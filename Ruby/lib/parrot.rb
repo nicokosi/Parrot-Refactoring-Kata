@@ -34,3 +34,6 @@ class Parrot
     12.0
   end
 end
+
+class EuropeanParrot < Parrot
+end
