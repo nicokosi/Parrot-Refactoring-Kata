@@ -1,6 +1,5 @@
 
 class ParrotType:
-    AFRICAN = 2
     NORWEGIAN_BLUE = 3
 
 
@@ -38,7 +37,7 @@ class EuropeanParrot(Parrot):
 
 class AfricanParrot(Parrot):
 
-    def __init__(self, type_of_parrot, number_of_coconuts, voltage, nailed):
+    def __init__(self, number_of_coconuts):
         self._number_of_coconuts = number_of_coconuts
 
     def speed(self):
