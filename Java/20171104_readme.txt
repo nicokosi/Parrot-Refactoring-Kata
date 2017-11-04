@@ -1,3 +1,10 @@
 Starting the Parrot kata. 
 Inspired by Jakob Holderbaum during ITAKE 2017 Open Space.
-Should take 10 minutes. Let's see.
+He was pretty good. It should take 10 minutes. Let's see.
+
+* Eclipse, mainly Push Down, Change Method Signature
+
+* it took me 18', felt slow.
+* manual step in duplicating getSpeed
+* mistake when pushing down, appeared in other subclass as well
+* order of remove is after removing of field.
