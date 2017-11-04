@@ -39,6 +39,9 @@ end
 
 class EuropeanParrot < Parrot
 
+  def initialize 
+  end
+
   def speed
     return base_speed
   end
