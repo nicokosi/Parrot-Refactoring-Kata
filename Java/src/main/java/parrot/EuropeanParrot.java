@@ -6,4 +6,9 @@ public class EuropeanParrot extends Parrot {
         super(ParrotTypeEnum.EUROPEAN);
     }
 
+    @Override
+    public double getSpeed() {
+        return getBaseSpeed();
+    }
+
 }
