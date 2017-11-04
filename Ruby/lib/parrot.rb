@@ -45,3 +45,7 @@ class EuropeanParrot < Parrot
   end
   
 end
+
+class AfricanParrot < Parrot
+   
+end
