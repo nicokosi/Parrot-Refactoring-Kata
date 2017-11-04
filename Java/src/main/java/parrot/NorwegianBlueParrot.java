@@ -6,8 +6,8 @@ public class NorwegianBlueParrot extends Parrot {
     private final boolean isNailed;
     protected int numberOfCoconuts;
 
-    public NorwegianBlueParrot(ParrotTypeEnum _type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        super(_type, numberOfCoconuts);
+    public NorwegianBlueParrot(ParrotTypeEnum _type, double voltage, boolean isNailed) {
+        super(_type);
         this.voltage = voltage;
         this.isNailed = isNailed;
     }
@@ -19,10 +19,6 @@ public class NorwegianBlueParrot extends Parrot {
 
     private double getBaseSpeedForVoltage() {
         return Math.min(24.0, voltage * getBaseSpeed());
-    }
-
-    protected double getLoadFactor() {
-        return 9.0;
     }
 
 }

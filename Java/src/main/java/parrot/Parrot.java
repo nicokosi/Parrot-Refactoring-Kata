@@ -4,7 +4,7 @@ public class Parrot {
 
     private ParrotTypeEnum type;
 
-    public Parrot(ParrotTypeEnum _type, int numberOfCoconuts) {
+    public Parrot(ParrotTypeEnum _type) {
         this.type = _type;
     }
 
