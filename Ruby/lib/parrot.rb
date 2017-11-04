@@ -56,3 +56,7 @@ class AfricanParrot < Parrot
   end
    
 end
+
+class NorwegianBlueParrot < Parrot
+  
+end
