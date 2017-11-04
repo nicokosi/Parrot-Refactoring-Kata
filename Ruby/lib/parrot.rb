@@ -30,10 +30,17 @@ class Parrot
     9.0
   end
 
+  protected
+  
   def base_speed
     12.0
   end
 end
 
 class EuropeanParrot < Parrot
+
+  def speed
+    return base_speed
+  end
+  
 end
