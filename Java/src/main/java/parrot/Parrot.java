@@ -1,21 +1,8 @@
 package parrot;
 
-public class Parrot {
+public abstract class Parrot {
 
-    private ParrotTypeEnum type;
-
-    public Parrot(ParrotTypeEnum _type) {
-        this.type = _type;
-    }
-
-    public double getSpeed() {
-        switch (type) {
-        case EUROPEAN:
-            return getBaseSpeed();
-        default:
-            throw new RuntimeException("Should be unreachable");
-        }
-    }
+    public abstract double getSpeed();
 
     protected double getBaseSpeed() {
         return 12.0;
