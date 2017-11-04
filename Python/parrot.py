@@ -37,4 +37,6 @@ class Parrot:
 
 
 class EuropeanParrot(Parrot):
-    pass
+
+    def speed(self):
+        return self._base_speed()
