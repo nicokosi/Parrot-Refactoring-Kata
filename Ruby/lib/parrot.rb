@@ -5,7 +5,7 @@ class Parrot
   def base_speed
     12.0
   end
-  
+
 end
 
 class EuropeanParrot < Parrot
@@ -42,13 +42,13 @@ class NorwegianBlueParrot < Parrot
   end
 
   def speed
-    return (@nailed) ? 0 : compute_base_speed_for_voltage(@voltage)
+    return (@nailed) ? 0 : compute_base_speed_for_voltage
   end
 
   private
 
-  def compute_base_speed_for_voltage voltage
-    [24.0, voltage * base_speed].min
+  def compute_base_speed_for_voltage
+    [24.0, @voltage * base_speed].min
   end
 
 end
