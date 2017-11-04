@@ -9,8 +9,6 @@ class Parrot
 
   def speed
     case @type
-    when :european_parrot
-      return base_speed
     when :african_parrot
       return [0, base_speed - load_factor * @number_of_coconuts].max
     when :norwegian_blue_parrot
