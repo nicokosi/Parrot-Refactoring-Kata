@@ -6,4 +6,8 @@ public class NorwegianBlueParrot extends Parrot {
         super(_type, numberOfCoconuts, voltage, isNailed);
     }
 
+    public double getSpeed() {
+        return (isNailed) ? 0 : getBaseSpeed(voltage);
+    }
+
 }
