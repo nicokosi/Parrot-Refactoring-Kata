@@ -1,1 +1,7 @@
 Third run in Ruby with DLTK (Eclipse).
+
+* 9 minutes, getting faster
+* commits more automatic (like in IDE), not wasting time.
+* also easier to do because constructors are inherited
+* push down = just copy everything down and delete what is not needed
+* change method signature is missing
