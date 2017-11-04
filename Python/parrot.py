@@ -41,7 +41,13 @@ class AfricanParrot(Parrot):
         self._number_of_coconuts = number_of_coconuts
 
     def speed(self):
-        return max(0, self._base_speed() - self._load_factor() * self._number_of_coconuts)
+        return max(0,
+                   self._base_speed() -
+                   self._load_factor() * self._number_of_coconuts)
 
     def _load_factor(self):
         return 9.0
+
+
+class NorwegianBlueParrot(Parrot):
+    pass
