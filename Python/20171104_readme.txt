@@ -1,1 +1,7 @@
 Try again in Python with PyDev (Eclipse).
+
+* 16 minutes
+* less commits, I am getting lazy
+* easier to do because constructors are inherited
+* easier to do because all access is public, so push down works nicer
+* change method signature is missing
