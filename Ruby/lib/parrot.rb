@@ -1,42 +1,19 @@
 class Parrot
 
-  def initialize type, number_of_coconuts, voltage, nailed
-    @type = type
-    @voltage = voltage
-    @nailed = nailed
-  end
-
-  def speed
-    case @type
-    when :norwegian_blue_parrot
-      return (@nailed) ? 0 : compute_base_speed_for_voltage(@voltage)
-    end
-
-    throw "Should be unreachable!"
-  end
-
-  private
-
-  def compute_base_speed_for_voltage voltage
-    [24.0, voltage * base_speed].min
-  end
-
   protected
-  
+
   def base_speed
     12.0
   end
+  
 end
 
 class EuropeanParrot < Parrot
 
-  def initialize 
-  end
-
   def speed
     return base_speed
   end
-  
+
 end
 
 class AfricanParrot < Parrot
@@ -54,7 +31,7 @@ class AfricanParrot < Parrot
   def load_factor
     9.0
   end
-   
+
 end
 
 class NorwegianBlueParrot < Parrot
@@ -73,5 +50,5 @@ class NorwegianBlueParrot < Parrot
   def compute_base_speed_for_voltage voltage
     [24.0, voltage * base_speed].min
   end
-  
+
 end
