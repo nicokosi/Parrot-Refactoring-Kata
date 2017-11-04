@@ -48,7 +48,7 @@ end
 
 class AfricanParrot < Parrot
 
-  def initialize type, number_of_coconuts, voltage, nailed
+  def initialize number_of_coconuts
     @number_of_coconuts = number_of_coconuts
   end
 
