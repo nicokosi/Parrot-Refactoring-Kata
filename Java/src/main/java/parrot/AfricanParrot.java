@@ -2,7 +2,7 @@ package parrot;
 
 public class AfricanParrot extends Parrot {
 
-    protected int numberOfCoconuts;
+    private final int numberOfCoconuts;
 
     public AfricanParrot(ParrotTypeEnum _type, int numberOfCoconuts) {
         super(_type, numberOfCoconuts);
@@ -14,7 +14,7 @@ public class AfricanParrot extends Parrot {
         return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
     }
 
-    protected double getLoadFactor() {
+    private double getLoadFactor() {
         return 9.0;
     }
 
