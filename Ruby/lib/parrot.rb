@@ -59,7 +59,7 @@ end
 
 class NorwegianBlueParrot < Parrot
 
-  def initialize type, number_of_coconuts, voltage, nailed
+  def initialize voltage, nailed
     @voltage = voltage
     @nailed = nailed
   end
