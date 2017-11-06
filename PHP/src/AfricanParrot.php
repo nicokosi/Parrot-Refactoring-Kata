@@ -6,11 +6,11 @@ class AfricanParrot extends Parrot {
   /** @var int */
   private $numberOfCoconuts;
 
-  public function __construct($numberOfCoconuts) {
+  function __construct($numberOfCoconuts) {
     $this->numberOfCoconuts = $numberOfCoconuts;
   }
 
-  public function getSpeed() {
+  function getSpeed() {
     return max(0, $this->getBaseSpeed() - $this->getLoadFactor() * $this->numberOfCoconuts);
   }
 
