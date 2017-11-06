@@ -5,7 +5,7 @@ class Parrot {
   /** @var int ParrotTypeEnum */
   private $type;
   /** @var int */
-  private $numberOfCoconuts = 0;
+  protected $numberOfCoconuts = 0;
   /** @var double */
   private $voltage;
   /** @var boolean */
@@ -20,19 +20,17 @@ class Parrot {
 
   public function getSpeed() {
     switch ($this->type) {
-      case ParrotTypeEnum::AFRICAN:
-        return max(0, $this->getBaseSpeed() - $this->getLoadFactor() * $this->numberOfCoconuts);
       case ParrotTypeEnum::NORWEGIAN_BLUE:
         return $this->isNailed ? 0 : $this->getBaseSpeedWith($this->voltage);
     }
     throw new \Exception("Should be unreachable");
   }
 
-  private function getBaseSpeedWith($voltage) {
+  protected function getBaseSpeedWith($voltage) {
     return min(24.0, $voltage * $this->getBaseSpeed());
   }
 
-  private function getLoadFactor() {
+  protected function getLoadFactor() {
     return 9.0;
   }
 
