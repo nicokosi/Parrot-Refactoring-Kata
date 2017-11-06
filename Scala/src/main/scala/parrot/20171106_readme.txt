@@ -3,3 +3,5 @@ Scala with ScalaIDE (Eclipse)
 * Eclipse can do everything.
 * Setup is most complex. SBT, uses IVY, ScalaIDE has only fixed Scala version...
 * Everything is soooo much slower.
+
+* Maybe skip the Scala version. Running sbt is no fun.
