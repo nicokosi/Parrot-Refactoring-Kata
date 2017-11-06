@@ -1,17 +1,9 @@
 <?php
 namespace Parrot;
 
-class Parrot {
-  /** @var int ParrotTypeEnum */
-  private $type;
+abstract class Parrot {
 
-  public function __construct($type, $numberOfCoconuts, $voltage, $isNailed) {
-    $this->type = $type;
-  }
-
-  public function getSpeed() {
-    throw new \Exception("Should be unreachable");
-  }
+  abstract function getSpeed();
 
   protected function getBaseSpeed() {
     return 12.0;
