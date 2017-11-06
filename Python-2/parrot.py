@@ -1,23 +1,6 @@
-
-class ParrotType:
-    NORWEGIAN_BLUE = 3
-
-
 class Parrot:
 
-    def __init__(self, type_of_parrot, number_of_coconuts, voltage, nailed):
-        self._type = type_of_parrot
-        self._number_of_coconuts = number_of_coconuts
-        self._voltage = voltage
-        self._nailed = nailed
-
     def speed(self):
-        if self._type == ParrotType.NORWEGIAN_BLUE:
-            if self._nailed:
-                return 0
-            else:
-                return self._compute_base_speed_for_voltage(self._voltage)
-
         raise ValueError("should be unreachable")
 
     def _base_speed(self):
