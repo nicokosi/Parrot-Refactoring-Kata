@@ -48,6 +48,10 @@ class AfricanParrot(Parrot):
         return 9.0
 
 
-
 class NorwegianBlueParrot(Parrot):
-    pass
+
+    def speed(self):
+        if self._nailed:
+            return 0
+        else:
+            return self._compute_base_speed_for_voltage(self._voltage)
