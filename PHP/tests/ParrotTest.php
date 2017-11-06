@@ -5,7 +5,7 @@ class ParrotTest extends \PHPUnit_Framework_TestCase {
 
   /** @test */
   public function get_speed_of_european_parrot() {
-    $parrot = new Parrot(ParrotTypeEnum::EUROPEAN, 0,0, false);
+    $parrot = new EuropeanParrot(ParrotTypeEnum::EUROPEAN, 0, 0, false);
     $this->assertEquals(12.0, $parrot->getSpeed());
   }
 
