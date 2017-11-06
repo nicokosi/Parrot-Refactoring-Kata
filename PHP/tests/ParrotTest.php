@@ -11,19 +11,19 @@ class ParrotTest extends \PHPUnit_Framework_TestCase {
 
   /** @test */
   public function get_speed_of_african_parrot_with_one_coconut() {
-    $parrot = new AfricanParrot(ParrotTypeEnum::AFRICAN, 1, 0, false);
+    $parrot = new AfricanParrot(1);
     $this->assertEquals(3.0, $parrot->getSpeed());
   }
 
   /** @test */
   public function get_speed_of_african_parrot_with_two_coconuts() {
-    $parrot = new AfricanParrot(ParrotTypeEnum::AFRICAN, 2, 0, false);
+    $parrot = new AfricanParrot(2);
     $this->assertEquals(0.0, $parrot->getSpeed());
   }
 
   /** @test */
   public function get_speed_of_african_parrot_with_no_coconuts() {
-    $parrot = new AfricanParrot(ParrotTypeEnum::AFRICAN, 0, 0, false);
+    $parrot = new AfricanParrot(0);
     $this->assertEquals(12.0, $parrot->getSpeed());
   }
 
