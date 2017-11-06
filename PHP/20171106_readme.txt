@@ -1,1 +1,7 @@
 Try again in PHP with Eclipse. Cool that I have almost all environments ready here.
+
+* 20 minutes. Slower again...
+* Mixing push down with change of constructor signatures.
+* Did not create ctor for EuropeanParrot because know I will delete it again.
+  But maybe I should. Finish each class one by one. No coming back to it.
+* Works as expected. No Refactorings in Eclipse, but not needed.
