@@ -4,8 +4,6 @@ namespace Parrot;
 class Parrot {
   /** @var int ParrotTypeEnum */
   private $type;
-  /** @var int */
-  protected $numberOfCoconuts = 0;
   /** @var double */
   private $voltage;
   /** @var boolean */
@@ -13,7 +11,6 @@ class Parrot {
 
   public function __construct($type, $numberOfCoconuts, $voltage, $isNailed) {
     $this->type = $type;
-    $this->numberOfCoconuts = $numberOfCoconuts;
     $this->voltage = $voltage;
     $this->isNailed = $isNailed;
   }
@@ -28,10 +25,6 @@ class Parrot {
 
   protected function getBaseSpeedWith($voltage) {
     return min(24.0, $voltage * $this->getBaseSpeed());
-  }
-
-  protected function getLoadFactor() {
-    return 9.0;
   }
 
   protected function getBaseSpeed() {
