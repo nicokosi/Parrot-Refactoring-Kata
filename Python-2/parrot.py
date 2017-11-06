@@ -20,9 +20,6 @@ class Parrot:
 
         raise ValueError("should be unreachable")
 
-    def _compute_base_speed_for_voltage(self, voltage):
-        return min([24.0, voltage * self._base_speed()])
-
     def _base_speed(self):
         return 12.0
 
@@ -55,3 +52,7 @@ class NorwegianBlueParrot(Parrot):
             return 0
         else:
             return self._compute_base_speed_for_voltage(self._voltage)
+
+    def _compute_base_speed_for_voltage(self, voltage):
+        return min([24.0, voltage * self._base_speed()])
+
