@@ -49,3 +49,7 @@ class AfricanParrot(Parrot):
 
     def _load_factor(self):
         return 9.0
+
+
+class NorwegianBlueParrot(Parrot):
+    pass
