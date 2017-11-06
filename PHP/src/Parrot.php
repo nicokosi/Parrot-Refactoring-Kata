@@ -5,9 +5,9 @@ class Parrot {
   /** @var int ParrotTypeEnum */
   private $type;
   /** @var double */
-  private $voltage;
+  protected $voltage;
   /** @var boolean */
-  private $isNailed;
+  protected $isNailed;
 
   public function __construct($type, $numberOfCoconuts, $voltage, $isNailed) {
     $this->type = $type;
