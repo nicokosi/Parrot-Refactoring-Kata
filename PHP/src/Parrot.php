@@ -13,10 +13,6 @@ class Parrot {
     throw new \Exception("Should be unreachable");
   }
 
-  protected function getBaseSpeedWith($voltage) {
-    return min(24.0, $voltage * $this->getBaseSpeed());
-  }
-
   protected function getBaseSpeed() {
     return 12.0;
   }

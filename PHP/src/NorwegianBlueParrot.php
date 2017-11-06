@@ -14,7 +14,11 @@ class NorwegianBlueParrot extends Parrot {
   }
 
   public function getSpeed() {
-    return $this->isNailed ? 0 : $this->getBaseSpeedWith($this->voltage);
+    return $this->isNailed ? 0 : $this->getBaseSpeedWithVoltage();
   }
 
+  private function getBaseSpeedWithVoltage() {
+    return min(24.0, $this->voltage * $this->getBaseSpeed());
+  }
+  
 }
