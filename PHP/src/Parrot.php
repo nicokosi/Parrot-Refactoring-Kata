@@ -4,22 +4,12 @@ namespace Parrot;
 class Parrot {
   /** @var int ParrotTypeEnum */
   private $type;
-  /** @var double */
-  protected $voltage;
-  /** @var boolean */
-  protected $isNailed;
 
   public function __construct($type, $numberOfCoconuts, $voltage, $isNailed) {
     $this->type = $type;
-    $this->voltage = $voltage;
-    $this->isNailed = $isNailed;
   }
 
   public function getSpeed() {
-    switch ($this->type) {
-      case ParrotTypeEnum::NORWEGIAN_BLUE:
-        return $this->isNailed ? 0 : $this->getBaseSpeedWith($this->voltage);
-    }
     throw new \Exception("Should be unreachable");
   }
 
