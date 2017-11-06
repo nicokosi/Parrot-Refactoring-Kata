@@ -38,4 +38,4 @@ class NorwegianBlueParrot(Parrot):
             return self._compute_base_speed_for_voltage()
 
     def _compute_base_speed_for_voltage(self):
-        return min([24.0, self._voltage * self._base_speed()])
+        return min(24.0, self._voltage * self._base_speed())
