@@ -38,7 +38,7 @@ class NorwegianBlueParrot(Parrot):
         if self._nailed:
             return 0
         else:
-            return self._compute_base_speed_for_voltage()
+            return self._speed_for_voltage()
 
-    def _compute_base_speed_for_voltage(self):
+    def _speed_for_voltage(self):
         return min(24.0, self._voltage * self._base_speed())
