@@ -41,4 +41,7 @@ class NorwegianBlueParrot(Parrot):
             return self._speed_for_voltage()
 
     def _speed_for_voltage(self):
-        return min(24.0, self._voltage * self._base_speed())
+        return min(self._max_speed(), self._voltage * self._base_speed())
+
+    def _max_speed(self):
+        return 24.0
