@@ -1,0 +1,11 @@
+*.pyc
+.cache
+__pycache__
+.idea
+*.iml
+.project
+.pydevproject
+.settings
+
+site-packages
+run_nose.bat
