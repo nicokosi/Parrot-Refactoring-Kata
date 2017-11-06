@@ -41,9 +41,14 @@ class EuropeanParrot(Parrot):
 
 class AfricanParrot(Parrot):
 
+    def __init__(self, type_of_parrot, number_of_coconuts, voltage, nailed):
+        self._type = type_of_parrot
+        self._number_of_coconuts = number_of_coconuts
+        self._voltage = voltage
+        self._nailed = nailed
+
     def speed(self):
         return max(0, self._base_speed() - self._load_factor() * self._number_of_coconuts)
 
     def _load_factor(self):
         return 9.0
-
