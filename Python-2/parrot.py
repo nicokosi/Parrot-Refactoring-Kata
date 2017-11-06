@@ -1,6 +1,5 @@
 
 class ParrotType:
-    AFRICAN = 2
     NORWEGIAN_BLUE = 3
 
 
@@ -13,8 +12,6 @@ class Parrot:
         self._nailed = nailed
 
     def speed(self):
-        if self._type == ParrotType.AFRICAN:
-            return max(0, self._base_speed() - self._load_factor() * self._number_of_coconuts)
         if self._type == ParrotType.NORWEGIAN_BLUE:
             if self._nailed:
                 return 0
@@ -49,6 +46,7 @@ class AfricanParrot(Parrot):
 
     def _load_factor(self):
         return 9.0
+
 
 
 class NorwegianBlueParrot(Parrot):
