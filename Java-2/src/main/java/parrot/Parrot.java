@@ -16,10 +16,6 @@ public class Parrot {
         throw new RuntimeException("Should be unreachable");
     }
 
-    protected double getBaseSpeed(double voltage) {
-        return Math.min(24.0, voltage * getBaseSpeed());
-    }
-
     protected double getBaseSpeed() {
         return 12.0;
     }
