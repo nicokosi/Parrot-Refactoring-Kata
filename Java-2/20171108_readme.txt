@@ -1,0 +1,6 @@
+Again in Java with IDEA this time.
+
+* Should be faster commit due to Alt-9.
+* Goal is maximal number of steps.
+
+*
