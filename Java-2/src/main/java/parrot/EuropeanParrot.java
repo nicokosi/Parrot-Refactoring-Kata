@@ -1,8 +1,8 @@
 package parrot;
 
 public class EuropeanParrot extends Parrot {
-    public EuropeanParrot(ParrotTypeEnum _type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        super(_type, numberOfCoconuts, voltage, isNailed);
+    public EuropeanParrot() {
+        super(null, 0, 0, false);
     }
 
     public double getSpeed() {
