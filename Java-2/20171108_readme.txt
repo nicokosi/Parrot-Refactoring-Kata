@@ -3,4 +3,9 @@ Again in Java with IDEA this time.
 * Should be faster commit due to Alt-9.
 * Goal is maximal number of steps.
 
-*
+* 29 minutes, quite slow
+* had to check the list of steps
+* found some more steps
+
+Total 36 steps now. Another ten more than Pythin. Nice.
+Now I need to practice to be in 10 minutes.
