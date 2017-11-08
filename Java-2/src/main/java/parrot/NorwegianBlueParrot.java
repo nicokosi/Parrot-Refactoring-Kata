@@ -12,7 +12,7 @@ public class NorwegianBlueParrot extends Parrot {
 
     @Override
     public double getSpeed() {
-        return (isNailed) ? 0 : speedForVoltage();
+        return isNailed ? 0 : speedForVoltage();
     }
 
     private double speedForVoltage() {
