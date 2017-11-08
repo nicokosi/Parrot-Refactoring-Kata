@@ -8,6 +8,7 @@ public class AfricanParrot extends Parrot {
         this.numberOfCoconuts = numberOfCoconuts;
     }
 
+    @Override
     public double getSpeed() {
         return Math.max(0, getBaseSpeed() - slowDownDueToCoconuts());
     }
