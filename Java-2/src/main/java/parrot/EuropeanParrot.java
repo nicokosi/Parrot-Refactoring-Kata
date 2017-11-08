@@ -2,7 +2,7 @@ package parrot;
 
 public class EuropeanParrot extends Parrot {
     public EuropeanParrot() {
-        super(null, 0, 0, false);
+        super();
     }
 
     public double getSpeed() {
