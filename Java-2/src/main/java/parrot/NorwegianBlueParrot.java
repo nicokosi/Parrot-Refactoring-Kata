@@ -6,10 +6,10 @@ public class NorwegianBlueParrot extends Parrot {
     }
 
     public double getSpeed() {
-        return (isNailed) ? 0 : getBaseSpeed(voltage);
+        return (isNailed) ? 0 : getBaseSpeedForVoltage(voltage);
     }
 
-    private double getBaseSpeed(double voltage) {
+    private double getBaseSpeedForVoltage(double voltage) {
         return Math.min(24.0, voltage * getBaseSpeed());
     }
 }
