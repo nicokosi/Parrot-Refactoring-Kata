@@ -3,8 +3,8 @@ package parrot;
 public class Parrot {
 
     private ParrotTypeEnum type;
-    private double voltage;
-    private boolean isNailed;
+    protected double voltage;
+    protected boolean isNailed;
 
     public Parrot(ParrotTypeEnum _type, int numberOfCoconuts, double voltage, boolean isNailed) {
         this.type = _type;
@@ -21,7 +21,7 @@ public class Parrot {
         }
     }
 
-    private double getBaseSpeed(double voltage) {
+    protected double getBaseSpeed(double voltage) {
         return Math.min(24.0, voltage * getBaseSpeed());
     }
 
