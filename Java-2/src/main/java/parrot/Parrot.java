@@ -3,8 +3,6 @@ package parrot;
 public class Parrot {
 
     private ParrotTypeEnum type;
-    protected double voltage;
-    protected boolean isNailed;
 
     public Parrot(ParrotTypeEnum _type, int numberOfCoconuts, double voltage, boolean isNailed) {
         this.type = _type;
