@@ -22,9 +22,10 @@ Steps
 17 use self._voltage in _compute_base_speed_for_voltage
 18 push down/copy whole constructor
 19 reduced constructor in tests
-20 removed NorwegianBlue from types, delete types
+20 removed NorwegianBlue from types
 
 21 remove base constructor (not done alone)
+   delete types
 22 remove empty European constructor
 
 23 remove braces in min (_compute_base_speed_for_voltage) in Norwegian

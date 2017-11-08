@@ -2,10 +2,7 @@ package parrot;
 
 public class Parrot {
 
-    private ParrotTypeEnum type;
-
     public Parrot(ParrotTypeEnum _type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        this.type = _type;
     }
 
     public double getSpeed() {
