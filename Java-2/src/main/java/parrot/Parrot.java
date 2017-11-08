@@ -1,10 +1,8 @@
 package parrot;
 
-public class Parrot {
+public abstract class Parrot {
 
-    public double getSpeed() {
-        throw new RuntimeException("Should be unreachable");
-    }
+    public abstract double getSpeed();
 
     protected double getBaseSpeed() {
         return 12.0;
