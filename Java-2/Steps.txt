@@ -1,0 +1,33 @@
+Steps
+-----
+
+1 empty EuropeanParrot used in tests
+2 copy speed
+3 removed code from parent speed
+4 reduced constructor in tests
+5 removed European from types
+
+6 empty AfricanParrot used in tests
+7 copy speed
+8 removed code from parent speed (not done alone)
+9 push down _loadfactor
+10 push down/copy whole constructor
+11 reduced constructor in tests
+12 removed African from types
+
+13 empty NorwegianBlue used in tests 
+14 copy speed
+15 removed code from parent speed (not done alone)
+16 push down _compute_base_speed_for_voltage
+16 use self._voltage in _compute_base_speed_for_voltage
+17 push down/copy whole constructor
+18 reduced constructor in tests
+19 removed NorwegianBlue from types, delete types
+
+20 remove base constructor (not done alone)
+21 remove empty European constructor
+
+22 remove braces in min (_compute_base_speed_for_voltage) in Norwegian
+23 extract _slowdown_due_coconuts in African
+24 rename _compute_base_speed_for_voltage to _speed_for_voltage in Norwegian
+25 extract _max_speed in Norwegian
