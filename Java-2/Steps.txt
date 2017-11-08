@@ -19,15 +19,15 @@ Steps
 14 copy speed
 15 removed code from parent speed (not done alone)
 16 push down _compute_base_speed_for_voltage
-16 use self._voltage in _compute_base_speed_for_voltage
-17 push down/copy whole constructor
-18 reduced constructor in tests
-19 removed NorwegianBlue from types, delete types
+17 use self._voltage in _compute_base_speed_for_voltage
+18 push down/copy whole constructor
+19 reduced constructor in tests
+20 removed NorwegianBlue from types, delete types
 
-20 remove base constructor (not done alone)
-21 remove empty European constructor
+21 remove base constructor (not done alone)
+22 remove empty European constructor
 
-22 remove braces in min (_compute_base_speed_for_voltage) in Norwegian
-23 extract _slowdown_due_coconuts in African
-24 rename _compute_base_speed_for_voltage to _speed_for_voltage in Norwegian
-25 extract _max_speed in Norwegian
+23 remove braces in min (_compute_base_speed_for_voltage) in Norwegian
+24 extract _slowdown_due_coconuts in African
+25 rename _compute_base_speed_for_voltage to _speed_for_voltage in Norwegian
+26 extract _max_speed in Norwegian
