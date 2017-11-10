@@ -2,16 +2,19 @@ package perfkata.parrot.a20171110b;
 
 public class AfricanParrot extends Parrot {
 
-    private int numberOfCoconuts;
+    private final int numberOfCoconuts;
 
     public AfricanParrot(int numberOfCoconuts) {
-        super();
         this.numberOfCoconuts = numberOfCoconuts;
     }
 
     @Override
     public double getSpeed() {
-            return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
+        return Math.max(0, getBaseSpeed() - slowdownDueToCoconuts());
+    }
+
+    private double slowdownDueToCoconuts() {
+        return getLoadFactor() * numberOfCoconuts;
     }
 
     private double getLoadFactor() {
