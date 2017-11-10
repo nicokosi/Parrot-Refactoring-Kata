@@ -2,10 +2,9 @@ package perfkata.parrot.a20171110a;
 
 public class AfricanParrot extends Parrot {
 
-    private int numberOfCoconuts;
+    private final int numberOfCoconuts;
 
     public AfricanParrot(int numberOfCoconuts) {
-        super();
         this.numberOfCoconuts = numberOfCoconuts;
     }
 
