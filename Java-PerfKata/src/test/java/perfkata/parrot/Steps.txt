@@ -1,0 +1,45 @@
+Steps (* not in Python)
+-----------------------
+
+1 empty class EuropeanParrot / duplicate constructor* / used in tests
+2 baseSpeed protected* (to be used)
+3 copy part of speed / add @override
+4 remove code from parent speed
+5 use dummy values in super call
+6 reduced own constructor arguments (Ctrl F6)
+7 delete European from types enum
+
+8 empty class AfricanParrot / duplicate constructor* / used in tests
+9 loadFactor protected* (to be used)
+10 copy part of speed / add @override
+11 remove code from parent speed
+12 push down loadFactor / make private* again
+13 use dummy values in super call
+14 reduced own constructor arguments (Ctrl F6)
+15 delete African from types enum
+
+16 empty class NorwegianBlueParrot / duplicate constructor* / used in tests
+17 fields and baseSpeedVoltage protected* (to be used)
+18 copy part of speed / add @override
+19 remove code from parent speed
+20 push down _compute_base_speed_for_voltage / make private* again
+21 move init of fields down to concrete class
+22 push down field declarations
+23 use dummy values in super call
+24 reduced own constructor arguments (Ctrl F6)
+25 delete NorwegianBlue from types enum
+
+26 delete unused field init / remove field in base class
+27 remove all constructor arguments (Ctrl F6)
+28 remove constructor
+29 delete types enum class
+30 make base class abstract* / make method abstract*
+
+31 remove empty European constructor
+
+32 extract _slowdown_due_to_coconuts in African
+
+33 rename _compute_base_speed_for_voltage to _speed_for_voltage
+34 use this._voltage in _speed_for_voltage
+35 remove extra braces in min() / (isNailed) in Norwegian
+36 extract _max_speed in Norwegian
