@@ -2,10 +2,7 @@ package perfkata.parrot.a20171110a;
 
 public class Parrot {
 
-    private ParrotTypeEnum type;
-
     public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        this.type = type;
     }
 
     public double getSpeed() {
