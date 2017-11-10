@@ -15,7 +15,7 @@ Steps (* not in Python)
 11 remove code from parent speed
 12 push down loadFactor / make private* again
 13 move init of field numberCoconuts down to concrete class
-14 push down field declaration
+14 push down field declaration / make private* again
 15 use dummy values in super call
 16 reduced own constructor arguments (Ctrl F6)
 17 delete African from types enum
@@ -26,7 +26,7 @@ Steps (* not in Python)
 21 remove code from parent speed
 22 push down _compute_base_speed_for_voltage / make private* again
 23 move init of fields down to concrete class
-24 push down field declarations
+24 push down field declarations / make private* again
 25 use dummy values in super call
 26 reduced own constructor arguments (Ctrl F6)
 27 delete NorwegianBlue from types enum
