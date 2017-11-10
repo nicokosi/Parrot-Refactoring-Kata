@@ -1,0 +1,5 @@
+* IntelliJ IDEA
+* 14 minutes
+* 1 mistake (did not delete enum)
+* now only test/commit after each parrot
+* tests run slow
