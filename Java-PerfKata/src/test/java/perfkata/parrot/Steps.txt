@@ -10,7 +10,7 @@ Steps (* not in Python)
 7 delete European from types enum
 
 8 empty class AfricanParrot / duplicate constructor* / used in tests
-9 loadFactor protected* (to be used)
+9 numberCoconuts and loadFactor protected* (to be used)
 10 copy part of speed / add @override
 11 remove code from parent speed
 12 push down loadFactor / make private* again
