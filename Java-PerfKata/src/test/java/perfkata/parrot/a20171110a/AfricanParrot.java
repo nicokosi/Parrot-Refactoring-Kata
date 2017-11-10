@@ -2,7 +2,7 @@ package perfkata.parrot.a20171110a;
 
 public class AfricanParrot extends Parrot {
 
-    protected int numberOfCoconuts;
+    private int numberOfCoconuts;
 
     public AfricanParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
         super(type, numberOfCoconuts, voltage, isNailed);
@@ -14,7 +14,7 @@ public class AfricanParrot extends Parrot {
         return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
     }
 
-    protected double getLoadFactor() {
+    private double getLoadFactor() {
         return 9.0;
     }
 

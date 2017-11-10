@@ -14,9 +14,11 @@ Steps (* not in Python)
 10 copy part of speed / add @override
 11 remove code from parent speed
 12 push down loadFactor / make private* again
-13 use dummy values in super call
-14 reduced own constructor arguments (Ctrl F6)
-15 delete African from types enum
+13 move init of field numberCoconuts down to concrete class
+14 push down field declaration
+15 use dummy values in super call
+16 reduced own constructor arguments (Ctrl F6)
+17 delete African from types enum
 
 16 empty class NorwegianBlueParrot / duplicate constructor* / used in tests
 17 fields and baseSpeedVoltage protected* (to be used)
