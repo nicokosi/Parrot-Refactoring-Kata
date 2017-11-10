@@ -5,7 +5,7 @@ public class NorwegianBlueParrot extends Parrot {
     private boolean isNailed;
 
     public NorwegianBlueParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        super(type, numberOfCoconuts, voltage, isNailed);
+        super(null, 0, 0, false);
         this.voltage = voltage;
         this.isNailed = isNailed;
     }
