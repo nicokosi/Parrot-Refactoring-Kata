@@ -1,0 +1,4 @@
+* 29 minutes
+* 2 mistakes
+* found more steps, now 40 steps.
+* maybe only commit after each parrot?
