@@ -39,11 +39,11 @@ Steps (* not in Python)
 
 33 remove empty European constructor
 
-34 remove empty super
-35 make field final
-36 extract _slowdown_due_to_coconuts in African
+34 make field final / remove empty super
+35 extract _slowdown_due_to_coconuts in African
 
-35 rename _compute_base_speed_for_voltage to _speed_for_voltage
-36 use this._voltage in _speed_for_voltage
-37 remove extra braces in min() / (isNailed) in Norwegian
-38 extract _max_speed in Norwegian
+36 make field final / remove empty super
+37 rename _compute_base_speed_for_voltage to _speed_for_voltage
+38 use this._voltage in _speed_for_voltage
+39 remove extra braces in min() / (isNailed) in Norwegian
+40 extract _max_speed in Norwegian
