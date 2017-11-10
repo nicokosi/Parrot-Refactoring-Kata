@@ -20,28 +20,28 @@ Steps (* not in Python)
 16 reduced own constructor arguments (Ctrl F6)
 17 delete African from types enum
 
-16 empty class NorwegianBlueParrot / duplicate constructor* / used in tests
-17 fields and baseSpeedVoltage protected* (to be used)
-18 copy part of speed / add @override
-19 remove code from parent speed
-20 push down _compute_base_speed_for_voltage / make private* again
-21 move init of fields down to concrete class
-22 push down field declarations
-23 use dummy values in super call
-24 reduced own constructor arguments (Ctrl F6)
-25 delete NorwegianBlue from types enum
+18 empty class NorwegianBlueParrot / duplicate constructor* / used in tests
+19 fields and baseSpeedVoltage protected* (to be used)
+20 copy part of speed / add @override
+21 remove code from parent speed
+22 push down _compute_base_speed_for_voltage / make private* again
+23 move init of fields down to concrete class
+24 push down field declarations
+25 use dummy values in super call
+26 reduced own constructor arguments (Ctrl F6)
+27 delete NorwegianBlue from types enum
 
-26 delete unused field init / remove field in base class
-27 remove all constructor arguments (Ctrl F6)
-28 remove constructor
-29 delete types enum class
-30 make base class abstract* / make method abstract*
+28 delete unused field init / remove field in base class
+29 remove all constructor arguments (Ctrl F6)
+30 remove constructor
+31 delete types enum class
+32 make base class abstract* / make method abstract*
 
-31 remove empty European constructor
+33 remove empty European constructor
 
-32 extract _slowdown_due_to_coconuts in African
+34 extract _slowdown_due_to_coconuts in African
 
-33 rename _compute_base_speed_for_voltage to _speed_for_voltage
-34 use this._voltage in _speed_for_voltage
-35 remove extra braces in min() / (isNailed) in Norwegian
-36 extract _max_speed in Norwegian
+35 rename _compute_base_speed_for_voltage to _speed_for_voltage
+36 use this._voltage in _speed_for_voltage
+37 remove extra braces in min() / (isNailed) in Norwegian
+38 extract _max_speed in Norwegian
