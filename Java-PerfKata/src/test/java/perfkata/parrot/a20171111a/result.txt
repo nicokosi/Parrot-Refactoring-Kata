@@ -1,0 +1,5 @@
+* IntelliJ IDEA
+* 13 minutes
+* 1 mistake (did delete enum too late)
+* do all at same time for all three parrots
+* not faster but more navigation
