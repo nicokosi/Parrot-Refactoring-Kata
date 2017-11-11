@@ -2,8 +2,8 @@ package perfkata.parrot.a20171111a;
 
 public class NorwegianBlueParrot extends Parrot {
 
-    private double voltage;
-    private boolean isNailed;
+    private final double voltage;
+    private final boolean isNailed;
 
     public NorwegianBlueParrot(double voltage, boolean isNailed) {
         this.voltage = voltage;
@@ -12,11 +12,15 @@ public class NorwegianBlueParrot extends Parrot {
 
     @Override
     public double getSpeed() {
-        return (isNailed) ? 0 : getBaseSpeed(voltage);
+        return isNailed ? 0 : speedForVoltage();
     }
 
-    private double getBaseSpeed(double voltage) {
-        return Math.min(24.0, voltage * getBaseSpeed());
+    private double speedForVoltage() {
+        return Math.min(maxSpeed(), voltage * getBaseSpeed());
+    }
+
+    private double maxSpeed() {
+        return 24.0;
     }
 
 }
