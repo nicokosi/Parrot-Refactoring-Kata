@@ -1,2 +1,3 @@
 * Eclipse (should be faster with run tests)
 * mistake, help opened
+* mistake, delete enum before removing it from ctor
