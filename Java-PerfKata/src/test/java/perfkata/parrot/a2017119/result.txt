@@ -1,3 +1,6 @@
 * Eclipse (should be faster with run tests)
-* mistake, help opened
-* mistake, delete enum before removing it from ctor
+* mistake: help opened
+* mistake: delete enum before removing it from ctor
+* running tests after each step
+* only checking in 4 times, after each class
+* 17 minutes, also it felt slow
