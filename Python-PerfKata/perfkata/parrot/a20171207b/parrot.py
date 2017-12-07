@@ -1,7 +1,4 @@
 class Parrot:
-    def __init__(self, type_of_parrot, number_of_coconuts, voltage, nailed):
-        self._type = type_of_parrot
-
     def speed(self):
         raise ValueError("should be unreachable")
 
@@ -10,30 +7,25 @@ class Parrot:
 
 
 class EuropeanParrot(Parrot):
-
-    def __init__(self):
-        pass
-
     def speed(self):
         return self._base_speed()
 
 
 class AfricanParrot(Parrot):
-
     def __init__(self, number_of_coconuts):
         self._number_of_coconuts = number_of_coconuts
 
     def speed(self):
-        return max(0, self._base_speed() - self.slowdown_due_coconuts())
+        return max(0, self._base_speed() - self._slowdown_due_coconuts())
 
-    def slowdown_due_coconuts(self):
+    def _slowdown_due_coconuts(self):
         return self._load_factor() * self._number_of_coconuts
 
     def _load_factor(self):
         return 9.0
 
-class NorwegianBlueParrot(Parrot):
 
+class NorwegianBlueParrot(Parrot):
     def __init__(self, voltage, nailed):
         self._voltage = voltage
         self._nailed = nailed
@@ -49,4 +41,3 @@ class NorwegianBlueParrot(Parrot):
 
     def _max_speed(self):
         return 24.0
-
