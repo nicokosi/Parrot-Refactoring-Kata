@@ -1,1 +1,6 @@
 * IDEA on fast machine
+* 13 minutes
+* 1 mistake, did not rename baseSpeedForVoltage before removing argument
+* running tests after each step
+* only checking in 4 times, after each class
+* IDEA on strong machine works nice, run test is not a problem, commit is faster.
