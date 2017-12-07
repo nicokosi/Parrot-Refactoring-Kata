@@ -1,19 +1,8 @@
 package perfkata.parrot.a20171207;
 
-public class Parrot {
+public abstract class Parrot {
 
-    private ParrotTypeEnum type;
-
-    public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        this.type = type;
-    }
-
-    public double getSpeed() {
-        switch (type) {
-            default:
-                throw new RuntimeException("Should be unreachable");
-        }
-    }
+    public abstract double getSpeed();
 
     protected double getBaseSpeed() {
         return 12.0;
