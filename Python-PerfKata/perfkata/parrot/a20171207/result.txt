@@ -1,0 +1,5 @@
+* PyCharm on fast machine
+* 9 minutes.
+* several mistakes (failing tests)
+* a bit out of order
+* can skip some steps or do indirectly with Alt-Enter.
