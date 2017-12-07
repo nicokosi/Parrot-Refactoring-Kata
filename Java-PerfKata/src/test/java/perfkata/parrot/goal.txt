@@ -1,0 +1,4 @@
+Performance Code Kata "Parrot"
+------------------------------------
+
+Goal: Do the refactoring part for presentation in 10'.
