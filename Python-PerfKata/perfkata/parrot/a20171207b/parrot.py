@@ -1,5 +1,4 @@
 class ParrotType:
-    EUROPEAN = 1
     AFRICAN = 2
     NORWEGIAN_BLUE = 3
 
@@ -32,3 +31,12 @@ class Parrot:
 
     def _base_speed(self):
         return 12.0
+
+
+class EuropeanParrot(Parrot):
+
+    def __init__(self):
+        pass
+
+    def speed(self):
+        return self._base_speed()
