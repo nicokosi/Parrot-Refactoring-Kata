@@ -1,2 +1,3 @@
 * PyCharm second run (on fast machine)
-*
+* 8 minutes
+* twice forgot to remove code of current parrot from base class.
