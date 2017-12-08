@@ -35,6 +35,7 @@ type
          function GetSpeed: Double; virtual;
          { private }
          function SpeedForVoltage: Double;
+         function MaxSpeed: Double;
      end;
      PNorwegianBlueParrot = ^TNorwegianBlueParrot;
 
@@ -64,7 +65,7 @@ end;
 
 constructor TAfricanParrot.Init(NumberOfCoconutsIn: Word);
 begin
-    Self.NumberOfCoconuts := NumberOfCoconutsIn;
+    NumberOfCoconuts := NumberOfCoconutsIn;
 end;
 
 function TAfricanParrot.GetSpeed: Double;
@@ -102,7 +103,12 @@ end;
 
 function TNorwegianBlueParrot.SpeedForVoltage: Double;
 begin
-    SpeedForVoltage := Math.Min(24.0, Self.Voltage * Self.GetBaseSpeed);
+    SpeedForVoltage := Math.Min(Self.MaxSpeed, Self.Voltage * Self.GetBaseSpeed);
+end;
+
+function TNorwegianBlueParrot.MaxSpeed: Double;
+begin
+    MaxSpeed := 24.0;
 end;
 
 end.
