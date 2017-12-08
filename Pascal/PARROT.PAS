@@ -6,8 +6,6 @@ type
      TParrotType = (European, African, NorwegianBlue);
      TParrot = object
          ParrotType: TParrotType;
-         Voltage: Double;
-         IsNailed: Boolean;
 
          constructor Init(ParrotTypeIn: TParrotType; NumberOfCoconutsIn: Word; VoltageIn: Double; IsNailedIn: Boolean);
          function GetSpeed: Double; virtual;
@@ -34,6 +32,9 @@ type
      PAfricanParrot = ^TAfricanParrot;
 
      TNorwegianBlueParrot = object(TParrot)
+         Voltage: Double;
+         IsNailed: Boolean;
+
          constructor Init(VoltageIn: Double; IsNailedIn: Boolean);
          function GetSpeed: Double; virtual;
          { private }
@@ -47,8 +48,6 @@ uses Math;
 constructor TParrot.Init(ParrotTypeIn: TParrotType; NumberOfCoconutsIn: Word; VoltageIn: Double; IsNailedIn: Boolean);
 begin
     Self.ParrotType := ParrotTypeIn;
-    Self.Voltage := VoltageIn;
-    Self.IsNailed := IsNailedIn;
 end;
 
 function TParrot.GetBaseSpeed: Double;
@@ -93,7 +92,8 @@ end;
 
 constructor TNorwegianBlueParrot.Init(VoltageIn: Double; IsNailedIn: Boolean);
 begin
-    TParrot.Init(NorwegianBlue, 0, VoltageIn, IsNailedIn);
+    Self.Voltage := VoltageIn;
+    Self.IsNailed := IsNailedIn;
 end;
 
 function TNorwegianBlueParrot.GetSpeed: Double;
