@@ -39,19 +39,19 @@ end;
 
 procedure GetSpeedNorwegianBlueParrotNailed;
 begin
-    P := New(PParrot, Init(NorwegianBlue, 0, 1.5, True));
+    P := New(PNorwegianBlueParrot, Init(1.5, True));
     AssertEqualsDouble('Speed', 0.0, P^.GetSpeed, Ulp);
 end;
 
 procedure GetSpeedNorwegianBlueParrotNotNailed;
 begin
-    P := New(PParrot, Init(NorwegianBlue, 0, 1.5, False));
+    P := New(PNorwegianBlueParrot, Init(1.5, False));
     AssertEqualsDouble('Speed', 18.0, P^.GetSpeed, Ulp);
 end;
 
 procedure GetSpeedNorwegianBlueParrotHighVoltage;
 begin
-    P := New(PParrot, Init(NorwegianBlue, 0, 4, False));
+    P := New(PNorwegianBlueParrot, Init(4, False));
     AssertEqualsDouble('Speed', 24.0, P^.GetSpeed, Ulp);
 end;
 

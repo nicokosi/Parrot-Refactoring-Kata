@@ -33,6 +33,11 @@ type
      end;
      PAfricanParrot = ^TAfricanParrot;
 
+     TNorwegianBlueParrot = object(TParrot)
+         constructor Init(VoltageIn: Double; IsNailedIn: Boolean);
+     end;
+     PNorwegianBlueParrot = ^TNorwegianBlueParrot;
+
 implementation
 
 uses Math;
@@ -80,6 +85,7 @@ end;
 
 constructor TEuropeanParrot.Init;
 begin
+    { needs empty constructor to initialise virtual table }
 end;
 
 function TEuropeanParrot.GetSpeed: Double;
@@ -96,5 +102,11 @@ function TAfricanParrot.GetSpeed: Double;
 begin
     GetSpeed := Math.Max(0.0, Self.GetBaseSpeed - Self.GetLoadFactor * Self.NumberOfCoconuts);
 end;
+
+constructor TNorwegianBlueParrot.Init(VoltageIn: Double; IsNailedIn: Boolean);
+begin
+    TParrot.Init(NorwegianBlue, 0, VoltageIn, IsNailedIn);
+end;
+
 
 end.
