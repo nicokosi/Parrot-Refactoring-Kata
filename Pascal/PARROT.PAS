@@ -11,7 +11,7 @@ type
          IsNailed: Boolean;
 
          constructor Init(ParrotTypeIn: TParrotType; NumberOfCoconutsIn: Word; VoltageIn: Double; IsNailedIn: Boolean);
-         function GetSpeed: Double;
+         function GetSpeed: Double; virtual;
          { private }
          function GetBaseSpeed: Double;
          function GetLoadFactor: Double;
