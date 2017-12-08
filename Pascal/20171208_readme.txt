@@ -1,0 +1,3 @@
+Parrot kata in Turbo Pascal using TURBO 6.0 editor.
+
+* 
