@@ -22,6 +22,7 @@ type
          constructor Init(NumberOfCoconutsIn: Word);
          function GetSpeed: Double; virtual;
          { private }
+         function SlowdownDueCoconuts: Double;
          function GetLoadFactor: Double;
      end;
      PAfricanParrot = ^TAfricanParrot;
@@ -68,7 +69,12 @@ end;
 
 function TAfricanParrot.GetSpeed: Double;
 begin
-    GetSpeed := Math.Max(0.0, Self.GetBaseSpeed - Self.GetLoadFactor * Self.NumberOfCoconuts);
+    GetSpeed := Math.Max(0.0, GetBaseSpeed - SlowdownDueCoconuts);
+end;
+
+function TAfricanParrot.SlowdownDueCoconuts: Double;
+begin
+    SlowdownDueCoconuts := GetLoadFactor * NumberOfCoconuts;
 end;
 
 function TAfricanParrot.GetLoadFactor: Double;
