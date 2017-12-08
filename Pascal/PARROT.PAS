@@ -37,7 +37,7 @@ type
          constructor Init(VoltageIn: Double; IsNailedIn: Boolean);
          function GetSpeed: Double; virtual;
          { private }
-         function GetBaseSpeedForVoltage(VoltageIn: Double): Double;
+         function SpeedForVoltage: Double;
      end;
      PNorwegianBlueParrot = ^TNorwegianBlueParrot;
 
@@ -60,9 +60,9 @@ begin
     GetLoadFactor := 9.0;
 end;
 
-function TNorwegianBlueParrot.GetBaseSpeedForVoltage(VoltageIn: Double): Double;
+function TNorwegianBlueParrot.SpeedForVoltage: Double;
 begin
-    GetBaseSpeedForVoltage := Math.Min(24.0, VoltageIn * Self.GetBaseSpeed);
+    SpeedForVoltage := Math.Min(24.0, Self.Voltage * Self.GetBaseSpeed);
 end;
 
 function TParrot.GetSpeed: Double;
@@ -104,7 +104,7 @@ begin
     end
     else
     begin
-        GetSpeed := Self.GetBaseSpeedForVoltage(Self.Voltage);
+        GetSpeed := Self.SpeedForVoltage;
     end;
 end;
 
