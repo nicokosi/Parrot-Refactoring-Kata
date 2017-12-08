@@ -1,5 +1,3 @@
-import nose
-
 from parrot import Parrot, ParrotType
 
 
@@ -38,4 +36,6 @@ def test_speedNorwegianBlueParrot_not_nailed_high_voltage():
     assert parrot.speed() == 24.0
 
 
-nose.run('test_parrot')
+if __name__ == '__main__':
+    import nose
+    nose.run('test_parrot')
