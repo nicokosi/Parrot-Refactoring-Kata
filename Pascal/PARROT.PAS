@@ -27,6 +27,7 @@ type
 
      TAfricanParrot = object(TParrot)
          constructor Init(NumberOfCoconutsIn: Word);
+         function GetSpeed: Double; virtual;
      end;
      PAfricanParrot = ^TAfricanParrot;
 
@@ -59,11 +60,7 @@ end;
 
 function TParrot.GetSpeed: Double;
 begin
-    if Self.ParrotType = African then
-    begin
-        GetSpeed := Math.Max(0.0, Self.GetBaseSpeed - Self.GetLoadFactor * Self.NumberOfCoconuts);
-    end
-    else if Self.ParrotType = NorwegianBlue then
+    if Self.ParrotType = NorwegianBlue then
     begin
         if Self.IsNailed then
         begin
@@ -92,6 +89,11 @@ end;
 constructor TAfricanParrot.Init(NumberOfCoconutsIn: Word);
 begin
     TParrot.Init(African, NumberOfCoconutsIn, 0, False)
+end;
+
+function TAfricanParrot.GetSpeed: Double;
+begin
+    GetSpeed := Math.Max(0.0, Self.GetBaseSpeed - Self.GetLoadFactor * Self.NumberOfCoconuts);
 end;
 
 end.
