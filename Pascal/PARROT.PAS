@@ -20,10 +20,10 @@ type
      PParrot = ^TParrot;
 
      TEuropeanParrot = object(TParrot)
-         constructor InitEuropean;
+         constructor Init;
          function GetSpeed: Double; virtual;
      end;
-     PEuropeanParrot = ^TParrot;
+     PEuropeanParrot = ^TEuropeanParrot;
 
 implementation
 
@@ -54,11 +54,7 @@ end;
 
 function TParrot.GetSpeed: Double;
 begin
-    if Self.ParrotType = European then
-    begin
-        GetSpeed := GetBaseSpeed;
-    end
-    else if Self.ParrotType = African then
+    if Self.ParrotType = African then
     begin
         GetSpeed := Math.Max(0.0, Self.GetBaseSpeed - Self.GetLoadFactor * Self.NumberOfCoconuts);
     end
@@ -79,9 +75,8 @@ begin
     end;
 end;
 
-constructor TEuropeanParrot.InitEuropean;
+constructor TEuropeanParrot.Init;
 begin
-    TParrot.Init(European, 0, 0.0, false);
 end;
 
 function TEuropeanParrot.GetSpeed: Double;
