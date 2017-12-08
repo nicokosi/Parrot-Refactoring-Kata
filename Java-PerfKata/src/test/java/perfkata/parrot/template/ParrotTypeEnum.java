@@ -1,4 +1,4 @@
-package perfkata.parrot.a201711xx;
+package perfkata.parrot.template;
 
 public enum ParrotTypeEnum {
 
