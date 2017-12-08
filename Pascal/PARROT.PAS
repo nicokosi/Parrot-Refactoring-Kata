@@ -46,16 +46,6 @@ begin
     GetBaseSpeed := 12.0;
 end;
 
-function TAfricanParrot.GetLoadFactor: Double;
-begin
-    GetLoadFactor := 9.0;
-end;
-
-function TNorwegianBlueParrot.SpeedForVoltage: Double;
-begin
-    SpeedForVoltage := Math.Min(24.0, Self.Voltage * Self.GetBaseSpeed);
-end;
-
 function TParrot.GetSpeed: Double;
 begin
     RunError(42); { Should be unreachable }
@@ -81,6 +71,11 @@ begin
     GetSpeed := Math.Max(0.0, Self.GetBaseSpeed - Self.GetLoadFactor * Self.NumberOfCoconuts);
 end;
 
+function TAfricanParrot.GetLoadFactor: Double;
+begin
+    GetLoadFactor := 9.0;
+end;
+
 constructor TNorwegianBlueParrot.Init(VoltageIn: Double; IsNailedIn: Boolean);
 begin
     Self.Voltage := VoltageIn;
@@ -97,6 +92,11 @@ begin
     begin
         GetSpeed := Self.SpeedForVoltage;
     end;
+end;
+
+function TNorwegianBlueParrot.SpeedForVoltage: Double;
+begin
+    SpeedForVoltage := Math.Min(24.0, Self.Voltage * Self.GetBaseSpeed);
 end;
 
 end.
