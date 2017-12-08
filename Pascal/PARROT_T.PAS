@@ -15,7 +15,7 @@ end;
 
 procedure GetSpeedOfEuropeanParrot;
 begin
-    P := New(PParrot, Init(European, 0, 0, False));
+    P := New(PEuropeanParrot, Init(European, 0, 0, false));
     AssertEqualsDouble('Speed', 12.0, P^.GetSpeed, Ulp);
 end;
 

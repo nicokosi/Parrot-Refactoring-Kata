@@ -19,6 +19,12 @@ type
      end;
      PParrot = ^TParrot;
 
+     TEuropeanParrot = object(TParrot)
+         constructor InitEuropean;
+         function GetSpeed: Double; virtual;
+     end;
+     PEuropeanParrot = ^TParrot;
+
 implementation
 
 uses Math;
@@ -71,6 +77,16 @@ begin
     begin
         RunError(42); { Should be unreachable }
     end;
+end;
+
+constructor TEuropeanParrot.InitEuropean;
+begin
+    TParrot.Init(European, 0, 0.0, false);
+end;
+
+function TEuropeanParrot.GetSpeed: Double;
+begin
+    GetSpeed := GetBaseSpeed;
 end;
 
 end.
