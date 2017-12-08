@@ -6,7 +6,6 @@ type
      TParrotType = (European, African, NorwegianBlue);
      TParrot = object
          ParrotType: TParrotType;
-         NumberOfCoconuts: Word;
          Voltage: Double;
          IsNailed: Boolean;
 
@@ -26,6 +25,8 @@ type
      PEuropeanParrot = ^TEuropeanParrot;
 
      TAfricanParrot = object(TParrot)
+         NumberOfCoconuts: Word;
+
          constructor Init(NumberOfCoconutsIn: Word);
          function GetSpeed: Double; virtual;
      end;
@@ -38,7 +39,6 @@ uses Math;
 constructor TParrot.Init(ParrotTypeIn: TParrotType; NumberOfCoconutsIn: Word; VoltageIn: Double; IsNailedIn: Boolean);
 begin
     Self.ParrotType := ParrotTypeIn;
-    Self.NumberOfCoconuts := NumberOfCoconutsIn;
     Self.Voltage := VoltageIn;
     Self.IsNailed := IsNailedIn;
 end;
@@ -88,7 +88,7 @@ end;
 
 constructor TAfricanParrot.Init(NumberOfCoconutsIn: Word);
 begin
-    TParrot.Init(African, NumberOfCoconutsIn, 0, False)
+    Self.NumberOfCoconuts := NumberOfCoconutsIn;
 end;
 
 function TAfricanParrot.GetSpeed: Double;
