@@ -3,11 +3,7 @@ unit Parrot;
 interface
 
 type
-     TParrotType = (European, African, NorwegianBlue);
      TParrot = object
-         ParrotType: TParrotType;
-
-         constructor Init(ParrotTypeIn: TParrotType; NumberOfCoconutsIn: Word; VoltageIn: Double; IsNailedIn: Boolean);
          function GetSpeed: Double; virtual;
          { private }
          function GetBaseSpeed: Double;
@@ -44,11 +40,6 @@ type
 implementation
 
 uses Math;
-
-constructor TParrot.Init(ParrotTypeIn: TParrotType; NumberOfCoconutsIn: Word; VoltageIn: Double; IsNailedIn: Boolean);
-begin
-    Self.ParrotType := ParrotTypeIn;
-end;
 
 function TParrot.GetBaseSpeed: Double;
 begin
