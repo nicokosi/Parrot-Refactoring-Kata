@@ -4,6 +4,7 @@ interface
 
 type
      TParrot = object
+         constructor Init;
          function GetSpeed: Double; virtual;
          { private }
          function GetBaseSpeed: Double;
@@ -42,6 +43,12 @@ type
 implementation
 
 uses Math;
+
+constructor TParrot.Init;
+begin
+    { existing constructor must be called, otherwise object is not initialized }
+    Fail; {  abstract class }
+end;
 
 function TParrot.GetBaseSpeed: Double;
 begin

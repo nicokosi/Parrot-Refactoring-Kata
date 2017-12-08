@@ -9,8 +9,11 @@ var P: PParrot;
 
 procedure Cleanup;
 begin
-    Dispose(P);
-    P := nil;
+    if P <> nil then
+    begin
+        Dispose(P);
+        P := nil;
+    end;
 end;
 
 procedure GetSpeedOfEuropeanParrot;
@@ -55,6 +58,12 @@ begin
     AssertEqualsDouble('Speed', 24.0, P^.GetSpeed, Ulp);
 end;
 
+procedure ParrotIsUnreachable;
+begin
+    P := New(PParrot, Init);
+    AssertNil('failed constructor', P);
+end;
+
 begin
     RunFixtures('GetSpeedOfEuropeanParrot', Empty, GetSpeedOfEuropeanParrot, Cleanup);
     RunFixtures('GetSpeedOfAfricanParrotWithOneCoconut', Empty, GetSpeedOfAfricanParrotWithOneCoconut, Cleanup);
@@ -63,4 +72,5 @@ begin
     RunFixtures('GetSpeedNorwegianBlueParrotNailed', Empty, GetSpeedNorwegianBlueParrotNailed, Cleanup);
     RunFixtures('GetSpeedNorwegianBlueParrotNotNailed', Empty, GetSpeedNorwegianBlueParrotNotNailed, Cleanup);
     RunFixtures('GetSpeedNorwegianBlueParrotNotNailedHighVoltage', Empty, GetSpeedNorwegianBlueParrotHighVoltage, Cleanup);
+    RunFixtures('ParrotIsUnreachable', Empty, ParrotIsUnreachable, Cleanup);
 end.
