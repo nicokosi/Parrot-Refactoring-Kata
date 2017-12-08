@@ -25,6 +25,11 @@ type
      end;
      PEuropeanParrot = ^TEuropeanParrot;
 
+     TAfricanParrot = object(TParrot)
+         constructor Init(NumberOfCoconutsIn: Word);
+     end;
+     PAfricanParrot = ^TAfricanParrot;
+
 implementation
 
 uses Math;
@@ -82,6 +87,11 @@ end;
 function TEuropeanParrot.GetSpeed: Double;
 begin
     GetSpeed := GetBaseSpeed;
+end;
+
+constructor TAfricanParrot.Init(NumberOfCoconutsIn: Word);
+begin
+    TParrot.Init(African, NumberOfCoconutsIn, 0, False)
 end;
 
 end.

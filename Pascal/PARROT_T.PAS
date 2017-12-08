@@ -21,19 +21,19 @@ end;
 
 procedure GetSpeedOfAfricanParrotWithOneCoconut;
 begin
-    P := New(PParrot, Init(African, 1, 0, False));
+    P := New(PAfricanParrot, Init(1));
     AssertEqualsDouble('Speed', 3.0, P^.GetSpeed, Ulp);
 end;
 
 procedure GetSpeedOfAfricanParrotWithTwoCoconuts;
 begin
-    P := New(PParrot, Init(African, 2, 0, False));
+    P := New(PAfricanParrot, Init(2));
     AssertEqualsDouble('Speed', 0.0, P^.GetSpeed, Ulp);
 end;
 
 procedure GetSpeedOfAfricanParrotWithNoCoconuts;
 begin
-    P := New(PParrot, Init(African, 0, 0, False));
+    P := New(PAfricanParrot, Init(0));
     AssertEqualsDouble('Speed', 12.0, P^.GetSpeed, Ulp);
 end;
 
