@@ -13,7 +13,6 @@ type
          function GetSpeed: Double; virtual;
          { private }
          function GetBaseSpeed: Double;
-         function GetLoadFactor: Double;
          function GetBaseSpeedForVoltage(VoltageIn: Double): Double;
      end;
      PParrot = ^TParrot;
@@ -29,6 +28,8 @@ type
 
          constructor Init(NumberOfCoconutsIn: Word);
          function GetSpeed: Double; virtual;
+         { private }
+         function GetLoadFactor: Double;
      end;
      PAfricanParrot = ^TAfricanParrot;
 
@@ -48,7 +49,7 @@ begin
     GetBaseSpeed := 12.0;
 end;
 
-function TParrot.GetLoadFactor: Double;
+function TAfricanParrot.GetLoadFactor: Double;
 begin
     GetLoadFactor := 9.0;
 end;
