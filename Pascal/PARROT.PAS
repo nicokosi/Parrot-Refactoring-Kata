@@ -35,6 +35,8 @@ type
 
      TNorwegianBlueParrot = object(TParrot)
          constructor Init(VoltageIn: Double; IsNailedIn: Boolean);
+         function GetSpeed: Double; virtual;
+         { private }
      end;
      PNorwegianBlueParrot = ^TNorwegianBlueParrot;
 
@@ -66,21 +68,7 @@ end;
 
 function TParrot.GetSpeed: Double;
 begin
-    if Self.ParrotType = NorwegianBlue then
-    begin
-        if Self.IsNailed then
-        begin
-            GetSpeed := 0.0;
-        end
-        else
-        begin
-            GetSpeed := Self.GetBaseSpeedForVoltage(Self.Voltage);
-        end;
-    end
-    else
-    begin
-        RunError(42); { Should be unreachable }
-    end;
+    RunError(42); { Should be unreachable }
 end;
 
 constructor TEuropeanParrot.Init;
@@ -108,5 +96,16 @@ begin
     TParrot.Init(NorwegianBlue, 0, VoltageIn, IsNailedIn);
 end;
 
+function TNorwegianBlueParrot.GetSpeed: Double;
+begin
+    if Self.IsNailed then
+    begin
+        GetSpeed := 0.0;
+    end
+    else
+    begin
+        GetSpeed := Self.GetBaseSpeedForVoltage(Self.Voltage);
+    end;
+end;
 
 end.
