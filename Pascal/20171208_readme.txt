@@ -1,3 +1,8 @@
 Parrot kata in Turbo Pascal using TURBO 6.0 editor.
 
-* 
+* 58' o'lala
+* ein blöder Fehler Type beim European hat viel Zeit gekostet.
+* mit Constructor Chain bisschen gekämpft.
+* ganz gut gegangen.
+* das Hauptwerkzeug ist copy/paste für Code Completion
+* fuktioniert genau wie erwartet, hat halt keine privaten Felder/Methoden. wie Python
