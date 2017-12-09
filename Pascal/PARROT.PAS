@@ -3,42 +3,42 @@ unit Parrot;
 interface
 
 type
-     TParrot = object
-         constructor Init;
-         function GetSpeed: Double; virtual;
-         { private }
-         function GetBaseSpeed: Double;
-     end;
-     PParrot = ^TParrot;
+    TParrot = object
+        constructor Init;
+        function GetSpeed: Double; virtual;
+        { private }
+        function GetBaseSpeed: Double;
+    end;
+    PParrot = ^TParrot;
 
-     TEuropeanParrot = object(TParrot)
-         constructor Init;
-         function GetSpeed: Double; virtual;
-     end;
-     PEuropeanParrot = ^TEuropeanParrot;
+    TEuropeanParrot = object(TParrot)
+        constructor Init;
+        function GetSpeed: Double; virtual;
+    end;
+    PEuropeanParrot = ^TEuropeanParrot;
 
-     TAfricanParrot = object(TParrot)
-         NumberOfCoconuts: Word;
+    TAfricanParrot = object(TParrot)
+        NumberOfCoconuts: Word;
 
-         constructor Init(NumberOfCoconutsIn: Word);
-         function GetSpeed: Double; virtual;
-         { private }
-         function SlowdownDueCoconuts: Double;
-         function GetLoadFactor: Double;
-     end;
-     PAfricanParrot = ^TAfricanParrot;
+        constructor Init(NumberOfCoconutsIn: Word);
+        function GetSpeed: Double; virtual;
+        { private }
+        function SlowdownDueCoconuts: Double;
+        function GetLoadFactor: Double;
+    end;
+    PAfricanParrot = ^TAfricanParrot;
 
-     TNorwegianBlueParrot = object(TParrot)
-         Voltage: Double;
-         IsNailed: Boolean;
+    TNorwegianBlueParrot = object(TParrot)
+        Voltage: Double;
+        IsNailed: Boolean;
 
-         constructor Init(VoltageIn: Double; IsNailedIn: Boolean);
-         function GetSpeed: Double; virtual;
-         { private }
-         function SpeedForVoltage: Double;
-         function MaxSpeed: Double;
-     end;
-     PNorwegianBlueParrot = ^TNorwegianBlueParrot;
+        constructor Init(VoltageIn: Double; IsNailedIn: Boolean);
+        function GetSpeed: Double; virtual;
+        { private }
+        function SpeedForVoltage: Double;
+        function MaxSpeed: Double;
+    end;
+    PNorwegianBlueParrot = ^TNorwegianBlueParrot;
 
 implementation
 
@@ -46,8 +46,8 @@ uses Math;
 
 constructor TParrot.Init;
 begin
-    { existing constructor must be called, otherwise object is not initialized }
-    Fail; {  abstract class }
+    { constructor must be called, otherwise object is not initialized }
+    Fail; { abstract class, fail any direct construction }
 end;
 
 function TParrot.GetBaseSpeed: Double;
@@ -57,7 +57,8 @@ end;
 
 function TParrot.GetSpeed: Double;
 begin
-    RunError(42); { Should be unreachable }
+    WriteLn('Should be unreachable');
+    RunError(42);
 end;
 
 constructor TEuropeanParrot.Init;
