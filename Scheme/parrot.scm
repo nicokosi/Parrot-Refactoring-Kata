@@ -5,10 +5,6 @@
         (min 24.0 (* voltage (base-speed))))
     (lambda ()
         (cond
-            ((eq? parrot-type 'european-parrot) ; ')
-                (base-speed))
-            ((eq? parrot-type 'african-parrot) ; ')
-                (max 0.0 (- (base-speed) (* (load-factor) num-coconuts))))
             ((eq? parrot-type 'norwegian-blue-parrot) ; ')
                 (if nailed 0.0 (compute-base-speed-for-voltage voltage)))
             (else (raise 'Should-be-unreachable)) ; '))
