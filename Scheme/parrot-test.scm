@@ -3,7 +3,7 @@
 
 (test-case "it gets the speed of an european parrot"
     (assert= 12.0
-            ((parrot-speed 'european-parrot 0 0.0 #f)))) ; '))))
+            ((new-parrot european-parrot)))) ; '))))
 
 (test-case "it gets the speed of an african parrot with one coconut"
     (assert= 3.0

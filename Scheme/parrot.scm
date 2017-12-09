@@ -14,3 +14,12 @@
             (else (raise 'Should-be-unreachable)) ; '))
         ))
 )
+
+(define (new-parrot parrot . parameters)
+    (apply parrot parameters)
+)
+
+(define (european-parrot)
+    (define (base-speed) 12.0)
+    (lambda () (base-speed))
+)
