@@ -1,8 +1,3 @@
-(define (parrot)
-    (define (base-speed) 12.0)
-    (lambda () (raise 'Should-be-unreachable)) ; '))
-)
-
 (define (new-parrot parrot . parameters)
     (apply parrot parameters)
 )
@@ -16,6 +11,17 @@
             (else (error "Error in method lookup " method))
         )
     )
+)
+
+(define (parrot)
+    (define (base-speed) 12.0)
+    (define (speed)
+        (raise 'Should-be-unreachable)) ; '))
+    (define (self message)
+        (cond
+            ((eq? message 'speed) speed) ; '))
+            (else (error "Message not understood" message))))
+    self
 )
 
 (define (european-parrot)
