@@ -35,9 +35,10 @@
 (define (african-parrot num-coconuts)
     (let
         ((super (new-instance parrot)))
+        (define (slowdown-due-coconuts) (* (load-factor) num-coconuts))
         (define (load-factor) 9.0)
         (define (speed)
-            (max 0.0 (- (send 'base-speed super) (* (load-factor) num-coconuts)))) ; '))))
+            (max 0.0 (- (send 'base-speed super) (slowdown-due-coconuts)))) ; '))))
         (define (self message)
             (cond
                 ((eq? message 'speed) speed) ; '))
@@ -47,10 +48,13 @@
 (define (norwegian-blue-parrot voltage nailed)
     (let
         ((super (new-instance parrot)))
+        (define (max-speed) 24.0)
         (define (compute-base-speed-for-voltage voltage)
-            (min 24.0 (* voltage (send 'base-speed super)))) ; '))))
+            (min (max-speed) (* voltage (send 'base-speed super)))) ; '))))
         (define (speed)
-            (if nailed 0.0 (compute-base-speed-for-voltage voltage)))
+            (if nailed
+                0.0
+                (compute-base-speed-for-voltage voltage)))
         (define (self message)
             (cond
                 ((eq? message 'speed) speed) ; '))
