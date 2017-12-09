@@ -1,0 +1,8 @@
+Parrot kata in Scheme using Gambit in Ultra Edit.
+
+* 78' + 10' - 22' = 66' ~ 1h
+  (looked at it 10' before committing start tag, 22' break)
+* simulating class with new and send works, but seems not Scheme style.
+  I would rather leave the functions alone.
+* The polymorphy and super construct works. Not sure it is nice/readable.
+* Small steps work as well.

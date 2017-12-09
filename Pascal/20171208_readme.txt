@@ -1,0 +1,11 @@
+Parrot kata in Turbo Pascal using original TURBO 6.0 editor.
+
+* 58' that is long.
+* stupid mistake with type of pointer after first change took a lot of time.
+* fought with constructor chaining (did not know how).
+* mainly used copy/paste as code completion
+* worked out well. Starting code is sufficient for the kata.
+* TP has no private fields, methods, much like Python.
+  So I omitted some steps because not needed.
+* TP omits () for methods with no arguments, much like Ruby.
+  So it is not clear if I use a field or a method. But who cares?

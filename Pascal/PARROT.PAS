@@ -3,32 +3,51 @@ unit Parrot;
 interface
 
 type
-     TParrotType = (European, African, NorwegianBlue);
-     TParrot = object
-         ParrotType: TParrotType;
-         NumberOfCoconuts: Word;
-         Voltage: Double;
-         IsNailed: Boolean;
+    TParrot = object
+        constructor Init;
+        function GetSpeed: Double; virtual;
+        { private }
+        function GetBaseSpeed: Double;
+    end;
+    PParrot = ^TParrot;
 
-         constructor Init(ParrotTypeIn: TParrotType; NumberOfCoconutsIn: Word; VoltageIn: Double; IsNailedIn: Boolean);
-         function GetSpeed: Double;
-         { private }
-         function GetBaseSpeed: Double;
-         function GetLoadFactor: Double;
-         function GetBaseSpeedForVoltage(VoltageIn: Double): Double;
-     end;
-     PParrot = ^TParrot;
+    TEuropeanParrot = object(TParrot)
+        constructor Init;
+        function GetSpeed: Double; virtual;
+    end;
+    PEuropeanParrot = ^TEuropeanParrot;
+
+    TAfricanParrot = object(TParrot)
+        NumberOfCoconuts: Word;
+
+        constructor Init(NumberOfCoconutsIn: Word);
+        function GetSpeed: Double; virtual;
+        { private }
+        function SlowdownDueCoconuts: Double;
+        function GetLoadFactor: Double;
+    end;
+    PAfricanParrot = ^TAfricanParrot;
+
+    TNorwegianBlueParrot = object(TParrot)
+        Voltage: Double;
+        IsNailed: Boolean;
+
+        constructor Init(VoltageIn: Double; IsNailedIn: Boolean);
+        function GetSpeed: Double; virtual;
+        { private }
+        function SpeedForVoltage: Double;
+        function MaxSpeed: Double;
+    end;
+    PNorwegianBlueParrot = ^TNorwegianBlueParrot;
 
 implementation
 
 uses Math;
 
-constructor TParrot.Init(ParrotTypeIn: TParrotType; NumberOfCoconutsIn: Word; VoltageIn: Double; IsNailedIn: Boolean);
+constructor TParrot.Init;
 begin
-    Self.ParrotType := ParrotTypeIn;
-    Self.NumberOfCoconuts := NumberOfCoconutsIn;
-    Self.Voltage := VoltageIn;
-    Self.IsNailed := IsNailedIn;
+    { constructor must be called, otherwise object is not initialized }
+    Fail; { abstract class, fail any direct construction }
 end;
 
 function TParrot.GetBaseSpeed: Double;
@@ -36,41 +55,68 @@ begin
     GetBaseSpeed := 12.0;
 end;
 
-function TParrot.GetLoadFactor: Double;
+function TParrot.GetSpeed: Double;
+begin
+    WriteLn('Should be unreachable');
+    RunError(42);
+end;
+
+constructor TEuropeanParrot.Init;
+begin
+    { needs empty constructor to initialise virtual table }
+end;
+
+function TEuropeanParrot.GetSpeed: Double;
+begin
+    GetSpeed := GetBaseSpeed;
+end;
+
+constructor TAfricanParrot.Init(NumberOfCoconutsIn: Word);
+begin
+    NumberOfCoconuts := NumberOfCoconutsIn;
+end;
+
+function TAfricanParrot.GetSpeed: Double;
+begin
+    GetSpeed := Math.Max(0.0, GetBaseSpeed - SlowdownDueCoconuts);
+end;
+
+function TAfricanParrot.SlowdownDueCoconuts: Double;
+begin
+    SlowdownDueCoconuts := GetLoadFactor * NumberOfCoconuts;
+end;
+
+function TAfricanParrot.GetLoadFactor: Double;
 begin
     GetLoadFactor := 9.0;
 end;
 
-function TParrot.GetBaseSpeedForVoltage(VoltageIn: Double): Double;
+constructor TNorwegianBlueParrot.Init(VoltageIn: Double; IsNailedIn: Boolean);
 begin
-    GetBaseSpeedForVoltage := Math.Min(24.0, VoltageIn * Self.GetBaseSpeed);
+    Self.Voltage := VoltageIn;
+    Self.IsNailed := IsNailedIn;
 end;
 
-function TParrot.GetSpeed: Double;
+function TNorwegianBlueParrot.GetSpeed: Double;
 begin
-    if Self.ParrotType = European then
+    if Self.IsNailed then
     begin
-        GetSpeed := GetBaseSpeed;
-    end
-    else if Self.ParrotType = African then
-    begin
-        GetSpeed := Math.Max(0.0, Self.GetBaseSpeed - Self.GetLoadFactor * Self.NumberOfCoconuts);
-    end
-    else if Self.ParrotType = NorwegianBlue then
-    begin
-        if Self.IsNailed then
-        begin
-            GetSpeed := 0.0;
-        end
-        else
-        begin
-            GetSpeed := Self.GetBaseSpeedForVoltage(Self.Voltage);
-        end;
+        GetSpeed := 0.0;
     end
     else
     begin
-        RunError(42); { Should be unreachable }
+        GetSpeed := Self.SpeedForVoltage;
     end;
+end;
+
+function TNorwegianBlueParrot.SpeedForVoltage: Double;
+begin
+    SpeedForVoltage := Math.Min(Self.MaxSpeed, Self.Voltage * Self.GetBaseSpeed);
+end;
+
+function TNorwegianBlueParrot.MaxSpeed: Double;
+begin
+    MaxSpeed := 24.0;
 end;
 
 end.
