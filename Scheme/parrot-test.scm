@@ -32,4 +32,4 @@
 (test-case "it can't get speed of unknown parrrot types"
     (assert-raise
         'Should-be-unreachable ; '
-        (lambda () ((parrot-speed 'unknown-parrot 0 0.0 #f))))) ; ')))))
+        (lambda () ((new-parrot parrot)))))

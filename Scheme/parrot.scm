@@ -1,7 +1,6 @@
-(define (parrot-speed parrot-type num-coconuts voltage nailed)
+(define (parrot)
     (define (base-speed) 12.0)
-    (lambda ()
-            (raise 'Should-be-unreachable)) ; '))
+    (lambda () (raise 'Should-be-unreachable)) ; '))
 )
 
 (define (new-parrot parrot . parameters)
