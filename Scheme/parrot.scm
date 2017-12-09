@@ -1,14 +1,7 @@
 (define (parrot-speed parrot-type num-coconuts voltage nailed)
     (define (base-speed) 12.0)
-    (define (load-factor) 9.0)
-    (define (compute-base-speed-for-voltage voltage)
-        (min 24.0 (* voltage (base-speed))))
     (lambda ()
-        (cond
-            ((eq? parrot-type 'norwegian-blue-parrot) ; ')
-                (if nailed 0.0 (compute-base-speed-for-voltage voltage)))
-            (else (raise 'Should-be-unreachable)) ; '))
-        ))
+            (raise 'Should-be-unreachable)) ; '))
 )
 
 (define (new-parrot parrot . parameters)
@@ -24,4 +17,11 @@
     (define (base-speed) 12.0)
     (define (load-factor) 9.0)
     (lambda () (max 0.0 (- (base-speed) (* (load-factor) num-coconuts))))
+)
+
+(define (norwegian-blue-parrot voltage nailed)
+    (define (base-speed) 12.0)
+    (define (compute-base-speed-for-voltage voltage)
+        (min 24.0 (* voltage (base-speed))))
+    (lambda () (if nailed 0.0 (compute-base-speed-for-voltage voltage)))
 )
