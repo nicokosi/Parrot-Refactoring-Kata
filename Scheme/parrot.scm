@@ -49,12 +49,12 @@
     (let
         ((super (new-instance parrot)))
         (define (max-speed) 24.0)
-        (define (compute-base-speed-for-voltage voltage)
+        (define (speed-for-voltage)
             (min (max-speed) (* voltage (send 'base-speed super)))) ; '))))
         (define (speed)
             (if nailed
                 0.0
-                (compute-base-speed-for-voltage voltage)))
+                (speed-for-voltage)))
         (define (self message)
             (cond
                 ((eq? message 'speed) speed) ; '))
