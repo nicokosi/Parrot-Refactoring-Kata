@@ -23,3 +23,9 @@
     (define (base-speed) 12.0)
     (lambda () (base-speed))
 )
+
+(define (african-parrot num-coconuts)
+    (define (base-speed) 12.0)
+    (define (load-factor) 9.0)
+    (lambda () (max 0.0 (- (base-speed) (* (load-factor) num-coconuts))))
+)
