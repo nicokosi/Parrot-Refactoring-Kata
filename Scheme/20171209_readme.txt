@@ -1,0 +1,3 @@
+Parrot kata in Scheme using Gambit in Ultra Edit.
+
+* (looked at it 10' before committing this)
