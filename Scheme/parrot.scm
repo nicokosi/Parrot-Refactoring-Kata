@@ -1,8 +1,7 @@
-(define (new-parrot parrot . parameters)
-    (apply parrot parameters)
-)
-
 ; simulate class, see http://people.cs.aau.dk/~normark/prog3-03/html/notes/oop-scheme_themes-classes-objects-sec.html
+(define (new-instance parrot . parameters)
+    (apply parrot parameters))
+
 (define (send message obj . args)
     (let
         ((method (obj message)))
@@ -24,7 +23,7 @@
 
 (define (european-parrot)
     (let
-        ((super (new-parrot parrot)))
+        ((super (new-instance parrot)))
         (define (speed)
             (send 'base-speed super)) ; '))
         (define (self message)
@@ -35,10 +34,10 @@
 
 (define (african-parrot num-coconuts)
     (let
-        ((super (new-parrot parrot)))
+        ((super (new-instance parrot)))
         (define (load-factor) 9.0)
         (define (speed)
-            (max 0.0 (- (send 'base-speed super) (* (load-factor) num-coconuts))))
+            (max 0.0 (- (send 'base-speed super) (* (load-factor) num-coconuts)))) ; '))))
         (define (self message)
             (cond
                 ((eq? message 'speed) speed) ; '))
@@ -47,9 +46,9 @@
 
 (define (norwegian-blue-parrot voltage nailed)
     (let
-        ((super (new-parrot parrot)))
+        ((super (new-instance parrot)))
         (define (compute-base-speed-for-voltage voltage)
-            (min 24.0 (* voltage (send 'base-speed super))))
+            (min 24.0 (* voltage (send 'base-speed super)))) ; '))))
         (define (speed)
             (if nailed 0.0 (compute-base-speed-for-voltage voltage)))
         (define (self message)
