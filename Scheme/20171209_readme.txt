@@ -2,3 +2,5 @@ Parrot kata in Scheme using Gambit in Ultra Edit.
 
 * (looked at it 10' before committing this)
 * (22' break)
+* simulating class with new and send works, but seems not Scheme style.
+  I would rather leave the functions alone.

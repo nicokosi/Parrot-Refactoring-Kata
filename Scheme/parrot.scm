@@ -14,26 +14,28 @@
 )
 
 (define (parrot)
-    (define (base-speed) 12.0)
+    (define (base-speed)
+        12.0)
     (define (speed)
         (raise 'Should-be-unreachable)) ; '))
     (define (self message)
         (cond
+            ((eq? message 'base-speed) base-speed) ; '))
             ((eq? message 'speed) speed) ; '))
             (else (error "Message not understood" message))))
     self
 )
 
 (define (european-parrot)
-    (define (base-speed) 12.0)
-    (define (speed)
-        (base-speed))
-    (define (self message)
-        (cond
-            ((eq? message 'speed) speed) ; '))
-            (else (error "Message not understood" message))))
-    self
-)
+    (let
+        ((super (new-parrot parrot)))
+        (define (speed)
+            (send 'base-speed super)) ; '))
+        (define (self message)
+            (cond
+                ((eq? message 'speed) speed) ; '))
+                (else (send super message))))
+        self))
 
 (define (african-parrot num-coconuts)
     (define (base-speed) 12.0)
