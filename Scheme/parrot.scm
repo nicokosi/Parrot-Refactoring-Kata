@@ -14,6 +14,7 @@
         12.0)
     (define (speed)
         (raise 'Should-be-unreachable)) ; '))
+    ; class infrastructure
     (define (self message)
         (cond
             ((eq? message 'base-speed) base-speed) ; '))
@@ -26,6 +27,8 @@
         ((super (new-instance parrot)))
         (define (speed)
             (send 'base-speed super)) ; '))
+
+        ; class infrastructure
         (define (self message)
             (cond
                 ((eq? message 'speed) speed) ; '))
@@ -39,6 +42,8 @@
         (define (load-factor) 9.0)
         (define (speed)
             (max 0.0 (- (send 'base-speed super) (slowdown-due-coconuts)))) ; '))))
+
+        ; class infrastructure
         (define (self message)
             (cond
                 ((eq? message 'speed) speed) ; '))
@@ -55,6 +60,8 @@
             (if nailed
                 0.0
                 (speed-for-voltage)))
+
+        ; class infrastructure
         (define (self message)
             (cond
                 ((eq? message 'speed) speed) ; '))
