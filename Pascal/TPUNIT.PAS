@@ -3,7 +3,7 @@
 (* Minimalist xUnit implementation for Turbo Pascal in TP style.      *)
 (* Version: 2.10                                                      *)
 (* Language: Turbo Pascal 6.01                                        *)
-(* Copyright: (c) 2010 Peter Kofler, www.code-cop.org                 *)
+(* Copyright: (c) 2010-2017 Peter Kofler, www.code-cop.org            *)
 (* License: BSD, http://www.opensource.org/licenses/bsd-license.php   *)
 (* ------------------------------------------------------------------ *)
 unit TPUnit;
