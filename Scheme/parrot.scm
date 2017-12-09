@@ -20,7 +20,13 @@
 
 (define (european-parrot)
     (define (base-speed) 12.0)
-    (lambda () (base-speed))
+    (define (speed)
+        (base-speed))
+    (define (self message)
+        (cond
+            ((eq? message 'speed) speed) ; '))
+            (else (error "Message not understood" message))))
+    self
 )
 
 (define (african-parrot num-coconuts)
