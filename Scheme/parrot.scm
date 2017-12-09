@@ -26,7 +26,13 @@
 (define (african-parrot num-coconuts)
     (define (base-speed) 12.0)
     (define (load-factor) 9.0)
-    (lambda () (max 0.0 (- (base-speed) (* (load-factor) num-coconuts))))
+    (define (speed)
+        (max 0.0 (- (base-speed) (* (load-factor) num-coconuts))))
+    (define (self message)
+        (cond
+            ((eq? message 'speed) speed) ; '))
+            (else (error "Message not understood" message))))
+    self
 )
 
 (define (norwegian-blue-parrot voltage nailed)
@@ -38,7 +44,6 @@
     (define (self message)
         (cond
             ((eq? message 'speed) speed) ; '))
-            (else (error "Message not understood" message)))
-    )
+            (else (error "Message not understood" message))))
     self
 )
