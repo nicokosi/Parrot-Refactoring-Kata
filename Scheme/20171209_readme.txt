@@ -6,3 +6,6 @@ Parrot kata in Scheme using Gambit in Ultra Edit.
   I would rather leave the functions alone.
 * The polymorphy and super construct works. Not sure it is nice/readable.
 * Small steps work as well.
+
+see http://people.cs.aau.dk/~normark/prog3-03/html/notes/oop-scheme_themes-classes-objects-sec.html
+see https://stackoverflow.com/questions/2382082/inheritance-classes-in-scheme/2384525#2384525
