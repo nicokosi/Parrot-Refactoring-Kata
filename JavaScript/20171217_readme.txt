@@ -5,3 +5,14 @@ JavaScript ES2015 with UltraEdit.
   * takes 120' for first run. weird, maybe because of no Internet?
   * has load of dependencies: 193 MB! (570 MB on disk)
   * `node_modules\.bin\jest --verbose --watchAll`
+
+* 15 minutes. Not bad, it felt much slower.
+* Tests run with --watch in second window is nice,
+  faster than manually running them.
+  but when both files need to be saved at the same time, I get red bar (shortly).
+* Constructors are inherited. Makes it easier.
+* All fields and methods are public, easy to push down.
+* Extra arguments to functions (and less arguments) do not matter unless used.
+* Works as expected. No Refactorings in UED, but not needed.
+  Only Push down would be needed, but that is just cut/paste in same file.
+* It took some time due unknown API of `extends` and `super`.
