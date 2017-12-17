@@ -1,0 +1,7 @@
+JavaScript ES2015 with UltraEdit.
+
+* Ultimate IDEA not available.
+* uses (unknown) testing framework Jest
+  * takes 120' for first run. weird, maybe because of no Internet?
+  * has load of dependencies: 193 MB! (570 MB on disk)
+  * `node_modules\.bin\jest --verbose --watchAll`
