@@ -1,11 +1,4 @@
-export const PARROT_TYPES = {
-    NORWEGIAN_BLUE: 'NORWEGIAN_BLUE',
-};
-
 export class Parrot {
-    constructor(type, numberOfCoconuts, voltage, isNailed) {
-    }
-
     getSpeed() {
         throw new Error("Should be unreachable");
     }
@@ -16,10 +9,6 @@ export class Parrot {
 }
 
 export class EuropeanParrot extends Parrot {
-    constructor() {
-        super(null, 0, 0, false);
-    }
-
     getSpeed() {
         return this.getBaseSpeed();
     }
@@ -27,7 +16,7 @@ export class EuropeanParrot extends Parrot {
 
 export class AfricanParrot extends Parrot {
     constructor(numberOfCoconuts) {
-        super(null, 0, 0, false);
+        super();
         this.numberOfCoconuts = numberOfCoconuts;
     }
 
@@ -41,8 +30,8 @@ export class AfricanParrot extends Parrot {
 }
 
 export class NorwegianBlueParrot extends Parrot {
-    constructor(type, numberOfCoconuts, voltage, isNailed) {
-        super(null, 0, 0, false);
+    constructor(voltage, isNailed) {
+        super();
         this.voltage = voltage;
         this.isNailed = isNailed;
     }
