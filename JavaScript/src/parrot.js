@@ -21,11 +21,15 @@ export class AfricanParrot extends Parrot {
     }
 
     getSpeed() {
-        return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
+        return Math.max(0, this.getBaseSpeed() - this.slowdownDueCoconuts());
     }
 
     getLoadFactor() {
         return 9;
+    }
+
+    slowdownDueCoconuts() {
+        return this.getLoadFactor() * this.numberOfCoconuts;
     }
 }
 
@@ -37,10 +41,14 @@ export class NorwegianBlueParrot extends Parrot {
     }
 
     getSpeed() {
-        return this.isNailed ? 0 : this.speedWithVoltage(this.voltage);
+        return this.isNailed ? 0 : this.speedWithVoltage();
     }
 
-    speedWithVoltage(voltage) {
-        return Math.min(24, voltage * this.getBaseSpeed());
+    speedWithVoltage() {
+        return Math.min(this.maxSpeed(), this.voltage * this.getBaseSpeed());
+    }
+
+    maxSpeed() {
+        return 24;
     }
 }
