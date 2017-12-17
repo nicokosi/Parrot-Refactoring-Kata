@@ -52,3 +52,7 @@ export class AfricanParrot extends Parrot {
     }
 
 }
+
+export class NorwegianBlueParrot extends Parrot {
+
+}
