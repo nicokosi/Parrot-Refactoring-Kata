@@ -36,3 +36,6 @@ export class Parrot {
         return 12;
     }
 }
+
+export class EuropeanParrot extends Parrot {
+}
