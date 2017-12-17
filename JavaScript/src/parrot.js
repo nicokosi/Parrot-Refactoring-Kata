@@ -38,4 +38,12 @@ export class Parrot {
 }
 
 export class EuropeanParrot extends Parrot {
+    constructor() {
+        super(null, 0, 0, false);
+    }
+
+    getSpeed() {
+        return this.getBaseSpeed();
+    }
+
 }
