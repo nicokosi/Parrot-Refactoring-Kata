@@ -4,21 +4,10 @@ export const PARROT_TYPES = {
 
 export class Parrot {
     constructor(type, numberOfCoconuts, voltage, isNailed) {
-        this.type = type;
-        this.voltage = voltage;
-        this.isNailed = isNailed;
     }
 
     getSpeed() {
-        switch (this.type) {
-            case PARROT_TYPES.NORWEGIAN_BLUE:
-                return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
-        }
         throw new Error("Should be unreachable");
-    }
-
-    getBaseSpeedWithVoltage(voltage) {
-        return Math.min(24, voltage * this.getBaseSpeed());
     }
 
     getBaseSpeed() {
@@ -34,7 +23,6 @@ export class EuropeanParrot extends Parrot {
     getSpeed() {
         return this.getBaseSpeed();
     }
-
 }
 
 export class AfricanParrot extends Parrot {
@@ -50,9 +38,20 @@ export class AfricanParrot extends Parrot {
     getLoadFactor() {
         return 9;
     }
-
 }
 
 export class NorwegianBlueParrot extends Parrot {
+    constructor(type, numberOfCoconuts, voltage, isNailed) {
+        super(null, 0, 0, false);
+        this.voltage = voltage;
+        this.isNailed = isNailed;
+    }
 
+    getSpeed() {
+        return this.isNailed ? 0 : this.speedWithVoltage(this.voltage);
+    }
+
+    speedWithVoltage(voltage) {
+        return Math.min(24, voltage * this.getBaseSpeed());
+    }
 }
