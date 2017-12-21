@@ -54,15 +54,20 @@ NorwegianBlueParrot.prototype = Object.create(Parrot.prototype);
 
 NorwegianBlueParrot.prototype.getSpeed = function() {
     'use strict';
-    return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
+    return (this.isNailed) ? 0 : this.speedForVoltage();
 };
 
-NorwegianBlueParrot.prototype.getBaseSpeedWithVoltage = function(voltage) {
+NorwegianBlueParrot.prototype.speedForVoltage = function() {
     'use strict';
-    return Math.min(24, this.voltage * this.getBaseSpeed());
+    return Math.min(this.maxSpeed(), this.voltage * this.getBaseSpeed());
 };
 
-module.exports = Parrot;
+NorwegianBlueParrot.prototype.maxSpeed = function() {
+    'use strict';
+    return 24;
+};
+
+module.exports = {};
 module.exports.EuropeanParrot = EuropeanParrot;
 module.exports.AfricanParrot = AfricanParrot;
 module.exports.NorwegianBlueParrot = NorwegianBlueParrot;
