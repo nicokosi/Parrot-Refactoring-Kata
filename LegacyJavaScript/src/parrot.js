@@ -1,7 +1,6 @@
 /* global module */
 
 var PARROT_TYPES = {
-    EUROPEAN : 'EUROPEAN',
     AFRICAN : 'AFRICAN',
     NORWEGIAN_BLUE : 'NORWEGIAN_BLUE'
 };
@@ -19,11 +18,6 @@ Parrot.prototype.getBaseSpeed = function() {
     return 12;
 };
 
-Parrot.prototype.getLoadFactor = function() {
-    'use strict';
-    return 9;
-};
-
 Parrot.prototype.getBaseSpeedWithVoltage = function(voltage) {
     'use strict';
     return Math.min(24, this.voltage * this.getBaseSpeed());
@@ -32,8 +26,6 @@ Parrot.prototype.getBaseSpeedWithVoltage = function(voltage) {
 Parrot.prototype.getSpeed = function() {
     'use strict';
     switch (this.parrotType) {
-    case PARROT_TYPES.AFRICAN:
-        return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
     case PARROT_TYPES.NORWEGIAN_BLUE:
         return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
     }
@@ -54,10 +46,16 @@ EuropeanParrot.prototype.getSpeed = function() {
 
 function AfricanParrot(parrotType, numberOfCoconuts) {
     'use strict';
-    Parrot.call(this, PARROT_TYPES.AFRICAN, numberOfCoconuts, 0, false);
+    Parrot.call(this, null, 0, 0, false);
+    this.numberOfCoconuts = numberOfCoconuts;
 }
 
 AfricanParrot.prototype = Object.create(Parrot.prototype);
+
+AfricanParrot.prototype.getLoadFactor = function() {
+    'use strict';
+    return 9;
+};
 
 AfricanParrot.prototype.getSpeed = function() {
     'use strict';
