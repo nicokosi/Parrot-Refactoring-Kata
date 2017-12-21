@@ -1,41 +1,45 @@
 /* global module */
 
 var PARROT_TYPES = {
-    EUROPEAN:       'EUROPEAN',
-    AFRICAN:        'AFRICAN',
-    NORWEGIAN_BLUE: 'NORWEGIAN_BLUE'
+    EUROPEAN : 'EUROPEAN',
+    AFRICAN : 'AFRICAN',
+    NORWEGIAN_BLUE : 'NORWEGIAN_BLUE'
 };
 
 function Parrot(parrotType, numberOfCoconuts, voltage, isNailed) {
     'use strict';
-    var self = this;
-
-    function getLoadFactor() {
-        return 9;
-    }
-
-    function getBaseSpeedWithVoltage(voltage) {
-        return Math.min(24, voltage * self.getBaseSpeed());
-    }
-
-    this.getSpeed = function() {
-        switch (parrotType) {
-        case PARROT_TYPES.EUROPEAN:
-            return self.getBaseSpeed();
-        case PARROT_TYPES.AFRICAN:
-            return Math.max(0, self.getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
-        case PARROT_TYPES.NORWEGIAN_BLUE:
-            return (isNailed) ? 0 : getBaseSpeedWithVoltage(voltage);
-        }
-        throw new Error("Should be unreachable");
-    };
-
-    return this;
+    this.parrotType = parrotType;
+    this.numberOfCoconuts = numberOfCoconuts;
+    this.voltage = voltage;
+    this.isNailed = isNailed;
 }
 
 Parrot.prototype.getBaseSpeed = function() {
     'use strict';
     return 12;
+};
+
+Parrot.prototype.getLoadFactor = function() {
+    'use strict';
+    return 9;
+};
+
+Parrot.prototype.getBaseSpeedWithVoltage = function(voltage) {
+    'use strict';
+    return Math.min(24, this.voltage * this.getBaseSpeed());
+};
+
+Parrot.prototype.getSpeed = function() {
+    'use strict';
+    switch (this.parrotType) {
+    case PARROT_TYPES.EUROPEAN:
+        return this.getBaseSpeed();
+    case PARROT_TYPES.AFRICAN:
+        return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
+    case PARROT_TYPES.NORWEGIAN_BLUE:
+        return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
+    }
+    throw new Error("Should be unreachable");
 };
 
 module.exports = Parrot;
