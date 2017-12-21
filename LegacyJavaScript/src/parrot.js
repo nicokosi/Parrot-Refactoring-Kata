@@ -1,16 +1,6 @@
 /* global module */
 
-var PARROT_TYPES = {
-    AFRICAN : 'AFRICAN',
-    NORWEGIAN_BLUE : 'NORWEGIAN_BLUE'
-};
-
-function Parrot(parrotType, numberOfCoconuts, voltage, isNailed) {
-    'use strict';
-    this.parrotType = parrotType;
-    this.numberOfCoconuts = numberOfCoconuts;
-    this.voltage = voltage;
-    this.isNailed = isNailed;
+function Parrot() {
 }
 
 Parrot.prototype.getBaseSpeed = function() {
@@ -18,17 +8,8 @@ Parrot.prototype.getBaseSpeed = function() {
     return 12;
 };
 
-Parrot.prototype.getBaseSpeedWithVoltage = function(voltage) {
-    'use strict';
-    return Math.min(24, this.voltage * this.getBaseSpeed());
-};
-
 Parrot.prototype.getSpeed = function() {
     'use strict';
-    switch (this.parrotType) {
-    case PARROT_TYPES.NORWEGIAN_BLUE:
-        return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
-    }
     throw new Error("Should be unreachable");
 };
 
@@ -64,15 +45,25 @@ AfricanParrot.prototype.getSpeed = function() {
 
 function NorwegianBlueParrot(voltage, isNailed) {
     'use strict';
-    Parrot.call(this, PARROT_TYPES.NORWEGIAN_BLUE, 0, voltage, isNailed);
+    Parrot.call(this);
     this.voltage = voltage;
     this.isNailed = isNailed;
 }
 
 NorwegianBlueParrot.prototype = Object.create(Parrot.prototype);
 
+NorwegianBlueParrot.prototype.getSpeed = function() {
+    'use strict';
+    return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
+};
+
+NorwegianBlueParrot.prototype.getBaseSpeedWithVoltage = function(voltage) {
+    'use strict';
+    return Math.min(24, this.voltage * this.getBaseSpeed());
+};
+
+
 module.exports = Parrot;
-module.exports.TYPES = PARROT_TYPES;
 module.exports.EuropeanParrot = EuropeanParrot;
 module.exports.AfricanParrot = AfricanParrot;
 module.exports.NorwegianBlueParrot = NorwegianBlueParrot;
