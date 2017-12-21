@@ -31,19 +31,19 @@ describe("Parrot", function () {
     });
 
     it("gets speed of Norwegian Blue Parrot nailed", function () {
-        var parrot = new Parrot(Parrot.TYPES.NORWEGIAN_BLUE, 0, 1.5, true);
+        var parrot = new Parrot.NorwegianBlueParrot(1.5, true);
 
         expect(parrot.getSpeed()).eql(0);
     });
 
     it("gets speed of Norwegian Blue Parrot not nailed", function () {
-        var parrot = new Parrot(Parrot.TYPES.NORWEGIAN_BLUE, 0, 1.5, false);
+        var parrot = new Parrot.NorwegianBlueParrot(1.5, false);
 
         expect(parrot.getSpeed()).eql(18);
     });
 
     it("gets speed of Norwegian Blue Parrot not nailed high voltage", function () {
-        var parrot = new Parrot(Parrot.TYPES.NORWEGIAN_BLUE, 0, 4, false);
+        var parrot = new Parrot.NorwegianBlueParrot(4, false);
 
         expect(parrot.getSpeed()).eql(24);
     });
