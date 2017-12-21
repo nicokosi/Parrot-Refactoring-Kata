@@ -7,7 +7,7 @@ describe("Parrot", function () {
     'use strict';
 
     it("gets speed of European Parrot", function () {
-        var parrot = new Parrot(Parrot.TYPES.EUROPEAN, 0, 0, false);
+        var parrot = new Parrot.EuropeanParrot(Parrot.TYPES.EUROPEAN, 0, 0, false);
 
         expect(parrot.getSpeed()).eql(12);
     });

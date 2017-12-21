@@ -42,5 +42,17 @@ Parrot.prototype.getSpeed = function() {
     throw new Error("Should be unreachable");
 };
 
+function EuropeanParrot() {
+    Parrot.call(this, null, 0, 0, false);
+}
+
+EuropeanParrot.prototype = Object.create(Parrot.prototype);
+
+EuropeanParrot.prototype.getSpeed = function() {
+    'use strict';
+    return this.getBaseSpeed();
+};
+
 module.exports = Parrot;
 module.exports.TYPES = PARROT_TYPES;
+module.exports.EuropeanParrot = EuropeanParrot;
