@@ -8,25 +8,22 @@ var PARROT_TYPES = {
 
 function Parrot(parrotType, numberOfCoconuts, voltage, isNailed) {
     'use strict';
-
-    function getBaseSpeed() {
-        return 12;
-    }
+    var self = this;
 
     function getLoadFactor() {
         return 9;
     }
 
     function getBaseSpeedWithVoltage(voltage) {
-        return Math.min(24, voltage * getBaseSpeed());
+        return Math.min(24, voltage * self.getBaseSpeed());
     }
 
     this.getSpeed = function() {
         switch (parrotType) {
         case PARROT_TYPES.EUROPEAN:
-            return getBaseSpeed();
+            return self.getBaseSpeed();
         case PARROT_TYPES.AFRICAN:
-            return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
+            return Math.max(0, self.getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
         case PARROT_TYPES.NORWEGIAN_BLUE:
             return (isNailed) ? 0 : getBaseSpeedWithVoltage(voltage);
         }
@@ -35,6 +32,11 @@ function Parrot(parrotType, numberOfCoconuts, voltage, isNailed) {
 
     return this;
 }
+
+Parrot.prototype.getBaseSpeed = function() {
+    'use strict';
+    return 12;
+};
 
 module.exports = Parrot;
 module.exports.TYPES = PARROT_TYPES;
