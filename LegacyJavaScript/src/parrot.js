@@ -43,6 +43,7 @@ Parrot.prototype.getSpeed = function() {
 };
 
 function EuropeanParrot() {
+    'use strict';
     Parrot.call(this, null, 0, 0, false);
 }
 
@@ -53,6 +54,14 @@ EuropeanParrot.prototype.getSpeed = function() {
     return this.getBaseSpeed();
 };
 
+function AfricanParrot(parrotType, numberOfCoconuts) {
+    'use strict';
+    Parrot.call(this, PARROT_TYPES.AFRICAN, numberOfCoconuts, 0, false);
+}
+
+AfricanParrot.prototype = Object.create(Parrot.prototype);
+
 module.exports = Parrot;
 module.exports.TYPES = PARROT_TYPES;
 module.exports.EuropeanParrot = EuropeanParrot;
+module.exports.AfricanParrot = AfricanParrot;
