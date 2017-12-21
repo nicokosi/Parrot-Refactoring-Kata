@@ -32,8 +32,6 @@ Parrot.prototype.getBaseSpeedWithVoltage = function(voltage) {
 Parrot.prototype.getSpeed = function() {
     'use strict';
     switch (this.parrotType) {
-    case PARROT_TYPES.EUROPEAN:
-        return this.getBaseSpeed();
     case PARROT_TYPES.AFRICAN:
         return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
     case PARROT_TYPES.NORWEGIAN_BLUE:
@@ -60,6 +58,11 @@ function AfricanParrot(parrotType, numberOfCoconuts) {
 }
 
 AfricanParrot.prototype = Object.create(Parrot.prototype);
+
+AfricanParrot.prototype.getSpeed = function() {
+    'use strict';
+    return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
+};
 
 module.exports = Parrot;
 module.exports.TYPES = PARROT_TYPES;
