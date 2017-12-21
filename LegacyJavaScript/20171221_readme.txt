@@ -1,0 +1,11 @@
+JavaScript Classic with Eclipse (Node Tools).
+
+* 32 minutes. Slow.
+* Had to google for inheritance in prorotypes. Took some time.
+* Had to change original function code to inheritance code first. Took some time.
+* Tests run in Eclipse console because we just run Mocha with switches helps.
+  Did not think of watch switch. Maybe even better...
+
+* All methods and fields are public, easy to push down. (like ES6)
+* Extra arguments to functions (and less arguments) do not matter unless used. (like ES6)
+* Prototype inheritance is less nice than ES6 `extends` and `super`.
