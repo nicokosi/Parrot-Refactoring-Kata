@@ -8,11 +8,6 @@ Parrot.prototype.getBaseSpeed = function() {
     return 12;
 };
 
-Parrot.prototype.getSpeed = function() {
-    'use strict';
-    throw new Error("Should be unreachable");
-};
-
 function EuropeanParrot() {
     'use strict';
     Parrot.call(this);
@@ -33,14 +28,19 @@ function AfricanParrot(numberOfCoconuts) {
 
 AfricanParrot.prototype = Object.create(Parrot.prototype);
 
+AfricanParrot.prototype.getSpeed = function() {
+    'use strict';
+    return Math.max(0, this.getBaseSpeed() - this.slowdownDueCoconuts());
+};
+
+AfricanParrot.prototype.slowdownDueCoconuts = function() {
+    'use strict';
+    return this.getLoadFactor() * this.numberOfCoconuts;
+};
+
 AfricanParrot.prototype.getLoadFactor = function() {
     'use strict';
     return 9;
-};
-
-AfricanParrot.prototype.getSpeed = function() {
-    'use strict';
-    return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
 };
 
 function NorwegianBlueParrot(voltage, isNailed) {
@@ -61,7 +61,6 @@ NorwegianBlueParrot.prototype.getBaseSpeedWithVoltage = function(voltage) {
     'use strict';
     return Math.min(24, this.voltage * this.getBaseSpeed());
 };
-
 
 module.exports = Parrot;
 module.exports.EuropeanParrot = EuropeanParrot;
