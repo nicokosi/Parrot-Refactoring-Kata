@@ -13,19 +13,19 @@ describe("Parrot", function () {
     });
 
     it("gets speed of African Parrot with one coconut", function () {
-        var parrot = new Parrot.AfricanParrot(Parrot.TYPES.AFRICAN, 1);
+        var parrot = new Parrot.AfricanParrot(1);
 
         expect(parrot.getSpeed()).eql(3);
     });
 
     it("gets speed of African Parrot with two coconuts", function () {
-        var parrot = new Parrot.AfricanParrot(Parrot.TYPES.AFRICAN, 2);
+        var parrot = new Parrot.AfricanParrot(2);
 
         expect(parrot.getSpeed()).eql(0);
     });
 
     it("gets speed of African Parrot with no coconuts", function () {
-        var parrot = new Parrot.AfricanParrot(Parrot.TYPES.AFRICAN, 0);
+        var parrot = new Parrot.AfricanParrot(0);
 
         expect(parrot.getSpeed()).eql(12);
     });
