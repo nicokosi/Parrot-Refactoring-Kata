@@ -23,16 +23,15 @@
 (defmulti speed class)
 
 (defmethod speed EuropeanParrot [parrot]
-  (speedx {:type :european-parrot}))
+  base-speed)
 
 (defmethod speed AfricanParrot [parrot]
-  (speedx {:type :african-parrot
-          :num-coconuts (:num-coconuts parrot)}))
+  (max 0.0 (- base-speed (* load-factor (:num-coconuts parrot)))))
 
 (defmethod speed NorwegianBlueParrot [parrot]
-  (speedx {:type :norwegian-blue-parrot
-                :voltage (:voltage parrot)
-                :nailed (:nailed parrot)}))
+(if (:nailed parrot)
+     0.0
+     (compute-base-speed-for-voltage (:voltage parrot))))
 
 (defmethod speed :default [parrot]
-  (speedx {:type :unknown}))
+  (throw (Exception. "Should be unreachable!")))
