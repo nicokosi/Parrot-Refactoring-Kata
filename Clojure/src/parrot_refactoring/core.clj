@@ -1,10 +1,11 @@
 (ns parrot-refactoring.core)
 
-(def ^:private load-factor 9.0)
-
 (def ^:private base-speed 12.0)
-
+(def ^:private load-factor 9.0)
 (def ^:private max-speed 24.0)
+
+(defn- slowdown-due-coconuts [num-coconuts]
+  (- base-speed (* load-factor num-coconuts)))
 
 (defn- speed-for-voltage [voltage]
   (min max-speed (* voltage base-speed)))
@@ -17,9 +18,6 @@
 
 (defmethod speed EuropeanParrot [parrot]
   base-speed)
-
-(defn- slowdown-due-coconuts [num-coconuts]
-  (- base-speed (* load-factor num-coconuts)))
 
 (defmethod speed AfricanParrot [parrot]
   (max 0.0 (slowdown-due-coconuts (:num-coconuts parrot))))
