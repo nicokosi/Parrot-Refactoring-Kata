@@ -17,8 +17,14 @@
     (throw (Exception. "Should be unreachable!"))))
 
 (defrecord EuropeanParrot [])
+(defrecord AfricanParrot [num-coconuts])
+(defrecord NorwegianBlueParrot [nailed voltage])
 
 (defmulti speedx class)
 
 (defmethod speedx EuropeanParrot [parrot]
   (fn [] (speed {:type :european-parrot})))
+
+(defmethod speedx AfricanParrot [parrot]
+  (fn [] (speed {:type :african-parrot
+                 :num-coconuts (:num-coconuts parrot)})))

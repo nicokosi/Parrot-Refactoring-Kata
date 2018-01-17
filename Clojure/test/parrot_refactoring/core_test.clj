@@ -14,26 +14,17 @@
   (fact
     "it gets the speed of an african parrot with one coconut"
 
-    (parrot/speed {:type :african-parrot
-                   :num-coconuts 1
-                   :voltage 0.0
-                   :nailed false}) => 3.0)
+    ((parrot/speedx (parrot/->AfricanParrot 1))) => 3.0)
 
   (fact
     "it gets the speed of an african parrot with two coconuts"
 
-    (parrot/speed {:type :african-parrot
-                   :num-coconuts 2
-                   :voltage 0.0
-                   :nailed false}) => 0.0)
+    ((parrot/speedx (parrot/->AfricanParrot 2))) => 0.0)
 
   (fact
     "it gets the speed of an african parrot with no coconuts"
 
-    (parrot/speed {:type :african-parrot
-                   :num-coconuts 0
-                   :voltage 0.0
-                   :nailed false}) => 12.0)
+    ((parrot/speedx (parrot/->AfricanParrot 0))) => 12.0)
 
   (fact
     "it gets the speed of a nailed norwegian blue parrot"
