@@ -23,8 +23,8 @@
 (defmulti speedx class)
 
 (defmethod speedx EuropeanParrot [parrot]
-  (fn [] (speed {:type :european-parrot})))
+  (speed {:type :european-parrot}))
 
 (defmethod speedx AfricanParrot [parrot]
-  (fn [] (speed {:type :african-parrot
-                 :num-coconuts (:num-coconuts parrot)})))
+  (speed {:type :african-parrot
+          :num-coconuts (:num-coconuts parrot)}))
