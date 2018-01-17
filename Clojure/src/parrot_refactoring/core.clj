@@ -15,3 +15,10 @@
                              0.0
                              (compute-base-speed-for-voltage (:voltage parrot)))
     (throw (Exception. "Should be unreachable!"))))
+
+(defrecord EuropeanParrot [])
+
+(defmulti speedx class)
+
+(defmethod speedx EuropeanParrot [parrot]
+  (fn [] (speed {:type :european-parrot})))

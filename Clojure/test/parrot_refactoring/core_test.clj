@@ -9,10 +9,7 @@
   (fact
     "it gets the speed of a european parrot"
 
-    (parrot/speed {:type :european-parrot
-                   :num-coconuts 0
-                   :voltage 0.0
-                   :nailed false}) => 12.0)
+    ((parrot/speedx (parrot/->EuropeanParrot))) => 12.0)
 
   (fact
     "it gets the speed of an african parrot with one coconut"
@@ -69,3 +66,4 @@
                    :num-coconuts 0
                    :voltage 0.0
                    :nailed false}) => (throws Exception "Should be unreachable!")))
+
