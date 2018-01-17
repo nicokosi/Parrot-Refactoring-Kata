@@ -7,7 +7,7 @@
 (defn- compute-base-speed-for-voltage [voltage]
   (min 24.0 (* voltage base-speed)))
 
-(defn speed [parrot]
+(defn speedx [parrot]
   (case (:type parrot)
     :european-parrot base-speed
     :african-parrot (max 0.0 (- base-speed (* load-factor (:num-coconuts parrot))))
@@ -20,16 +20,19 @@
 (defrecord AfricanParrot [num-coconuts])
 (defrecord NorwegianBlueParrot [voltage nailed])
 
-(defmulti speedx class)
+(defmulti speed class)
 
-(defmethod speedx EuropeanParrot [parrot]
-  (speed {:type :european-parrot}))
+(defmethod speed EuropeanParrot [parrot]
+  (speedx {:type :european-parrot}))
 
-(defmethod speedx AfricanParrot [parrot]
-  (speed {:type :african-parrot
+(defmethod speed AfricanParrot [parrot]
+  (speedx {:type :african-parrot
           :num-coconuts (:num-coconuts parrot)}))
 
-(defmethod speedx NorwegianBlueParrot [parrot]
-  (speed {:type :norwegian-blue-parrot
+(defmethod speed NorwegianBlueParrot [parrot]
+  (speedx {:type :norwegian-blue-parrot
                 :voltage (:voltage parrot)
                 :nailed (:nailed parrot)}))
+
+(defmethod speed :default [parrot]
+  (speedx {:type :unknown}))
