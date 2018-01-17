@@ -1,0 +1,6 @@
+Clojure with VIm?
+
+* long time no kata here. Clojure and Scala were pending. 
+  Probably because Scala is slow and I do not know Clojure as well.
+* Setup is easy with Lein.
+
