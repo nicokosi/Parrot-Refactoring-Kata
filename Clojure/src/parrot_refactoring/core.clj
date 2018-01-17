@@ -18,7 +18,7 @@
 
 (defrecord EuropeanParrot [])
 (defrecord AfricanParrot [num-coconuts])
-(defrecord NorwegianBlueParrot [nailed voltage])
+(defrecord NorwegianBlueParrot [voltage nailed])
 
 (defmulti speedx class)
 
@@ -28,3 +28,8 @@
 (defmethod speedx AfricanParrot [parrot]
   (speed {:type :african-parrot
           :num-coconuts (:num-coconuts parrot)}))
+
+(defmethod speedx NorwegianBlueParrot [parrot]
+  (speed {:type :norwegian-blue-parrot
+                :voltage (:voltage parrot)
+                :nailed (:nailed parrot)}))

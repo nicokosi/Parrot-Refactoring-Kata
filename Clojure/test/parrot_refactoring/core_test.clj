@@ -29,26 +29,17 @@
   (fact
     "it gets the speed of a nailed norwegian blue parrot"
 
-    (parrot/speed {:type :norwegian-blue-parrot
-                   :num-coconuts 0
-                   :voltage 0.0
-                   :nailed true}) => 0.0)
+    (parrot/speedx (parrot/->NorwegianBlueParrot 0.0 true)) => 0.0)
 
   (fact
     "it gets the speed of a not nailed norwegian blue parrot"
 
-    (parrot/speed {:type :norwegian-blue-parrot
-                   :num-coconuts 0
-                   :voltage 1.5
-                   :nailed false}) => 18.0)
+    (parrot/speedx (parrot/->NorwegianBlueParrot 1.5 false)) => 18.0)
 
   (fact
     "it gets the speed of a not nailed norwegian blue parrot with high voltage"
 
-    (parrot/speed {:type :norwegian-blue-parrot
-                   :num-coconuts 0
-                   :voltage 4.0
-                   :nailed false}) => 24.0)
+    (parrot/speedx (parrot/->NorwegianBlueParrot 4.0 false)) => 24.0)
 
   (fact
     "it can't get speed of unknown parrrot types"
