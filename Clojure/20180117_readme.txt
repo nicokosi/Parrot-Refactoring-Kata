@@ -1,6 +1,17 @@
-Clojure with VIm?
+Clojure with VIm/UED
 
 * long time no kata here. Clojure and Scala were pending. 
   Probably because Scala is slow and I do not know Clojure as well.
 * Setup is easy with Lein.
+* Switched to Ued soon after Start with VIM.
+* Autotest is cool in other window.
 
+* Time = 45' + 50' = ~ 1.5h
+* Was fighting with Multimethod long (1h5')
+  Problem was that core and test were in different state.
+* 12 Steps: 4 delegationg Multimethods, 
+            4 Method Bodies, 
+            2 Extract Methods, 
+            Delete original Method, 
+            Sort Methods.
+* Felt easy, just 30'
