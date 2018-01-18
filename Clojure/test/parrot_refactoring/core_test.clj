@@ -29,7 +29,7 @@
   (fact
     "it gets the speed of a nailed norwegian blue parrot"
 
-    (parrot/speed (parrot/->NorwegianBlueParrot 0.0 true)) => 0.0)
+    (parrot/speed (parrot/->NorwegianBlueParrot 1.5 true)) => 0.0)
 
   (fact
     "it gets the speed of a not nailed norwegian blue parrot"
