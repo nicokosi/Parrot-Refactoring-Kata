@@ -20,7 +20,7 @@ type europeanParrot struct {
 	base baseParrot
 }
 
-func CreateEuropeanParrot() europeanParrot {
+func CreateEuropeanParrot() Parrot {
 	return europeanParrot{baseParrot{}}
 }
 
@@ -33,7 +33,7 @@ type africanParrot struct {
 	numberOfCoconuts int
 }
 
-func CreateAfricanParrot(numberOfCoconuts int) africanParrot {
+func CreateAfricanParrot(numberOfCoconuts int) Parrot {
 	return africanParrot{baseParrot{}, numberOfCoconuts}
 }
 
@@ -51,7 +51,7 @@ type norwegianBlueParrot struct {
 	nailed  bool
 }
 
-func CreateNorwegianBlueParrot(voltage float64, nailed bool) norwegianBlueParrot {
+func CreateNorwegianBlueParrot(voltage float64, nailed bool) Parrot {
 	return norwegianBlueParrot{baseParrot{}, voltage, nailed}
 }
 
