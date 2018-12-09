@@ -12,8 +12,12 @@ type Parrot interface {
 type baseParrot struct {
 }
 
-type EuropeanParrot struct {
+type europeanParrot struct {
 	base baseParrot
+}
+
+func EuropeanParrot() europeanParrot {
+	return europeanParrot{baseParrot{}}
 }
 
 type AfricanParrot struct {
@@ -31,7 +35,7 @@ func (parrot baseParrot) baseSpeed() float64 {
 	return 12.0
 }
 
-func (parrot EuropeanParrot) Speed() (float64, error) {
+func (parrot europeanParrot) Speed() (float64, error) {
 	return parrot.base.baseSpeed(), nil
 }
 
