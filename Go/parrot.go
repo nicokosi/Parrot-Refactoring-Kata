@@ -1,7 +1,6 @@
 package parrot
 
 import (
-	"errors"
 	"math"
 )
 
@@ -28,32 +27,20 @@ type NorwegianBlueParrot struct {
 	nailed  bool
 }
 
-func (parrot baseParrot) Speed() (float64, error) {
-	return 0, errors.New("should be unreachable")
-}
-
 func (parrot baseParrot) baseSpeed() float64 {
 	return 12.0
 }
 
 func (parrot EuropeanParrot) Speed() (float64, error) {
-	return parrot.baseSpeed(), nil
-}
-
-func (parrot EuropeanParrot) baseSpeed() float64 {
-	return 12.0
+	return parrot.base.baseSpeed(), nil
 }
 
 func (parrot AfricanParrot) Speed() (float64, error) {
-	return math.Max(0, parrot.baseSpeed()-parrot.loadFactor()*float64(parrot.numberOfCoconuts)), nil
+	return math.Max(0, parrot.base.baseSpeed()-parrot.loadFactor()*float64(parrot.numberOfCoconuts)), nil
 }
 
 func (parrot AfricanParrot) loadFactor() float64 {
 	return 9.0
-}
-
-func (parrot AfricanParrot) baseSpeed() float64 {
-	return 12.0
 }
 
 func (parrot NorwegianBlueParrot) Speed() (float64, error) {
@@ -64,9 +51,5 @@ func (parrot NorwegianBlueParrot) Speed() (float64, error) {
 }
 
 func (parrot NorwegianBlueParrot) computeBaseSpeedForVoltage(voltage float64) float64 {
-	return math.Min(24.0, voltage*parrot.baseSpeed())
-}
-
-func (parrot NorwegianBlueParrot) baseSpeed() float64 {
-	return 12.0
+	return math.Min(24.0, voltage*parrot.base.baseSpeed())
 }
