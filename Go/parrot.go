@@ -27,6 +27,10 @@ type mixedParrot struct {
 type EuropeanParrot struct {
 }
 
+type AfricanParrot struct {
+	numberOfCoconuts int
+}
+
 func CreateParrot(t parrotType, numberOfCoconuts int, voltage float64, nailed bool) Parrot {
 	return mixedParrot{t, numberOfCoconuts, voltage, nailed}
 }
@@ -53,6 +57,18 @@ func (parrot EuropeanParrot) Speed() (float64, error) {
 }
 
 func (parrot EuropeanParrot) baseSpeed() float64 {
+	return 12.0
+}
+
+func (parrot AfricanParrot) Speed() (float64, error) {
+	return math.Max(0, parrot.baseSpeed()-parrot.loadFactor()*float64(parrot.numberOfCoconuts)), nil
+}
+
+func (parrot AfricanParrot) loadFactor() float64 {
+	return 9.0
+}
+
+func (parrot AfricanParrot) baseSpeed() float64 {
 	return 12.0
 }
 
