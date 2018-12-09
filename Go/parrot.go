@@ -25,6 +25,9 @@ type mixedParrot struct {
 	nailed           bool
 }
 
+type europeanParrot struct {
+}
+
 func CreateParrot(t parrotType, numberOfCoconuts int, voltage float64, nailed bool) Parrot {
 	return mixedParrot{t, numberOfCoconuts, voltage, nailed}
 }
@@ -46,6 +49,14 @@ func (parrot mixedParrot) Speed() (float64, error) {
 	default:
 		return 0, errors.New("should be unreachable")
 	}
+}
+
+func (parrot europeanParrot) Speed() (float64, error) {
+	return parrot.baseSpeed(), nil
+}
+
+func (parrot europeanParrot) baseSpeed() float64 {
+	return 12.0
 }
 
 func (parrot mixedParrot) computeBaseSpeedForVoltage(voltage float64) float64 {
