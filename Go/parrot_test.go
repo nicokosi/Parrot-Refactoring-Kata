@@ -35,21 +35,21 @@ func TestSpeedOfAfricanParrot_With_No_Coconuts(t *testing.T) {
 }
 
 func TestSpeedNorwegianBlueParrot_nailed(t *testing.T) {
-	parrot := NorwegianBlueParrot{baseParrot{}, 1.5, true}
+	parrot := NorwegianBlueParrot(1.5, true)
 	speed, err := parrot.Speed()
 	assert.Equal(t, 0.0, speed)
 	assert.NoError(t, err)
 }
 
 func TestSpeedNorwegianBlueParrot_not_nailed(t *testing.T) {
-	parrot := NorwegianBlueParrot{baseParrot{}, 1.5, false}
+	parrot := NorwegianBlueParrot(1.5, false)
 	speed, err := parrot.Speed()
 	assert.Equal(t, 18.0, speed)
 	assert.NoError(t, err)
 }
 
 func TestSpeedNorwegianBlueParrot_not_nailed_high_voltage(t *testing.T) {
-	parrot := NorwegianBlueParrot{baseParrot{}, 4, false}
+	parrot := NorwegianBlueParrot(4, false)
 	speed, err := parrot.Speed()
 	assert.Equal(t, 24.0, speed)
 	assert.NoError(t, err)
