@@ -25,7 +25,7 @@ type mixedParrot struct {
 	nailed           bool
 }
 
-type europeanParrot struct {
+type EuropeanParrot struct {
 }
 
 func CreateParrot(t parrotType, numberOfCoconuts int, voltage float64, nailed bool) Parrot {
@@ -51,11 +51,11 @@ func (parrot mixedParrot) Speed() (float64, error) {
 	}
 }
 
-func (parrot europeanParrot) Speed() (float64, error) {
+func (parrot EuropeanParrot) Speed() (float64, error) {
 	return parrot.baseSpeed(), nil
 }
 
-func (parrot europeanParrot) baseSpeed() float64 {
+func (parrot EuropeanParrot) baseSpeed() float64 {
 	return 12.0
 }
 

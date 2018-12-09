@@ -7,7 +7,7 @@ import (
 )
 
 func TestSpeedOfEuropeanParrot(t *testing.T) {
-	parrot := CreateParrot(TypeEuropean, 0, 0, false)
+	parrot := EuropeanParrot{}
 	speed, err := parrot.Speed()
 	assert.Equal(t, 12.0, speed)
 	assert.NoError(t, err)
