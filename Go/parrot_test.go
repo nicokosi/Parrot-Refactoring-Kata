@@ -14,21 +14,21 @@ func TestSpeedOfEuropeanParrot(t *testing.T) {
 }
 
 func TestSpeedOfAfricanParrot_With_One_Coconut(t *testing.T) {
-	parrot := CreateParrot(TypeAfrican, 1, 0, false)
+	parrot := AfricanParrot{1}
 	speed, err := parrot.Speed()
 	assert.Equal(t, 3.0, speed)
 	assert.NoError(t, err)
 }
 
 func TestSpeedOfAfricanParrot_With_Two_Coconuts(t *testing.T) {
-	parrot := CreateParrot(TypeAfrican, 2, 0, false)
+	parrot := AfricanParrot{2}
 	speed, err := parrot.Speed()
 	assert.Equal(t, 0.0, speed)
 	assert.NoError(t, err)
 }
 
 func TestSpeedOfAfricanParrot_With_No_Coconuts(t *testing.T) {
-	parrot := CreateParrot(TypeAfrican, 0, 0, false)
+	parrot := AfricanParrot{0}
 	speed, err := parrot.Speed()
 	assert.Equal(t, 12.0, speed)
 	assert.NoError(t, err)
