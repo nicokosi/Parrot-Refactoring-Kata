@@ -10,23 +10,30 @@ type Parrot interface {
 	Speed() (float64, error)
 }
 
-type mixedParrot struct {
+type baseParrot struct {
 }
 
 type EuropeanParrot struct {
+	base baseParrot
 }
 
 type AfricanParrot struct {
+	base             baseParrot
 	numberOfCoconuts int
 }
 
 type NorwegianBlueParrot struct {
+	base    baseParrot
 	voltage float64
 	nailed  bool
 }
 
-func (parrot mixedParrot) Speed() (float64, error) {
+func (parrot baseParrot) Speed() (float64, error) {
 	return 0, errors.New("should be unreachable")
+}
+
+func (parrot baseParrot) baseSpeed() float64 {
+	return 12.0
 }
 
 func (parrot EuropeanParrot) Speed() (float64, error) {
