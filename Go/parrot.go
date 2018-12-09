@@ -8,7 +8,6 @@ import (
 type parrotType int
 
 const (
-	TypeAfrican       parrotType = 2
 	TypeNorwegianBlue parrotType = 3
 )
 
@@ -37,9 +36,6 @@ func CreateParrot(t parrotType, numberOfCoconuts int, voltage float64, nailed bo
 
 func (parrot mixedParrot) Speed() (float64, error) {
 	switch parrot._type {
-
-	case TypeAfrican:
-		return math.Max(0, parrot.baseSpeed()-parrot.loadFactor()*float64(parrot.numberOfCoconuts)), nil
 
 	case TypeNorwegianBlue:
 		if parrot.nailed {
@@ -74,10 +70,6 @@ func (parrot AfricanParrot) baseSpeed() float64 {
 
 func (parrot mixedParrot) computeBaseSpeedForVoltage(voltage float64) float64 {
 	return math.Min(24.0, voltage*parrot.baseSpeed())
-}
-
-func (parrot mixedParrot) loadFactor() float64 {
-	return 9.0
 }
 
 func (parrot mixedParrot) baseSpeed() float64 {
