@@ -26,4 +26,4 @@ jobs:
       working-directory: PHP
       run: |
         composer install
-        ./vendor/.bin/phpunit
+        ./vendor/bin/phpunit
