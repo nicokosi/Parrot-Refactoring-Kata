@@ -1,0 +1,31 @@
+name: Test C gcc
+
+on:
+  push:
+    paths:
+      - 'C/**'
+      - '.github/workflows/C**'
+  pull_request:
+    paths:
+      - 'C/**'
+      - '.github/workflows/C**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Install cmocka
+      run: |
+        sudo apt-get update
+        sudo apt-get install libcmocka-dev
+
+    - name: Build
+      working-directory: C
+      run: gcc -std=c99 -pedantic -pedantic-errors -Werror -Wall -Wextra Parrot.c ParrotTest.c -l cmocka -o ParrotTest
+
+    - name: Test
+      working-directory: C
+      run: ./ParrotTest

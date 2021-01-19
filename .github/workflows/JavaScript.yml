@@ -1,0 +1,29 @@
+name: Test JavaScript NPM
+
+on:
+  push:
+    paths:
+      - 'JavaScript/**'
+      - '.github/workflows/JavaScript**'
+  pull_request:
+    paths:
+      - 'JavaScript/**'
+      - '.github/workflows/JavaScript**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 15.x
+
+    - name: Test
+      working-directory: JavaScript
+      run: |
+        npm install
+        npm test

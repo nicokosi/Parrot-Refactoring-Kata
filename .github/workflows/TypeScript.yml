@@ -1,0 +1,29 @@
+name: Test TypeScript NPM
+
+on:
+  push:
+    paths:
+      - 'TypeScript/**'
+      - '.github/workflows/TypeScript**'
+  pull_request:
+    paths:
+      - 'TypeScript/**'
+      - '.github/workflows/TypeScript**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 15.x
+
+    - name: Test
+      working-directory: TypeScript
+      run: |
+        npm install
+        npm test
