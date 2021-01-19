@@ -24,4 +24,4 @@ jobs:
 
     - name: Test with testify
       working-directory: Go
-      run: go test
+      run: go test -v
