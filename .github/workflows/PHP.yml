@@ -1,0 +1,29 @@
+name: Test PHP Composer
+
+on:
+  push:
+    paths:
+      - 'PHP/**'
+      - '.github/workflows/PHP**'
+  pull_request:
+    paths:
+      - 'PHP/**'
+      - '.github/workflows/PHP**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v1
+      with:
+        php-version: 7.3
+
+    - name: Test with PHPUnit
+      working-directory: PHP
+      run: |
+        composer install
+        ./vendor/.bin/phpunit

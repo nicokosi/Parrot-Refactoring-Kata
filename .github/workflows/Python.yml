@@ -22,7 +22,7 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Test
+    - name: Test with nose
       working-directory: Python
       run: |
         python -m pip install --upgrade pip

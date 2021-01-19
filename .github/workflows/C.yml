@@ -26,6 +26,6 @@ jobs:
       working-directory: C
       run: gcc -std=c99 -pedantic -pedantic-errors -Werror -Wall -Wextra Parrot.c ParrotTest.c -l cmocka -o ParrotTest
 
-    - name: Test
+    - name: Test with Cmocka
       working-directory: C
       run: ./ParrotTest
