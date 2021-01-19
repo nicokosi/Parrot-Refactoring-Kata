@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - 'Java/**'
-      - '.github/workflows/Java**'
+      - '.github/workflows/Java.yml'
   pull_request:
     paths:
       - 'Java/**'
-      - '.github/workflows/Java**'
+      - '.github/workflows/Java.yml'
 
 jobs:
   build:

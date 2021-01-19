@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - 'JavaScript/**'
-      - '.github/workflows/JavaScript**'
+      - '.github/workflows/JavaScript.yml'
   pull_request:
     paths:
       - 'JavaScript/**'
-      - '.github/workflows/JavaScript**'
+      - '.github/workflows/JavaScript.yml'
 
 jobs:
   build:

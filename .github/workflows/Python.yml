@@ -1,14 +1,14 @@
-name: Test Python
+name: Test Python PIP
 
 on:
   push:
     paths:
       - 'Python/**'
-      - '.github/workflows/Python**'
+      - '.github/workflows/Python.yml'
   pull_request:
     paths:
       - 'Python/**'
-      - '.github/workflows/Python**'
+      - '.github/workflows/Python.yml'
 
 jobs:
   build:

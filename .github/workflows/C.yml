@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - 'C/**'
-      - '.github/workflows/C**'
+      - '.github/workflows/C.yml
   pull_request:
     paths:
       - 'C/**'
-      - '.github/workflows/C**'
+      - '.github/workflows/C.yml'
 
 jobs:
   build:

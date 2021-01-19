@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - 'TypeScript/**'
-      - '.github/workflows/TypeScript**'
+      - '.github/workflows/TypeScript.yml'
   pull_request:
     paths:
       - 'TypeScript/**'
-      - '.github/workflows/TypeScript**'
+      - '.github/workflows/TypeScript.yml'
 
 jobs:
   build:

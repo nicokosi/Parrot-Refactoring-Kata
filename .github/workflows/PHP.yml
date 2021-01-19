@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - 'PHP/**'
-      - '.github/workflows/PHP**'
+      - '.github/workflows/PHP.yml'
   pull_request:
     paths:
       - 'PHP/**'
-      - '.github/workflows/PHP**'
+      - '.github/workflows/PHP.yml'
 
 jobs:
   build:

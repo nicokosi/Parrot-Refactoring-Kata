@@ -1,0 +1,30 @@
+name: Test CSharp .NET
+
+on:
+  push:
+    paths:
+      - 'CSharp/**'
+      - '.github/workflows/CSharp.yml'
+  pull_request:
+    paths:
+      - 'CSharp/**'
+      - '.github/workflows/CSharp.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.0.x
+
+    - name: Build and test
+      working-directory: CSharp
+      run: |
+        dotnet restore
+        dotnet build --no-restore
+        dotnet test --no-build --verbosity normal
