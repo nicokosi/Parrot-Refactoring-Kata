@@ -1,0 +1,24 @@
+name: Test Rust
+
+on:
+  push:
+    paths:
+      - 'Rust/**'
+      - '.github/workflows/Rust.yml'
+  pull_request:
+    paths:
+      - 'Rust/**'
+      - '.github/workflows/Rust.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Build and test
+      working-directory: Rust
+      run: |
+        cargo build --verbose
+        cargo test --verbose
