@@ -1,4 +1,4 @@
-name: Test Clojure Lein
+name: Test Clojure
 
 on:
   push:
@@ -21,7 +21,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Install Clojure
+
+    - name: Set up Clojure
       uses: DeLaGuardo/setup-clojure@3.2
       with:
           lein: latest

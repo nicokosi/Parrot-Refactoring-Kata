@@ -1,4 +1,4 @@
-name: Test Kotlin Gradle
+name: Test Kotlin
 
 on:
   push:

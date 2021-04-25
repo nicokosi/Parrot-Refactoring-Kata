@@ -1,4 +1,4 @@
-name: Test Ruby Rake
+name: Test Ruby
 
 on:
   push:
@@ -22,9 +22,12 @@ jobs:
       with:
         ruby-version: 2.3
 
-    - name: Test
+    - name: Set up dependencies
       working-directory: Ruby
       run: |
         gem install bundler
         bundle install
-        rake
+
+    - name: Test
+      working-directory: Ruby
+      run: rake

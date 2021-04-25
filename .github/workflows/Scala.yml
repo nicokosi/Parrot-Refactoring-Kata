@@ -1,4 +1,4 @@
-name: Test Scala SBT
+name: Test Scala
 
 on:
   push:

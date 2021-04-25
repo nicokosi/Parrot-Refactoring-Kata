@@ -1,4 +1,4 @@
-name: Test CSharp .NET
+name: Test CSharp
 
 on:
   push:
@@ -22,9 +22,14 @@ jobs:
       with:
         dotnet-version: 3.0.x
 
-    - name: Build and test
+    - name: Set up dependencies
       working-directory: CSharp
-      run: |
-        dotnet restore
-        dotnet build --no-restore
-        dotnet test --no-build --verbosity normal
+      run: dotnet restore
+
+    - name: Build
+      working-directory: CSharp
+      run: dotnet build --no-restore
+
+    - name: Test
+      working-directory: CSharp
+      run: dotnet test --no-build --verbosity normal

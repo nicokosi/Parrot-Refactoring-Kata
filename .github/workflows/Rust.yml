@@ -17,8 +17,10 @@ jobs:
     - name: Check out the repo
       uses: actions/checkout@v2
 
-    - name: Build and test
+    - name: Build
       working-directory: Rust
-      run: |
-        cargo build --verbose
-        cargo test --verbose
+      run: cargo build --verbose
+
+    - name: Test
+      working-directory: Rust
+      run: cargo test --verbose

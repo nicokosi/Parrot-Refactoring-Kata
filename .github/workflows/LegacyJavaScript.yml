@@ -1,4 +1,4 @@
-name: Test LegacyJavaScript NPM
+name: Test LegacyJavaScript
 
 on:
   push:
@@ -20,10 +20,12 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 8
+        node-version: 10.x
+
+    - name: Set up dependencies
+      working-directory: LegacyJavaScript
+      run: npm install
 
     - name: Test
       working-directory: LegacyJavaScript
-      run: |
-        npm install
-        npm test
+      run: npm test

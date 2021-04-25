@@ -1,4 +1,4 @@
-name: Test TypeScript NPM
+name: Test TypeScript
 
 on:
   push:
@@ -22,8 +22,10 @@ jobs:
       with:
         node-version: 15.x
 
+    - name: Set up dependencies
+      working-directory: TypeScript
+      run: npm install
+
     - name: Test
       working-directory: TypeScript
-      run: |
-        npm install
-        npm test
+      run: npm test
