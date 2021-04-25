@@ -1,0 +1,25 @@
+name: Test Crystal
+
+on:
+  push:
+    paths:
+      - 'Crystal/**'
+      - '.github/workflows/Crystal.yml'
+  pull_request:
+    paths:
+      - 'Crystal/**'
+      - '.github/workflows/Crystal.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Setup Crystal
+      uses: oprypin/install-crystal@v1
+
+    - name: Test
+      working-directory: Crystal
+      run: crystal spec
