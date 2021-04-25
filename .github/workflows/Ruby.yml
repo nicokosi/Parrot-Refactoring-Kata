@@ -1,0 +1,30 @@
+name: Test Ruby Rake
+
+on:
+  push:
+    paths:
+      - 'Ruby/**'
+      - '.github/workflows/Ruby.yml'
+  pull_request:
+    paths:
+      - 'Ruby/**'
+      - '.github/workflows/Ruby.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.3
+
+    - name: Test
+      working-directory: Ruby
+      run: |
+        gem install bundler
+        bundle install
+        rake
