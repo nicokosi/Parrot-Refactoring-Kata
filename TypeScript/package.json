@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "parrot refactoring kata",
   "author": "Peter 'Code Cop' Kofler",
-  "dependencies": {},
   "devDependencies": {
     "@types/chai": "4.1.4",
     "@types/mocha": "5.2.5",
