@@ -26,6 +26,8 @@ export class EuropeanParrot implements IParrot {
 }
 
 export class NorwegianParrot implements IParrot {
+    private readonly MIN_SPEED = 24;
+
     constructor(private voltage: number,
                 private isNailed: boolean) {
     }
@@ -35,7 +37,7 @@ export class NorwegianParrot implements IParrot {
             return 0;
         }
 
-        return Math.min(24, this.voltage * BASE_SPEED);
+        return Math.min(this.MIN_SPEED, this.voltage * BASE_SPEED);
     }
 
 }
