@@ -16,8 +16,6 @@ public class Parrot {
 
     public double getSpeed() {
         switch (type) {
-            case EUROPEAN:
-                return europeanSpeed();
             case AFRICAN:
                 return africanSpeed();
             case NORWEGIAN_BLUE:
@@ -33,10 +31,6 @@ public class Parrot {
 
     private double africanSpeed() {
         return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
-    }
-
-    private double europeanSpeed() {
-        return getBaseSpeed();
     }
 
     private double getBaseSpeed(double voltage) {
