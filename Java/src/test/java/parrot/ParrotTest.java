@@ -45,7 +45,7 @@ public class ParrotTest {
     }
 
     private Parrot newNorwegianBlueParrot(double voltage, boolean isNailed) {
-        return new Parrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, voltage, isNailed);
+        return new NorwegianBlueParrot(voltage, isNailed);
     }
 
     @Test
