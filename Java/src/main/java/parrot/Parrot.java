@@ -4,12 +4,10 @@ public class Parrot {
 
     private ParrotTypeEnum type;
     private int numberOfCoconuts;
-    private double voltage;
 
-    public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage) {
+    public Parrot(ParrotTypeEnum type, int numberOfCoconuts) {
         this.type = type;
         this.numberOfCoconuts = numberOfCoconuts;
-        this.voltage = voltage;
     }
 
     public double getSpeed() {
