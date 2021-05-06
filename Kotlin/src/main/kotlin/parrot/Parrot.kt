@@ -19,7 +19,6 @@ open class Parrot(
 
     override val speed: Double
         get() = when (type) {
-            ParrotTypeEnum.EUROPEAN -> baseSpeed
             ParrotTypeEnum.AFRICAN -> max(0.0, baseSpeed - loadFactor * numberOfCoconuts)
             ParrotTypeEnum.NORWEGIAN_BLUE -> if (isNailed) 0.0 else getBaseSpeed(voltage)
         }
