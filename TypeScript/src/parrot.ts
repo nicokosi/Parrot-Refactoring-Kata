@@ -9,7 +9,6 @@ export class Parrot {
 
     private static readonly LOAD_FACTOR = 9;
 
-
     constructor(private parrotType: ParrotTypes,
                 private numberOfCoconuts: number,
                 private voltage: number,
@@ -23,7 +22,7 @@ export class Parrot {
             case ParrotTypes.AFRICAN:
                 return Math.max(0, Parrot.BASE_SPEED - Parrot.LOAD_FACTOR * this.numberOfCoconuts);
             case ParrotTypes.NORWEGIAN_BLUE:
-                return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
+                return this.isNailed ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
         }
         throw new Error("Should be unreachable");
     }
