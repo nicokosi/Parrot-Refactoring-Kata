@@ -10,3 +10,7 @@ The project uses [JUnit 4](https://junit.org/junit4/).
 To run the test:
 
     ./gradlew test
+
+
+
+Session by Claus & Bastien
