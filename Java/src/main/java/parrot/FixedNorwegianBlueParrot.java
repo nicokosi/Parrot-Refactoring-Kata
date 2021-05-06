@@ -1,9 +1,6 @@
 package parrot;
 
-public class FixedNorwegianBlueParrot extends NorwegianBlueParrot {
-    public FixedNorwegianBlueParrot() {
-        super(0, true);
-    }
+public class FixedNorwegianBlueParrot extends Parrot {
 
     public double getSpeed() {
         return 0;
