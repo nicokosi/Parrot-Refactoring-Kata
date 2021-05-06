@@ -9,7 +9,11 @@ public class MovableNorwegianBlueParrot extends Parrot {
     }
 
     public double getSpeed() {
-        return Math.min(24.0, voltage * baseSpeed());
+        return Math.min(minSpeed(), voltage * baseSpeed());
+    }
+
+    private double minSpeed() {
+        return 24.0;
     }
 
 }
