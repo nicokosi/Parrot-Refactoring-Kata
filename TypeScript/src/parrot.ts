@@ -34,7 +34,7 @@ export class NorwegianParrot extends Parrot {
         return Math.min(24, voltage * BASE_SPEED);
     }
 
-    constructor(protected voltage: number,
+    constructor(private voltage: number,
                 protected isNailed: boolean) {
         super();
     }
