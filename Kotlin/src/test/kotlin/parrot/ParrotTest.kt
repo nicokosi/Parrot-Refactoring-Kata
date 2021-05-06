@@ -8,7 +8,8 @@ class ParrotTest {
 
     @Test
     fun getSpeedOfEuropeanParrot() {
-        val parrot = Parrot(ParrotTypeEnum.EUROPEAN, 0, 0.0, false)
+        val type = ParrotTypeEnum.EUROPEAN
+        val parrot = Parrot(type, 0, 0.0, false)
         assertEquals(12.0, parrot.speed, 0.0)
     }
 
