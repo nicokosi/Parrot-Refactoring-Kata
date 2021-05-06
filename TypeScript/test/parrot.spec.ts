@@ -45,4 +45,10 @@ describe("Parrot", () => {
 
         expect(parrot.getSpeed()).eql(24);
     });
+
+    it("gets speed of Norwegian Blue Parrot can be negative when voltage is negative", () => {
+        const parrot = new NorwegianParrot(-4, false);
+
+        expect(parrot.getSpeed()).eql(-48);
+    });
 });
