@@ -44,3 +44,10 @@ export class EuropeanParrot extends Parrot {
         return Parrot.BASE_SPEED;
     }
 }
+
+export class NorwegianParrot extends Parrot {
+
+    public getSpeed(): number {
+        return super.getSpeed();
+    }
+}
