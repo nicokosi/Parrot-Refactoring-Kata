@@ -5,7 +5,7 @@ export enum ParrotTypes {
 }
 
 export class Parrot {
-    private static readonly BASE_SPEED = 12;
+    protected static readonly BASE_SPEED = 12;
 
     private static readonly LOAD_FACTOR = 9;
 
