@@ -7,4 +7,9 @@ public class African extends Parrot {
         super(type, numberOfCoconuts);
         this.numberOfCoconuts = numberOfCoconuts;
     }
+
+    @Override
+    public double getSpeed() {
+        return super.getSpeed();
+    }
 }
