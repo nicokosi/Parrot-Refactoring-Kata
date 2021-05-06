@@ -4,8 +4,9 @@ export enum ParrotTypes {
     NORWEGIAN_BLUE,
 }
 
+const BASE_SPEED = 12;
+
 export class Parrot {
-    protected static readonly BASE_SPEED = 12;
 
     constructor(protected parrotType: ParrotTypes,
                 protected numberOfCoconuts: number,
@@ -24,21 +25,21 @@ export class AfricanParrot extends Parrot {
     private static readonly LOAD_FACTOR = 9;
 
     public getSpeed(): number {
-        return Math.max(0, Parrot.BASE_SPEED - AfricanParrot.LOAD_FACTOR * this.numberOfCoconuts);
+        return Math.max(0, BASE_SPEED - AfricanParrot.LOAD_FACTOR * this.numberOfCoconuts);
     }
 }
 
 export class EuropeanParrot extends Parrot {
 
     public getSpeed(): number {
-        return Parrot.BASE_SPEED;
+        return BASE_SPEED;
     }
 }
 
 export class NorwegianParrot extends Parrot {
 
     private static getBaseSpeedWithVoltage(voltage: number): number {
-        return Math.min(24, voltage * Parrot.BASE_SPEED);
+        return Math.min(24, voltage * BASE_SPEED);
     }
 
     public getSpeed(): number {
