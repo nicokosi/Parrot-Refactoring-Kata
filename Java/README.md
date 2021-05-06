@@ -1,6 +1,9 @@
 Parrot Refactoring Kata Java version
 ====================================
 
+Branch modified by Gregor and Christian.
+
+
 Parrot Refactoring Kata.
 
 This is a [Maven](https://maven.apache.org/) and a [Gradle](https://gradle.org/) project at the same time.
