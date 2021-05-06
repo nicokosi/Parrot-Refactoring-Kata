@@ -26,17 +26,13 @@ export class EuropeanParrot implements IParrot {
 }
 
 export class NorwegianParrot implements IParrot {
-
-    private static getBaseSpeedWithVoltage(voltage: number): number {
-        return Math.min(24, voltage * BASE_SPEED);
-    }
-
     constructor(private voltage: number,
                 private isNailed: boolean) {
     }
 
     public getSpeed(): number {
-        return this.isNailed ? 0 : NorwegianParrot.getBaseSpeedWithVoltage(this.voltage);
+        const baseSpeedWithVoltage = Math.min(24, this.voltage * BASE_SPEED);
+        return this.isNailed ? 0 : baseSpeedWithVoltage;
     }
 
 }
