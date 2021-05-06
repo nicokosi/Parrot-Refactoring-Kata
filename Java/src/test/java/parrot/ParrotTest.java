@@ -59,4 +59,8 @@ public class ParrotTest {
     private Parrot newNorwegianBlueParrot(double voltage, boolean isNailed) {
         return new NorwegianBlueParrot(voltage, isNailed);
     }
+
+    private Parrot newFixedNorwegianBlueParrot() {
+        return new FixedNorwegianBlueParrot();
+    }
 }
