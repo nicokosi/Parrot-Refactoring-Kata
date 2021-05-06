@@ -1,3 +1,5 @@
+import * as assert from "assert";
+
 const BASE_SPEED = 12;
 
 export interface IParrot {
@@ -32,6 +34,7 @@ export class NorwegianParrot implements IParrot {
 
     constructor(private voltage: number,
                 private isNailed: boolean) {
+        assert(voltage >= 0, "Voltage must be non-negative");
     }
 
     public getSpeed(): number {
