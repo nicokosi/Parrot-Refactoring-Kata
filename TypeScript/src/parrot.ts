@@ -31,8 +31,11 @@ export class NorwegianParrot implements IParrot {
     }
 
     public getSpeed(): number {
-        const baseSpeedWithVoltage = Math.min(24, this.voltage * BASE_SPEED);
-        return this.isNailed ? 0 : baseSpeedWithVoltage;
+        if (this.isNailed) {
+            return 0;
+        }
+
+        return Math.min(24, this.voltage * BASE_SPEED);
     }
 
 }
