@@ -23,7 +23,7 @@ public class ParrotTest {
     }
 
     private Parrot newAfricanParrot(int numberOfCoconuts) {
-        return new Parrot(ParrotTypeEnum.AFRICAN, numberOfCoconuts, 0, false);
+        return new AfricanParrot(numberOfCoconuts);
     }
 
     @Test
