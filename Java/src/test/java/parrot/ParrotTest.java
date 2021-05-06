@@ -8,8 +8,12 @@ public class ParrotTest {
 
     @Test
     public void getSpeedOfEuropeanParrot() {
-        Parrot parrot = new Parrot(ParrotTypeEnum.EUROPEAN, 0, 0, false);
+        Parrot parrot = newEuropeanParrot();
         assertEquals(12.0, parrot.getSpeed(), 0.0);
+    }
+
+    private Parrot newEuropeanParrot() {
+        return new Parrot(ParrotTypeEnum.EUROPEAN, 0, 0, false);
     }
 
     @Test
