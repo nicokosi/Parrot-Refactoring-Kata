@@ -63,4 +63,5 @@ public class ParrotTest {
     private Parrot newMovableNorwegianBlueParrot(double voltage) {
         return new MovableNorwegianBlueParrot(voltage);
     }
+
 }

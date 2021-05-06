@@ -20,4 +20,5 @@ public class AfricanParrot extends Parrot {
     private double loadFactor() {
         return 9.0;
     }
+
 }
