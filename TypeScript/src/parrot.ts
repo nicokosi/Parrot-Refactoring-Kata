@@ -35,7 +35,7 @@ export class NorwegianParrot extends Parrot {
     }
 
     constructor(private voltage: number,
-                protected isNailed: boolean) {
+                private isNailed: boolean) {
         super();
     }
 
