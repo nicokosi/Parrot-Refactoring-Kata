@@ -8,10 +8,9 @@ class ParrotTest {
 
     @Test
     fun getSpeedOfEuropeanParrot() {
-        val numberOfCoconuts = 0
         val voltage = 0.0
         val isNailed = false
-        val parrot = breedParrot(ParrotTypeEnum.EUROPEAN, numberOfCoconuts, voltage, isNailed)
+        val parrot = breedParrot(ParrotTypeEnum.EUROPEAN, 0, voltage, isNailed)
         assertEquals(12.0, parrot.speed, 0.0)
     }
 
