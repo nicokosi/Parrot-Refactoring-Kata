@@ -13,7 +13,7 @@ public class ParrotTest {
     }
 
     private Parrot newEuropeanParrot() {
-        return new Parrot(ParrotTypeEnum.EUROPEAN, 0, 0, false);
+        return new EuropeanParrot();
     }
 
     @Test
