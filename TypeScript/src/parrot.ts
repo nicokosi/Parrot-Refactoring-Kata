@@ -7,8 +7,6 @@ export enum ParrotTypes {
 export class Parrot {
     protected static readonly BASE_SPEED = 12;
 
-    protected static readonly LOAD_FACTOR = 9;
-
     constructor(protected parrotType: ParrotTypes,
                 protected numberOfCoconuts: number,
                 protected voltage: number,
@@ -23,8 +21,10 @@ export class Parrot {
 
 export class AfricanParrot extends Parrot {
 
+    private static readonly LOAD_FACTOR = 9;
+
     public getSpeed(): number {
-        return Math.max(0, Parrot.BASE_SPEED - Parrot.LOAD_FACTOR * this.numberOfCoconuts);
+        return Math.max(0, Parrot.BASE_SPEED - AfricanParrot.LOAD_FACTOR * this.numberOfCoconuts);
     }
 }
 
