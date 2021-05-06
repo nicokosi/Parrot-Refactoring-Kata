@@ -1,6 +1,6 @@
 package parrot;
 
-public class Parrot {
+public abstract class Parrot {
 
     private ParrotTypeEnum type;
     private int numberOfCoconuts;
@@ -14,16 +14,7 @@ public class Parrot {
         this.isNailed = isNailed;
     }
 
-    public double getSpeed() {
-        switch (type) {
-            case AFRICAN:
-                return africanSpeed();
-            case NORWEGIAN_BLUE:
-                return norwegianBlueSpeed();
-            default:
-                throw new RuntimeException("Should be unreachable");
-        }
-    }
+    public abstract double getSpeed();
 
     private double norwegianBlueSpeed() {
         return (isNailed) ? 0 : getBaseSpeed(voltage);
