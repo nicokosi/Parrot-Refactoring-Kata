@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import "mocha";
-import {EuropeanParrot, Parrot, ParrotTypes} from "../src/parrot";
+import {AfricanParrot, EuropeanParrot, Parrot, ParrotTypes} from "../src/parrot";
 
 describe("Parrot", () => {
 
@@ -11,19 +11,19 @@ describe("Parrot", () => {
     });
 
     it("gets speed of African Parrot with one coconut", () => {
-        const parrot = new Parrot(ParrotTypes.AFRICAN, 1, 0, false);
+        const parrot = new AfricanParrot(ParrotTypes.AFRICAN, 1, 0, false);
 
         expect(parrot.getSpeed()).eql(3);
     });
 
     it("gets speed of African Parrot with two coconuts", () => {
-        const parrot = new Parrot(ParrotTypes.AFRICAN, 2, 0, false);
+        const parrot = new AfricanParrot(ParrotTypes.AFRICAN, 2, 0, false);
 
         expect(parrot.getSpeed()).eql(0);
     });
 
     it("gets speed of African Parrot with no coconuts", () => {
-        const parrot = new Parrot(ParrotTypes.AFRICAN, 0, 0, false);
+        const parrot = new AfricanParrot(ParrotTypes.AFRICAN, 0, 0, false);
 
         expect(parrot.getSpeed()).eql(12);
     });
