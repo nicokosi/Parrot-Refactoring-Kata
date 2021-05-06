@@ -9,10 +9,6 @@ export class Parrot {
 
     protected static readonly LOAD_FACTOR = 9;
 
-    protected static getBaseSpeedWithVoltage(voltage: number): number {
-        return Math.min(24, voltage * Parrot.BASE_SPEED);
-    }
-
     constructor(protected parrotType: ParrotTypes,
                 protected numberOfCoconuts: number,
                 protected voltage: number,
@@ -41,7 +37,12 @@ export class EuropeanParrot extends Parrot {
 
 export class NorwegianParrot extends Parrot {
 
-    public getSpeed(): number {
-        return this.isNailed ? 0 : Parrot.getBaseSpeedWithVoltage(this.voltage);
+    private static getBaseSpeedWithVoltage(voltage: number): number {
+        return Math.min(24, voltage * Parrot.BASE_SPEED);
     }
+
+    public getSpeed(): number {
+        return this.isNailed ? 0 : NorwegianParrot.getBaseSpeedWithVoltage(this.voltage);
+    }
+
 }
