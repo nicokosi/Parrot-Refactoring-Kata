@@ -20,12 +20,13 @@ open class Parrot(
     override val speed: Double
         get() = when (type) {
             ParrotTypeEnum.AFRICAN -> African(numberOfCoconuts).speed
-            ParrotTypeEnum.NORWEGIAN_BLUE -> norwegianBlueSpeed(isNailed, voltage)
+            ParrotTypeEnum.NORWEGIAN_BLUE -> norwegianBlueSpeed(isNailed, voltage, baseSpeed)
         }
 
     private fun norwegianBlueSpeed(
         isNailed: Boolean,
-        voltage: Double
+        voltage: Double,
+        baseSpeed: Double
     ) = if (isNailed) 0.0 else getBaseSpeed(voltage, baseSpeed)
 
     private fun getBaseSpeed(voltage: Double, baseSpeed: Double): Double = min(24.0, voltage * baseSpeed)
