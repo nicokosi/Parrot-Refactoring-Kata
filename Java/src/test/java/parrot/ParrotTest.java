@@ -12,18 +12,10 @@ public class ParrotTest {
         assertEquals(12.0, parrot.getSpeed(), 0.0);
     }
 
-    private Parrot newEuropeanParrot() {
-        return new EuropeanParrot();
-    }
-
     @Test
     public void getSpeedOfAfricanParrot_With_One_Coconut() {
         Parrot parrot = newAfricanParrot(1);
         assertEquals(3.0, parrot.getSpeed(), 0.0);
-    }
-
-    private Parrot newAfricanParrot(int numberOfCoconuts) {
-        return new AfricanParrot(numberOfCoconuts);
     }
 
     @Test
@@ -44,10 +36,6 @@ public class ParrotTest {
         assertEquals(0.0, parrot.getSpeed(), 0.0);
     }
 
-    private Parrot newNorwegianBlueParrot(double voltage, boolean isNailed) {
-        return new NorwegianBlueParrot(voltage, isNailed);
-    }
-
     @Test
     public void getSpeedNorwegianBlueParrot_not_nailed() {
         Parrot parrot = newNorwegianBlueParrot(1.5, false);
@@ -58,5 +46,17 @@ public class ParrotTest {
     public void getSpeedNorwegianBlueParrot_not_nailed_high_voltage() {
         Parrot parrot = newNorwegianBlueParrot(4, false);
         assertEquals(24.0, parrot.getSpeed(), 0.0);
+    }
+
+    private Parrot newEuropeanParrot() {
+        return new EuropeanParrot();
+    }
+
+    private Parrot newAfricanParrot(int numberOfCoconuts) {
+        return new AfricanParrot(numberOfCoconuts);
+    }
+
+    private Parrot newNorwegianBlueParrot(double voltage, boolean isNailed) {
+        return new NorwegianBlueParrot(voltage, isNailed);
     }
 }
