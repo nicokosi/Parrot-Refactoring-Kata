@@ -1,7 +1,3 @@
-export enum ParrotTypes {
-    NORWEGIAN_BLUE,
-}
-
 const BASE_SPEED = 12;
 
 export class Parrot {
