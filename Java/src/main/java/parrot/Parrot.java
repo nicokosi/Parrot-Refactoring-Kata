@@ -14,8 +14,6 @@ public class Parrot {
         switch (type) {
             case EUROPEAN:
                 return getBaseSpeed();
-            case AFRICAN:
-                return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
 
             default:
                 throw new RuntimeException("Should be unreachable");
