@@ -21,15 +21,11 @@ export class Parrot {
             case ParrotTypes.EUROPEAN:
                 return Parrot.BASE_SPEED;
             case ParrotTypes.AFRICAN:
-                return Math.max(0, Parrot.BASE_SPEED - this.getLoadFactor() * this.numberOfCoconuts);
+                return Math.max(0, Parrot.BASE_SPEED - Parrot.LOAD_FACTOR * this.numberOfCoconuts);
             case ParrotTypes.NORWEGIAN_BLUE:
                 return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
         }
         throw new Error("Should be unreachable");
-    }
-
-    private getLoadFactor(): number {
-        return Parrot.LOAD_FACTOR;
     }
 
     private getBaseSpeedWithVoltage(voltage: number): number {
