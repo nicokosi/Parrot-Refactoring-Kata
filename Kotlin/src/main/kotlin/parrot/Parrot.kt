@@ -26,9 +26,9 @@ open class Parrot(
     private fun norwegianBlueSpeed(
         isNailed: Boolean,
         voltage: Double
-    ) = if (isNailed) 0.0 else getBaseSpeed(voltage)
+    ) = if (isNailed) 0.0 else getBaseSpeed(voltage, baseSpeed)
 
-    private fun getBaseSpeed(voltage: Double): Double = min(24.0, voltage * baseSpeed)
+    private fun getBaseSpeed(voltage: Double, baseSpeed: Double): Double = min(24.0, voltage * baseSpeed)
 }
 
 class European : BaseParrot {
