@@ -28,13 +28,15 @@ export class EuropeanParrot implements IParrot {
 export class NorwegianParrot implements IParrot {
     private readonly MIN_SPEED = 24;
 
+    private readonly NAILED_SPEED = 0;
+
     constructor(private voltage: number,
                 private isNailed: boolean) {
     }
 
     public getSpeed(): number {
         if (this.isNailed) {
-            return 0;
+            return this.NAILED_SPEED;
         }
 
         return Math.min(this.MIN_SPEED, this.voltage * BASE_SPEED);
