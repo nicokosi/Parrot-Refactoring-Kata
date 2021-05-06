@@ -1,10 +1,8 @@
 const BASE_SPEED = 12;
 
-export class Parrot {
+export abstract class Parrot {
 
-    public getSpeed(): number {
-        throw new Error("Should be unreachable");
-    }
+    public abstract getSpeed(): number;
 
 }
 
