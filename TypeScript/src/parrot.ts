@@ -30,3 +30,17 @@ export class Parrot {
     }
 
 }
+
+export class AfricanParrot extends Parrot {
+
+    public getSpeed(): number {
+        return super.getSpeed();
+    }
+}
+
+export class EuropeanParrot extends Parrot {
+
+    public getSpeed(): number {
+        return Parrot.BASE_SPEED;
+    }
+}
