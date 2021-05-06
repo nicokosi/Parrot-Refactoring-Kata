@@ -10,7 +10,8 @@ class ParrotTest {
     fun getSpeedOfEuropeanParrot() {
         val type = ParrotTypeEnum.EUROPEAN
         val numberOfCoconuts = 0
-        val parrot = Parrot(type, numberOfCoconuts, 0.0, false)
+        val voltage = 0.0
+        val parrot = Parrot(type, numberOfCoconuts, voltage, false)
         assertEquals(12.0, parrot.speed, 0.0)
     }
 
