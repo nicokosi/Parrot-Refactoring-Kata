@@ -12,43 +12,50 @@ class ParrotTest {
         val numberOfCoconuts = 0
         val voltage = 0.0
         val isNailed = false
-        val parrot = Parrot(type, numberOfCoconuts, voltage, isNailed)
+        val parrot = breedParrot(type, numberOfCoconuts, voltage, isNailed)
         assertEquals(12.0, parrot.speed, 0.0)
     }
 
     @Test
     fun getSpeedOfAfricanParrot_With_One_Coconut() {
-        val parrot = Parrot(ParrotTypeEnum.AFRICAN, 1, 0.0, false)
+        val parrot = breedParrot(ParrotTypeEnum.AFRICAN, 1, 0.0, false)
         assertEquals(3.0, parrot.speed, 0.0)
     }
 
     @Test
     fun getSpeedOfAfricanParrot_With_Two_Coconuts() {
-        val parrot = Parrot(ParrotTypeEnum.AFRICAN, 2, 0.0, false)
+        val parrot = breedParrot(ParrotTypeEnum.AFRICAN, 2, 0.0, false)
         assertEquals(0.0, parrot.speed, 0.0)
     }
 
     @Test
     fun getSpeedOfAfricanParrot_With_No_Coconuts() {
-        val parrot = Parrot(ParrotTypeEnum.AFRICAN, 0, 0.0, false)
+        val parrot = breedParrot(ParrotTypeEnum.AFRICAN, 0, 0.0, false)
         assertEquals(12.0, parrot.speed, 0.0)
     }
 
     @Test
     fun getSpeedNorwegianBlueParrot_nailed() {
-        val parrot = Parrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 1.5, true)
+        val parrot = breedParrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 1.5, true)
         assertEquals(0.0, parrot.speed, 0.0)
     }
 
     @Test
     fun getSpeedNorwegianBlueParrot_not_nailed() {
-        val parrot = Parrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 1.5, false)
+        val parrot = breedParrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 1.5, false)
         assertEquals(18.0, parrot.speed, 0.0)
     }
 
     @Test
     fun getSpeedNorwegianBlueParrot_not_nailed_high_voltage() {
-        val parrot = Parrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 4.0, false)
+        val parrot = breedParrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 4.0, false)
         assertEquals(24.0, parrot.speed, 0.0)
     }
+
+    private fun breedParrot(
+        type: ParrotTypeEnum,
+        numberOfCoconuts: Int,
+        voltage: Double,
+        isNailed: Boolean
+    ) = Parrot(type, numberOfCoconuts, voltage, isNailed)
 }
