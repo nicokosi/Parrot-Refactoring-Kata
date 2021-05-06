@@ -11,7 +11,7 @@ public class NorwegianBlueParrot extends Parrot {
     }
 
     public double getSpeed() {
-        return (isNailed) ? 0 : voltageSpeed();
+        return isNailed ? 0 : voltageSpeed();
     }
 
     private double voltageSpeed() {
