@@ -5,6 +5,8 @@ export enum ParrotTypes {
 }
 
 export class Parrot {
+    private static readonly BASE_SPEED = 12;
+
     constructor(private parrotType: ParrotTypes,
                 private numberOfCoconuts: number,
                 private voltage: number,
@@ -24,7 +26,7 @@ export class Parrot {
     }
 
     private getBaseSpeed(): number {
-        return 12;
+        return Parrot.BASE_SPEED;
     }
 
     private getLoadFactor(): number {
