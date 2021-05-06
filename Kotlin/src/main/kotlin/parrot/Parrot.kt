@@ -3,14 +3,18 @@ package parrot
 import kotlin.math.max
 import kotlin.math.min
 
+interface BaseParrot {
+    val speed: Double
+}
+
 open class Parrot(
     private val type: ParrotTypeEnum,
     private val numberOfCoconuts: Int,
     private val voltage: Double,
     private val isNailed: Boolean
-) {
+) : BaseParrot {
 
-    val speed: Double
+    override val speed: Double
         get() = when (type) {
             ParrotTypeEnum.EUROPEAN -> baseSpeed
             ParrotTypeEnum.AFRICAN -> max(0.0, baseSpeed - loadFactor * numberOfCoconuts)
