@@ -8,12 +8,6 @@ const BASE_SPEED = 12;
 
 export class Parrot {
 
-    constructor(protected parrotType: ParrotTypes,
-                protected numberOfCoconuts: number,
-                protected voltage: number,
-                protected isNailed: boolean) {
-    }
-
     public getSpeed(): number {
         throw new Error("Should be unreachable");
     }
@@ -23,6 +17,13 @@ export class Parrot {
 export class AfricanParrot extends Parrot {
 
     private static readonly LOAD_FACTOR = 9;
+
+    constructor(protected parrotType: ParrotTypes,
+                protected numberOfCoconuts: number,
+                protected voltage: number,
+                protected isNailed: boolean) {
+        super();
+    }
 
     public getSpeed(): number {
         return Math.max(0, BASE_SPEED - AfricanParrot.LOAD_FACTOR * this.numberOfCoconuts);
@@ -40,6 +41,13 @@ export class NorwegianParrot extends Parrot {
 
     private static getBaseSpeedWithVoltage(voltage: number): number {
         return Math.min(24, voltage * BASE_SPEED);
+    }
+
+    constructor(protected parrotType: ParrotTypes,
+                protected numberOfCoconuts: number,
+                protected voltage: number,
+                protected isNailed: boolean) {
+        super();
     }
 
     public getSpeed(): number {
