@@ -1,17 +1,16 @@
 const BASE_SPEED = 12;
 
-export abstract class Parrot {
+export interface IParrot {
 
-    public abstract getSpeed(): number;
+    getSpeed(): number;
 
 }
 
-export class AfricanParrot extends Parrot {
+export class AfricanParrot implements IParrot {
 
     private static readonly LOAD_FACTOR = 9;
 
     constructor(private numberOfCoconuts: number) {
-        super();
     }
 
     public getSpeed(): number {
@@ -19,14 +18,14 @@ export class AfricanParrot extends Parrot {
     }
 }
 
-export class EuropeanParrot extends Parrot {
+export class EuropeanParrot implements IParrot {
 
     public getSpeed(): number {
         return BASE_SPEED;
     }
 }
 
-export class NorwegianParrot extends Parrot {
+export class NorwegianParrot implements IParrot {
 
     private static getBaseSpeedWithVoltage(voltage: number): number {
         return Math.min(24, voltage * BASE_SPEED);
@@ -34,7 +33,6 @@ export class NorwegianParrot extends Parrot {
 
     constructor(private voltage: number,
                 private isNailed: boolean) {
-        super();
     }
 
     public getSpeed(): number {
