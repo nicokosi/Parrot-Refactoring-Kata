@@ -18,7 +18,6 @@ export class AfricanParrot extends Parrot {
     private static readonly LOAD_FACTOR = 9;
 
     constructor(protected numberOfCoconuts: number,
-                protected voltage: number,
                 protected isNailed: boolean) {
         super();
     }
