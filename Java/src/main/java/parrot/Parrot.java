@@ -19,12 +19,16 @@ public class Parrot {
             case EUROPEAN:
                 return europeanSpeed();
             case AFRICAN:
-                return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
+                return africanSpeed();
             case NORWEGIAN_BLUE:
                 return (isNailed) ? 0 : getBaseSpeed(voltage);
             default:
                 throw new RuntimeException("Should be unreachable");
         }
+    }
+
+    private double africanSpeed() {
+        return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
     }
 
     private double europeanSpeed() {
