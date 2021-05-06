@@ -11,19 +11,19 @@ describe("Parrot", () => {
     });
 
     it("gets speed of African Parrot with one coconut", () => {
-        const parrot = new AfricanParrot(1, false);
+        const parrot = new AfricanParrot(1);
 
         expect(parrot.getSpeed()).eql(3);
     });
 
     it("gets speed of African Parrot with two coconuts", () => {
-        const parrot = new AfricanParrot(2, false);
+        const parrot = new AfricanParrot(2);
 
         expect(parrot.getSpeed()).eql(0);
     });
 
     it("gets speed of African Parrot with no coconuts", () => {
-        const parrot = new AfricanParrot(0, false);
+        const parrot = new AfricanParrot(0);
 
         expect(parrot.getSpeed()).eql(12);
     });
