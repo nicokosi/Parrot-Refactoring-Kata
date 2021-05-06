@@ -5,7 +5,7 @@ import {AfricanParrot, EuropeanParrot, NorwegianParrot, ParrotTypes} from "../sr
 describe("Parrot", () => {
 
     it("gets speed of European Parrot", () => {
-        const parrot = new EuropeanParrot(ParrotTypes.EUROPEAN, 0, 0, false);
+        const parrot = new EuropeanParrot();
 
         expect(parrot.getSpeed()).eql(12);
     });
