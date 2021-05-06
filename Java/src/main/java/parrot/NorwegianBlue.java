@@ -9,4 +9,8 @@ public class NorwegianBlue extends Parrot{
         this.isNailed = isNailed;
         this.voltage = voltage;
     }
+    @Override
+    public double getSpeed(){
+        return super.getSpeed();
+    }
 }
