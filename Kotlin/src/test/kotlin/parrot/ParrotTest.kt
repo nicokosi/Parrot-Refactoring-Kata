@@ -13,6 +13,12 @@ class ParrotTest {
     }
 
     @Test
+    fun getSpeedOfEuropeanParrot2() {
+        val parrot = EuropeanParrot()
+        assertEquals(12.0, parrot.speed, 0.0)
+    }
+
+    @Test
     fun getSpeedOfAfricanParrot_With_One_Coconut() {
         val parrot = breedParrot(ParrotTypeEnum.AFRICAN, 1, 0.0, false)
         assertEquals(3.0, parrot.speed, 0.0)
