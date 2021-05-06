@@ -11,7 +11,8 @@ class ParrotTest {
         val type = ParrotTypeEnum.EUROPEAN
         val numberOfCoconuts = 0
         val voltage = 0.0
-        val parrot = Parrot(type, numberOfCoconuts, voltage, false)
+        val isNailed = false
+        val parrot = Parrot(type, numberOfCoconuts, voltage, isNailed)
         assertEquals(12.0, parrot.speed, 0.0)
     }
 
