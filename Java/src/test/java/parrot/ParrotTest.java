@@ -32,7 +32,7 @@ public class ParrotTest {
 
     @Test
     public void getSpeedNorwegianBlueParrot_nailed() {
-        Parrot parrot = newNorwegianBlueParrot(1.5, true);
+        Parrot parrot = newFixedNorwegianBlueParrot();
         assertEquals(0.0, parrot.getSpeed(), 0.0);
     }
 
