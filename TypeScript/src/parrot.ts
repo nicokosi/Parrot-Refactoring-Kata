@@ -7,9 +7,7 @@ export enum ParrotTypes {
 export class Parrot {
     protected static readonly BASE_SPEED = 12;
 
-    protected static getBaseSpeedWithVoltage(voltage: number): number {
-        return Math.min(24, voltage * Parrot.BASE_SPEED);
-    }
+    protected static readonly LOAD_FACTOR = 9;
 
     private static readonly LOAD_FACTOR = 9;
 
@@ -20,10 +18,6 @@ export class Parrot {
     }
 
     public getSpeed(): number {
-        switch (this.parrotType) {
-            case ParrotTypes.AFRICAN:
-                return Math.max(0, Parrot.BASE_SPEED - Parrot.LOAD_FACTOR * this.numberOfCoconuts);
-        }
         throw new Error("Should be unreachable");
     }
 
@@ -32,7 +26,7 @@ export class Parrot {
 export class AfricanParrot extends Parrot {
 
     public getSpeed(): number {
-        return super.getSpeed();
+        return Math.max(0, Parrot.BASE_SPEED - Parrot.LOAD_FACTOR * this.numberOfCoconuts);
     }
 }
 
