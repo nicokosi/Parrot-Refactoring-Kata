@@ -22,8 +22,6 @@ open class Parrot(
             ParrotTypeEnum.AFRICAN -> African(numberOfCoconuts).speed
             ParrotTypeEnum.NORWEGIAN_BLUE -> NorwegianBlue().norwegianBlueSpeed(isNailed, voltage, baseSpeed)
         }
-
-    private fun getBaseSpeed(voltage: Double, baseSpeed: Double): Double = min(24.0, voltage * baseSpeed)
 }
 
 class European : BaseParrot {
