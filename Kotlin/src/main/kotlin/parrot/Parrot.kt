@@ -5,6 +5,9 @@ import kotlin.math.min
 
 interface BaseParrot {
     val speed: Double
+
+    val baseSpeed: Double
+        get() = 12.0
 }
 
 open class Parrot(
@@ -23,9 +26,6 @@ open class Parrot(
 
     private val loadFactor: Double
         get() = 9.0
-
-    private val baseSpeed: Double
-        get() = 12.0
 
     private fun getBaseSpeed(voltage: Double): Double = min(24.0, voltage * baseSpeed)
 }
