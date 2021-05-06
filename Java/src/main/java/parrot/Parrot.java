@@ -21,10 +21,14 @@ public class Parrot {
             case AFRICAN:
                 return africanSpeed();
             case NORWEGIAN_BLUE:
-                return (isNailed) ? 0 : getBaseSpeed(voltage);
+                return norwegianBlueSpeed();
             default:
                 throw new RuntimeException("Should be unreachable");
         }
+    }
+
+    private double norwegianBlueSpeed() {
+        return (isNailed) ? 0 : getBaseSpeed(voltage);
     }
 
     private double africanSpeed() {
