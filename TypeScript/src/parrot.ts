@@ -7,6 +7,9 @@ export enum ParrotTypes {
 export class Parrot {
     private static readonly BASE_SPEED = 12;
 
+    private static readonly LOAD_FACTOR = 9;
+
+
     constructor(private parrotType: ParrotTypes,
                 private numberOfCoconuts: number,
                 private voltage: number,
@@ -24,8 +27,9 @@ export class Parrot {
         }
         throw new Error("Should be unreachable");
     }
+
     private getLoadFactor(): number {
-        return 9;
+        return Parrot.LOAD_FACTOR;
     }
 
     private getBaseSpeedWithVoltage(voltage: number): number {
