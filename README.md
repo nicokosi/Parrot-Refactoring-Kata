@@ -2,6 +2,10 @@
 
 Based on [Parrot Refactoring Kata by Emily Bache](https://github.com/emilybache/Parrot-Refactoring-Kata).
 
+## Mode and Constraint
+
+See [slides](https://www.slideshare.net/pkofler/coding-dojo-baby-steps-push-challenge-2021).
+
 ## Supported Languages
 
 * C
