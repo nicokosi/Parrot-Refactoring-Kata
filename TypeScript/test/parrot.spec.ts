@@ -2,14 +2,19 @@ import { expect } from "chai";
 import "mocha";
 import { Parrot, ParrotTypes } from "../src/parrot";
 
-function createParrot(parrotType: ParrotTypes, numberOfCoconuts: number, voltage: number) {
-    return new Parrot(parrotType, numberOfCoconuts, voltage, false);
+function createParrot(
+    parrotType: ParrotTypes,
+    numberOfCoconuts: number,
+    voltage: number,
+    nailed: boolean,
+) {
+    return new Parrot(parrotType, numberOfCoconuts, voltage, nailed);
 }
 
 describe("Parrot", () => {
 
     it("gets speed of European Parrot", () => {
-        const parrot = createParrot(ParrotTypes.EUROPEAN, 0, 0);
+        const parrot = createParrot(ParrotTypes.EUROPEAN, 0, 0, false);
 
         expect(parrot.getSpeed()).eql(12);
     });
