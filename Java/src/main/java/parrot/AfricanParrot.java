@@ -2,7 +2,9 @@ package parrot;
 
 public class AfricanParrot extends Parrot {
 
-    public AfricanParrot(ParrotTypeEnum african, int i, int i1, boolean b) {
-        super(ParrotTypeEnum.AFRICAN, i, i1, b);
+    private int numberOfCoconuts;
+
+    public AfricanParrot(ParrotTypeEnum african, int numberOfCoconuts, int i1, boolean b) {
+        super(ParrotTypeEnum.AFRICAN, numberOfCoconuts, i1, b);
     }
 }
