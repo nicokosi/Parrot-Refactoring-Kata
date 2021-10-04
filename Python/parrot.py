@@ -40,3 +40,8 @@ class Parrot:
 
     def _base_speed(self):
         return 12.0
+
+
+class AfricanParrot(Parrot):
+    pass
+
