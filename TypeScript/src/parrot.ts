@@ -5,6 +5,7 @@ export enum ParrotTypes {
 }
 
 export class Parrot {
+    // @ts-ignore
     constructor(private parrotType: ParrotTypes,
                 protected numberOfCoconuts: number,
                 protected voltage: number,
@@ -12,14 +13,6 @@ export class Parrot {
     }
 
     public getSpeed(): number {
-        switch (this.parrotType) {
-            case ParrotTypes.EUROPEAN:
-                return this.getBaseSpeed();
-            case ParrotTypes.AFRICAN:
-                return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
-            case ParrotTypes.NORWEGIAN_BLUE:
-                return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
-        }
         throw new Error("Should be unreachable");
     }
 
