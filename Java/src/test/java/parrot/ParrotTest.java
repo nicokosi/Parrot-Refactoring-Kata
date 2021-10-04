@@ -38,13 +38,13 @@ public class ParrotTest {
 
     @Test
     public void getSpeedNorwegianBlueParrot_not_nailed() {
-        Parrot parrot = new Parrot(ParrotTypeEnum.NORWEGIAN_BLUE, 1.5, false);
+        Parrot parrot = new ParrotNorwegian(ParrotTypeEnum.NORWEGIAN_BLUE, 1.5, false);
         assertEquals(18.0, parrot.getSpeed(), 0.0);
     }
 
     @Test
     public void getSpeedNorwegianBlueParrot_not_nailed_high_voltage() {
-        Parrot parrot = new Parrot(ParrotTypeEnum.NORWEGIAN_BLUE, 4, false);
+        Parrot parrot = new ParrotNorwegian(ParrotTypeEnum.NORWEGIAN_BLUE, 4, false);
         assertEquals(24.0, parrot.getSpeed(), 0.0);
     }
 }
