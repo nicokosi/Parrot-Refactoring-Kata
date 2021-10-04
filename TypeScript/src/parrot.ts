@@ -4,8 +4,4 @@ export abstract class Parrot {
   protected getBaseSpeed(): number {
     return 12;
   }
-
-  protected getLoadFactor(): number {
-    return 9;
-  }
 }
