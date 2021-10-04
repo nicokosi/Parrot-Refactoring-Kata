@@ -21,11 +21,6 @@ export abstract class Parrot {
     protected getLoadFactor(): number {
         return 9;
     }
-
-    protected getBaseSpeedWithVoltage(voltage: number): number {
-        return Math.min(24, voltage * this.getBaseSpeed());
-    }
-
 }
 
 class EuropeanParrot extends Parrot {
@@ -65,6 +60,10 @@ class NorvegianBlueParrot extends Parrot {
 
     public getSpeed(): number {
         return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
+    }
+
+    protected getBaseSpeedWithVoltage(voltage: number): number {
+        return Math.min(24, voltage * this.getBaseSpeed());
     }
 }
 
