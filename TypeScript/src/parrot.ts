@@ -46,9 +46,8 @@ class AfricanParrot extends Parrot {
     constructor(
         numberOfCoconuts: number,
         voltage: number,
-        isNailed: boolean,
     ) {
-        super(ParrotTypes.AFRICAN, numberOfCoconuts, voltage, isNailed);
+        super(ParrotTypes.AFRICAN, numberOfCoconuts, voltage);
     }
 
     public getSpeed(): number {
@@ -79,7 +78,7 @@ export function createParrot(
     if (parrotType === ParrotTypes.EUROPEAN) {
         return new EuropeanParrot(numberOfCoconuts, voltage);
     } else if (parrotType === ParrotTypes.AFRICAN) {
-        return new AfricanParrot(numberOfCoconuts, voltage, nailed);
+        return new AfricanParrot(numberOfCoconuts, voltage);
     } else if (parrotType === ParrotTypes.NORWEGIAN_BLUE) {
         return new NorvegianBlueParrot(numberOfCoconuts, voltage, nailed);
     }
