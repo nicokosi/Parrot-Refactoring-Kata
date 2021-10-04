@@ -29,9 +29,9 @@ open class Parrot(
 
     private fun getBaseSpeed(voltage: Double): Double = min(24.0, voltage * baseSpeed)
 
-    private fun europeanSpeed(baseSpeed: Double) = EuropeanParrot().speed(baseSpeed)
+    private fun europeanSpeed(baseSpeed: Double) = EuropeanParrot(baseSpeed).speed()
 }
 
-class EuropeanParrot {
-    fun speed(baseSpeed: Double) = baseSpeed
+class EuropeanParrot(private val baseSpeed: Double) {
+    fun speed() = baseSpeed
 }
