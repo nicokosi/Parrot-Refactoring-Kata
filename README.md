@@ -1,4 +1,4 @@
-# Parrot Push Challenge
+# Parrot Push Challenge 👋
 
 Based on [Parrot Refactoring Kata by Emily Bache](https://github.com/emilybache/Parrot-Refactoring-Kata).
 
