@@ -4,7 +4,8 @@ export class EuropeanParrot extends Parrot {
   constructor(
     numberOfCoconuts: number,
     voltage: number,
-    isNailed: boolean) {
+    isNailed: boolean
+  ) {
       super(ParrotTypes.EUROPEAN, numberOfCoconuts, voltage, isNailed);
   }
 }
