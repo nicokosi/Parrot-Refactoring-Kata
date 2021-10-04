@@ -3,6 +3,7 @@ import "mocha";
 import { Parrot, ParrotTypes } from "../src/parrot";
 import { AfricanParrot } from "../src/parrot-african";
 import { EuropeanParrot } from "../src/parrot-european";
+import { NorwegianBlueParrot } from "../src/parrot-norwegian-blue";
 
 describe("Parrot", () => {
 
@@ -31,19 +32,19 @@ describe("Parrot", () => {
     });
 
     it("gets speed of Norwegian Blue Parrot nailed", () => {
-        const parrot = new Parrot(ParrotTypes.NORWEGIAN_BLUE, 0, 1.5, true);
+        const parrot = new NorwegianBlueParrot(0, 1.5, true);
 
         expect(parrot.getSpeed()).eql(0);
     });
 
     it("gets speed of Norwegian Blue Parrot not nailed", () => {
-        const parrot = new Parrot(ParrotTypes.NORWEGIAN_BLUE, 0, 1.5, false);
+        const parrot = new NorwegianBlueParrot(0, 1.5, false);
 
         expect(parrot.getSpeed()).eql(18);
     });
 
     it("gets speed of Norwegian Blue Parrot not nailed high voltage", () => {
-        const parrot = new Parrot(ParrotTypes.NORWEGIAN_BLUE, 0, 4, false);
+        const parrot = new NorwegianBlueParrot(0, 4, false);
 
         expect(parrot.getSpeed()).eql(24);
     });
