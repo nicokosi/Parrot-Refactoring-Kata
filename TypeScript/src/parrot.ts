@@ -15,8 +15,6 @@ export class Parrot {
 
     public getSpeed(): number {
         switch (this.parrotType) {
-            case ParrotTypes.EUROPEAN:
-                return this.getBaseSpeed();
             case ParrotTypes.AFRICAN:
                 return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
             case ParrotTypes.NORWEGIAN_BLUE:
