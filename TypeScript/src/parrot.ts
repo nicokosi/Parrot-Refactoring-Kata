@@ -8,7 +8,6 @@ export abstract class Parrot {
     constructor(
         protected parrotType: ParrotTypes,
         protected numberOfCoconuts: number,
-        protected voltage?: number,
     ) {
     }
 
@@ -50,10 +49,10 @@ class AfricanParrot extends Parrot {
 class NorvegianBlueParrot extends Parrot {
     constructor(
         numberOfCoconuts: number,
-        voltage: number,
+        private voltage: number,
         private isNailed: boolean,
     ) {
-        super(ParrotTypes.NORWEGIAN_BLUE, numberOfCoconuts, voltage);
+        super(ParrotTypes.NORWEGIAN_BLUE, numberOfCoconuts);
     }
 
     public getSpeed(): number {
