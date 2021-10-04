@@ -5,10 +5,12 @@ export enum ParrotTypes {
 }
 
 export class Parrot {
-    constructor(private parrotType: ParrotTypes,
-                private numberOfCoconuts: number,
-                private voltage: number,
-                private isNailed: boolean) {
+    constructor(
+        private parrotType: ParrotTypes,
+        private numberOfCoconuts: number,
+        private voltage: number,
+        private isNailed: boolean,
+    ) {
     }
 
     public getSpeed(): number {
@@ -35,6 +37,16 @@ export class Parrot {
         return Math.min(24, voltage * this.getBaseSpeed());
     }
 
+}
+
+class EuropeanParrot extends Parrot {
+    constructor(
+        numberOfCoconuts: number,
+        voltage: number,
+        isNailed: boolean,
+    ) {
+        super(ParrotTypes.EUROPEAN, numberOfCoconuts, voltage, isNailed);
+    }
 }
 
 export function createParrot(
