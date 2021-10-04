@@ -26,12 +26,16 @@ open class Parrot(
 
 }
 
+interface Speed {
+    val speed: Double
+}
+
 class NorwegianBlueParrot(
     private val isNailed: Boolean,
     private val voltage: Double,
     private val baseSpeed: Double
-) {
-    val speed: Double
+) : Speed {
+    override val speed: Double
         get() = if (this.isNailed) 0.0 else min(24.0, this.voltage * this.baseSpeed)
 }
 
