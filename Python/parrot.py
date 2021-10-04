@@ -23,7 +23,7 @@ class NorvegianBlueParrot(EuropeanParrot):
         if nailed:
             return 0
         else:
-            return min([24.0, self.voltage * self.base_speed])
+            return min([24.0, self.voltage * self._base_speed])
 
 
 class Parrot:
