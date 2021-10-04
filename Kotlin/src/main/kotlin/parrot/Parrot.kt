@@ -48,6 +48,6 @@ class AfricanParrot(
         get() = max(0.0, this.baseSpeed - this.loadFactor * this.numberOfCoconuts)
 }
 
-class EuropeanParrot(speed: Double): Speed {
-    override val speed = speed
+class EuropeanParrot(baseSpeed: Double): Speed {
+    override val speed = baseSpeed
 }
