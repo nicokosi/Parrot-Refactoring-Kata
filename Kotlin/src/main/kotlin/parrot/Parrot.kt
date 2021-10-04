@@ -23,7 +23,7 @@ open class Parrot(
         baseSpeed: Double,
         loadFactor: Double,
         numberOfCoconuts: Int
-    ) = max(0.0, baseSpeed - loadFactor * numberOfCoconuts)
+    ) = AfricanParrot().speed(baseSpeed, loadFactor, numberOfCoconuts)
 
     private val loadFactor: Double
         get() = 9.0
@@ -33,6 +33,14 @@ open class Parrot(
 
     private fun getBaseSpeed(voltage: Double): Double = min(24.0, voltage * baseSpeed)
 
+}
+
+class AfricanParrot() {
+    fun speed(
+        baseSpeed: Double,
+        loadFactor: Double,
+        numberOfCoconuts: Int
+    ) = max(0.0, baseSpeed - loadFactor * numberOfCoconuts)
 }
 
 class EuropeanParrot(val speed: Double)
