@@ -14,3 +14,5 @@ The project uses [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com
 To run the test:
 
     npm test
+
+test
