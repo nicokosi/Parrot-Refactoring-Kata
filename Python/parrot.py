@@ -15,7 +15,7 @@ class EuropeanParrot(object):
 
 
 class NorvegianBlueParrot(EuropeanParrot):
-    def __init__(self,voltage, base_speed):
+    def __init__(self, voltage, base_speed):
         self.voltage = voltage
         self.base_speed = base_speed
 
