@@ -14,12 +14,13 @@ open class Parrot(
         get() = when (type) {
             ParrotTypeEnum.EUROPEAN -> EuropeanParrot(baseSpeed).speed
             ParrotTypeEnum.AFRICAN -> AfricanParrot(baseSpeed, loadFactor, numberOfCoconuts).speed
-            ParrotTypeEnum.NORWEGIAN_BLUE -> norwegianBlueSpeed(isNailed, voltage)
+            ParrotTypeEnum.NORWEGIAN_BLUE -> norwegianBlueSpeed(isNailed, voltage, baseSpeed)
         }
 
     private fun norwegianBlueSpeed(
         isNailed: Boolean,
-        voltage: Double
+        voltage: Double,
+        baseSpeed: Double
     ) = if (isNailed) 0.0 else min(24.0, voltage * baseSpeed)
 
     private val loadFactor: Double
