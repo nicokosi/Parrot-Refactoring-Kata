@@ -6,6 +6,6 @@ export class EuropeanParrot extends Parrot {
   }
 
   public getSpeed(): number {
-    return this.getBaseSpeed();
+    return this.baseSpeed;
   }
 }
