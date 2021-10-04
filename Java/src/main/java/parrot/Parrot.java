@@ -4,12 +4,10 @@ public class Parrot {
 
     private ParrotTypeEnum type;
     protected double voltage;
-    private boolean isNailed;
 
     public Parrot(ParrotTypeEnum type, double voltage, boolean isNailed) {
         this.type = type;
         this.voltage = voltage;
-        this.isNailed = isNailed;
     }
 
     public double getSpeed() {
