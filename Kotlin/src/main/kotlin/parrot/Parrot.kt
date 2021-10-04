@@ -31,3 +31,7 @@ open class Parrot(
 
     private fun europeanSpeed(baseSpeed: Double) = baseSpeed
 }
+
+class EuropeanParrot {
+    private fun europeanSpeed(baseSpeed: Double) = baseSpeed
+}
