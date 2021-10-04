@@ -7,7 +7,7 @@ export enum ParrotTypes {
 export abstract class Parrot {
     constructor(
         protected parrotType: ParrotTypes,
-        protected numberOfCoconuts: number,
+        protected numberOfCoconuts?: number,
     ) {
     }
 
@@ -42,7 +42,7 @@ class AfricanParrot extends Parrot {
     }
 
     public getSpeed(): number {
-        return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
+        return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts!);
     }
 }
 
