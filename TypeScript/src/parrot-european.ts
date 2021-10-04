@@ -5,7 +5,7 @@ export class EuropeanParrot extends Parrot {
     super();
   }
 
-  public getSpeed(): number {
+  public get speed(): number {
     return this.baseSpeed;
   }
 }

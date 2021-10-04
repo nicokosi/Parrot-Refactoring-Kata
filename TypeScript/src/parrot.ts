@@ -1,5 +1,5 @@
 export abstract class Parrot {
-  public abstract getSpeed(): number;
+  public abstract get speed(): number;
 
   protected get baseSpeed() {
     return 12;
