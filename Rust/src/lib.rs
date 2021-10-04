@@ -41,24 +41,8 @@ impl Speed for Parrot {
 }
 
 impl Speed for EuropeanParrot {
-
     fn speed(&self) -> Result<f32, &'static str> {
-        match self.parrot_type {
-            "european_parrot" => Ok(base_speed()),
-            "african_parrot" => {
-                let african_speed = base_speed() - load_factor() * self.number_of_coconuts as f32;
-                Ok(positive_speed_or_zero(african_speed))
-            }
-            "norwegian_blue_parrot" => {
-                if self.nailed == true {
-                    Ok(ZERO)
-                }
-                else {
-                    Ok(compute_base_speed_for_voltage(self.voltage))
-                }
-            }
-            _ => Err("Should be unreachable!")
-        }
+       Ok(base_speed())
     }
 }
 
