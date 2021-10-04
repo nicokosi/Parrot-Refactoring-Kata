@@ -69,5 +69,7 @@ export function createParrot(
 ) {
     return parrotType === ParrotTypes.EUROPEAN
         ? new EuropeanParrot(numberOfCoconuts, voltage, nailed)
+        : parrotType === ParrotTypes.AFRICAN
+        ? new AfricanParrot(numberOfCoconuts, voltage, nailed)
         : new Parrot(parrotType, numberOfCoconuts, voltage, nailed);
 }
