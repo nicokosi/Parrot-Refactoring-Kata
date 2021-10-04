@@ -1,15 +1,6 @@
 import { expect } from "chai";
 import "mocha";
-import { Parrot, ParrotTypes } from "../src/parrot";
-
-function createParrot(
-    parrotType: ParrotTypes,
-    numberOfCoconuts: number,
-    voltage: number,
-    nailed: boolean,
-) {
-    return new Parrot(parrotType, numberOfCoconuts, voltage, nailed);
-}
+import { createParrot, Parrot, ParrotTypes } from "../src/parrot";
 
 describe("Parrot", () => {
 

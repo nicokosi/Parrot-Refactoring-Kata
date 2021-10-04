@@ -36,3 +36,12 @@ export class Parrot {
     }
 
 }
+
+export function createParrot(
+    parrotType: ParrotTypes,
+    numberOfCoconuts: number,
+    voltage: number,
+    nailed: boolean,
+) {
+    return new Parrot(parrotType, numberOfCoconuts, voltage, nailed);
+}
