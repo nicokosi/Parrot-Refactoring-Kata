@@ -85,7 +85,6 @@ export function createParrot(
         return new AfricanParrot(numberOfCoconuts, voltage, nailed);
     } else if (parrotType === ParrotTypes.NORWEGIAN_BLUE) {
         return new NorvegianBlueParrot(numberOfCoconuts, voltage, nailed);
-    } else {
-        return new Parrot(parrotType, numberOfCoconuts, voltage, nailed);
     }
+    throw new Error("Should be unreachable");
 }
