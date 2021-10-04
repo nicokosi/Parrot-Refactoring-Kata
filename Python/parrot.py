@@ -8,8 +8,10 @@ class ParrotType(Enum):  # If it is not available, just remove it.
 
 
 class EuropeanParrot(object):
+    _base_speed = 12
+
     def speed(self):
-        return 12.0
+        return self._base_speed
 
 
 class NorvegianBlueParrot(EuropeanParrot):
