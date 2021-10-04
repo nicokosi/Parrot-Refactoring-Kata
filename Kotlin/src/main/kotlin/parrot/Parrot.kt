@@ -38,7 +38,7 @@ class AfricanParrot(
         baseSpeed: Double,
         loadFactor: Double,
         numberOfCoconuts: Int
-    ) = max(0.0, baseSpeed - loadFactor * numberOfCoconuts)
+    ) = max(0.0, this.baseSpeed - this.loadFactor * this.numberOfCoconuts)
 }
 
 class EuropeanParrot(val speed: Double)
