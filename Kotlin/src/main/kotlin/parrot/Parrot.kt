@@ -17,12 +17,6 @@ open class Parrot(
             ParrotTypeEnum.NORWEGIAN_BLUE -> NorwegianBlueParrot().norwegianBlueSpeed(isNailed, voltage, baseSpeed)
         }
 
-    private fun norwegianBlueSpeed(
-        isNailed: Boolean,
-        voltage: Double,
-        baseSpeed: Double
-    ) = if (isNailed) 0.0 else min(24.0, voltage * baseSpeed)
-
     private val loadFactor: Double
         get() = 9.0
 
