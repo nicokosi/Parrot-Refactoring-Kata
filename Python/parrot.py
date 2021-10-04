@@ -31,13 +31,13 @@ class Parrot:
         raise ValueError("should be unreachable")
 
     def norvegian_blue_speed(self, nailed, voltage, base_speed):
+        def compute_base_speed_for_voltage(voltage, base_speed):
+            return min([24.0, voltage * base_speed])
         if nailed:
             return 0
         else:
-            return self._compute_base_speed_for_voltage(voltage, base_speed)
+            return compute_base_speed_for_voltage(voltage, base_speed)
 
-    def _compute_base_speed_for_voltage(self, voltage, base_speed):
-        return min([24.0, voltage * base_speed])
 
     def _load_factor(self):
         return 9.0
