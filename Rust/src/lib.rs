@@ -1,14 +1,19 @@
-struct Parrot<'a> {
-    parrot_type: &'a str,
+const ZERO: f32 = 0.0;
+
+struct Parrot {
+    parrot_type: &'static str,
     number_of_coconuts: usize,
     voltage: f32,
     nailed: bool,
 }
-const ZERO: f32 = 0.0;
 
-impl<'a> Parrot<'a> {
+trait Speed {
+    fn speed(&self) -> Result<f32, &'static str>;
+}
 
-    pub fn speed(&self) -> Result<f32, &'static str> {
+impl Speed for Parrot {
+
+    fn speed(&self) -> Result<f32, &'static str> {
         match self.parrot_type {
             "european_parrot" => Ok(base_speed()),
             "african_parrot" => {
