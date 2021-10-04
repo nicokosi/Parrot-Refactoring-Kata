@@ -9,9 +9,9 @@ use Exception;
 class Parrot
 {
     /**
-     * @var int ParrotTypeEnum
+     * @var \Parrot\ParrotTypeEnum|int
      */
-    private $type;
+    private ParrotTypeEnum|int $type;
 
     /**
      * @var int
@@ -28,7 +28,7 @@ class Parrot
      */
     private $isNailed;
 
-    public function __construct(int $type, int $numberOfCoconuts, float $voltage, bool $isNailed)
+    public function __construct(ParrotTypeEnum|int $type, int $numberOfCoconuts, float $voltage, bool $isNailed)
     {
         $this->type = $type;
         $this->numberOfCoconuts = $numberOfCoconuts;
