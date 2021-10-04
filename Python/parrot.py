@@ -7,6 +7,11 @@ class ParrotType(Enum):  # If it is not available, just remove it.
     NORWEGIAN_BLUE = 3
 
 
+class EuropeanParrot(object):
+    def base_speed(self):
+        return 12.0
+
+
 class Parrot:
 
     def __init__(self, type_of_parrot, number_of_coconuts, voltage, nailed):
@@ -17,7 +22,7 @@ class Parrot:
 
     def speed(self):
         if self._type == ParrotType.EUROPEAN:
-            return self._base_speed()
+            return EuropeanParrot().base_speed()
         if self._type == ParrotType.AFRICAN:
             return max(0, self._base_speed() - self._load_factor() * self._number_of_coconuts)
         if self._type == ParrotType.NORWEGIAN_BLUE:
