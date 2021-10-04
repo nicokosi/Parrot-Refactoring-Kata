@@ -1,7 +1,5 @@
 export class Parrot {
-  constructor(
-    protected numberOfCoconuts: number
-  ) {}
+  constructor() {}
 
   public getSpeed(): number {
     throw new Error("Should be unreachable");
