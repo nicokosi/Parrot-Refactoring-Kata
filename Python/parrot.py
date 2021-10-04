@@ -18,8 +18,8 @@ class NorvegianBlueParrot(object):
         self.voltage = voltage
         self.base_speed = base_speed
 
-    def speed(self):
-        if self.nailed:
+    def speed(self, nailed):
+        if nailed:
             return 0
         else:
             return min([24.0, self.voltage * self.base_speed])
@@ -40,7 +40,7 @@ class Parrot:
             return max(0, self._base_speed() - self._load_factor() * self._number_of_coconuts)
         if self._type == ParrotType.NORWEGIAN_BLUE:
             speed = self._base_speed()
-            return NorvegianBlueParrot(self._nailed, self._voltage, speed).speed()
+            return NorvegianBlueParrot(self._nailed, self._voltage, speed).speed(self._nailed)
 
         raise ValueError("should be unreachable")
 
