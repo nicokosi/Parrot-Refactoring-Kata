@@ -1,6 +1,4 @@
 export abstract class Parrot {
-  constructor() {}
-
   public abstract getSpeed(): number;
 
   protected getBaseSpeed(): number {
