@@ -1,9 +1,3 @@
-export enum ParrotTypes {
-  EUROPEAN,
-  AFRICAN,
-  NORWEGIAN_BLUE,
-}
-
 export class Parrot {
   constructor(
     protected numberOfCoconuts: number,
