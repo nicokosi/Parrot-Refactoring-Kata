@@ -1,9 +1,7 @@
-export class Parrot {
+export abstract class Parrot {
   constructor() {}
 
-  public getSpeed(): number {
-    throw new Error("Should be unreachable");
-  }
+  public abstract getSpeed(): number;
 
   protected getBaseSpeed(): number {
     return 12;
