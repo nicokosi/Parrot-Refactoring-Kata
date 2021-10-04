@@ -49,6 +49,6 @@ class AfricanParrot(
 }
 
 class EuropeanParrot(private val baseSpeed: Double) : Speed {
-    override val speed
+    override val speed: Double
         get() = this.baseSpeed
 }
