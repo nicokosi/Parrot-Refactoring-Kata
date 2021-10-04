@@ -1,6 +1,5 @@
 import { expect } from "chai";
 import "mocha";
-import { Parrot, ParrotTypes } from "../src/parrot";
 import { AfricanParrot } from "../src/parrot-african";
 import { EuropeanParrot } from "../src/parrot-european";
 import { NorwegianBlueParrot } from "../src/parrot-norwegian-blue";
