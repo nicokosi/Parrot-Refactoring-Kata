@@ -3,7 +3,6 @@ from enum import Enum  # Enum is introduced in Python 3.4.
 
 class ParrotType(Enum):  # If it is not available, just remove it.
     AFRICAN = 2
-    NORWEGIAN_BLUE = 3
 
 
 class EuropeanParrot(object):
