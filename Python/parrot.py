@@ -44,10 +44,6 @@ class Parrot:
 
         raise ValueError("should be unreachable")
 
-    def norvegian_blue_speed(self, nailed, voltage, base_speed):
-        return NorvegianBlueParrot(nailed, voltage, base_speed).speed()
-
-
     def _load_factor(self):
         return 9.0
 
