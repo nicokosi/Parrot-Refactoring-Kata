@@ -1,8 +1,7 @@
 export class Parrot {
   constructor(
     protected numberOfCoconuts: number,
-    protected voltage: number,
-    protected isNailed: boolean
+    protected voltage: number
   ) {}
 
   public getSpeed(): number {

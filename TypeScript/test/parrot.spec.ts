@@ -7,25 +7,25 @@ import { NorwegianBlueParrot } from "../src/parrot-norwegian-blue";
 describe("Parrot", () => {
 
     it("gets speed of European Parrot", () => {
-        const parrot = new EuropeanParrot(0, 0, false);
+        const parrot = new EuropeanParrot(0, 0);
 
         expect(parrot.getSpeed()).eql(12);
     });
 
     it("gets speed of African Parrot with one coconut", () => {
-        const parrot = new AfricanParrot(1, 0, false);
+        const parrot = new AfricanParrot(1, 0);
 
         expect(parrot.getSpeed()).eql(3);
     });
 
     it("gets speed of African Parrot with two coconuts", () => {
-        const parrot = new AfricanParrot(2, 0, false);
+        const parrot = new AfricanParrot(2, 0);
 
         expect(parrot.getSpeed()).eql(0);
     });
 
     it("gets speed of African Parrot with no coconuts", () => {
-        const parrot = new AfricanParrot(0, 0, false);
+        const parrot = new AfricanParrot(0, 0);
 
         expect(parrot.getSpeed()).eql(12);
     });
