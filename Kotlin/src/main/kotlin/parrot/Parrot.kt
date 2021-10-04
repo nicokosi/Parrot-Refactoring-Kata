@@ -12,7 +12,7 @@ open class Parrot(
 
     val speed: Double
         get() = when (type) {
-            ParrotTypeEnum.EUROPEAN -> europeanSpeed(baseSpeed)
+            ParrotTypeEnum.EUROPEAN -> EuropeanParrot(baseSpeed).speed()
             ParrotTypeEnum.AFRICAN -> africanSpeed()
             ParrotTypeEnum.NORWEGIAN_BLUE -> norwegianBlueSpeed()
         }
@@ -29,7 +29,6 @@ open class Parrot(
 
     private fun getBaseSpeed(voltage: Double): Double = min(24.0, voltage * baseSpeed)
 
-    private fun europeanSpeed(baseSpeed: Double) = EuropeanParrot(baseSpeed).speed()
 }
 
 class EuropeanParrot(private val baseSpeed: Double) {
