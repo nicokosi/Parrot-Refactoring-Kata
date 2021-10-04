@@ -81,11 +81,11 @@ export function createParrot(
 ) {
     if (parrotType === ParrotTypes.EUROPEAN) {
         return new EuropeanParrot(numberOfCoconuts, voltage, nailed);
+    } else if (parrotType === ParrotTypes.AFRICAN) {
+        return new AfricanParrot(numberOfCoconuts, voltage, nailed);
     } else {
-        return parrotType === ParrotTypes.AFRICAN
-            ? new AfricanParrot(numberOfCoconuts, voltage, nailed)
-            : parrotType === ParrotTypes.NORWEGIAN_BLUE
-                ? new NorvegianBlueParrot(numberOfCoconuts, voltage, nailed)
-                : new Parrot(parrotType, numberOfCoconuts, voltage, nailed);
+        return parrotType === ParrotTypes.NORWEGIAN_BLUE
+            ? new NorvegianBlueParrot(numberOfCoconuts, voltage, nailed)
+            : new Parrot(parrotType, numberOfCoconuts, voltage, nailed);
     }
 }
