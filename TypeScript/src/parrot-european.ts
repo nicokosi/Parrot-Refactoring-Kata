@@ -1,8 +1,8 @@
 import { Parrot } from "./parrot";
 
 export class EuropeanParrot extends Parrot {
-  constructor(numberOfCoconuts: number, voltage: number) {
-    super(numberOfCoconuts, voltage);
+  constructor(numberOfCoconuts: number) {
+    super(numberOfCoconuts);
   }
 
   public getSpeed(): number {
