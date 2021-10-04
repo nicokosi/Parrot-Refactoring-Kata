@@ -20,7 +20,7 @@ open class Parrot(
     private fun norwegianBlueSpeed(
         isNailed: Boolean,
         voltage: Double
-    ) = if (isNailed) 0.0 else getBaseSpeed(voltage)
+    ) = if (isNailed) 0.0 else getBaseSpeed(voltage, baseSpeed)
 
     private val loadFactor: Double
         get() = 9.0
@@ -28,7 +28,7 @@ open class Parrot(
     private val baseSpeed: Double
         get() = 12.0
 
-    private fun getBaseSpeed(voltage: Double): Double = min(24.0, voltage * baseSpeed)
+    private fun getBaseSpeed(voltage: Double, baseSpeed: Double): Double = min(24.0, voltage * baseSpeed)
 
 }
 
