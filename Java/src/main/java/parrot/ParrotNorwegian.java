@@ -1,7 +1,7 @@
 package parrot;
 
 public class ParrotNorwegian extends Parrot {
-    public ParrotNorwegian(ParrotTypeEnum norwegianBlue, double v, boolean b) {
-        super(norwegianBlue, v, b);
+    public ParrotNorwegian(ParrotTypeEnum norwegianBlue, double voltage, boolean b) {
+        super(norwegianBlue, voltage, b);
     }
 }
