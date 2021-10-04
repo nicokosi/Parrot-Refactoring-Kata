@@ -13,8 +13,7 @@ class EuropeanParrot(object):
 
 
 class NorvegianBlueParrot(object):
-    def __init__(self, nailed, voltage, base_speed):
-        self.nailed = nailed
+    def __init__(self,voltage, base_speed):
         self.voltage = voltage
         self.base_speed = base_speed
 
@@ -40,7 +39,7 @@ class Parrot:
             return max(0, self._base_speed() - self._load_factor() * self._number_of_coconuts)
         if self._type == ParrotType.NORWEGIAN_BLUE:
             speed = self._base_speed()
-            return NorvegianBlueParrot(self._nailed, self._voltage, speed).speed(self._nailed)
+            return NorvegianBlueParrot(self._voltage, speed).speed(self._nailed)
 
         raise ValueError("should be unreachable")
 
