@@ -9,7 +9,7 @@ export abstract class Parrot {
         protected parrotType: ParrotTypes,
         protected numberOfCoconuts: number,
         protected voltage: number,
-        protected isNailed: boolean,
+        protected isNailed?: boolean,
     ) {
     }
 
