@@ -44,6 +44,13 @@ impl Speed for EuropeanParrot {
     }
 }
 
+impl Speed for AfricanParrot {
+    fn speed(&self) -> Result<f32, &'static str> {
+        let african_speed = base_speed() - load_factor() * self.number_of_coconuts as f32;
+        Ok(positive_speed_or_zero(african_speed))
+    }
+}
+
 fn positive_speed_or_zero(speed: f32) -> f32 {
     if speed > ZERO { speed } else { ZERO }
 }
@@ -82,7 +89,7 @@ mod tests {
 
     #[test]
     fn african_parrot_speed_with_one_coconut() {
-        let parrot = Parrot { parrot_type: "african_parrot",
+        let parrot = AfricanParrot { parrot_type: "african_parrot",
                               number_of_coconuts: 1,
                               voltage: 0.0,
                               nailed: false };
@@ -91,7 +98,7 @@ mod tests {
 
     #[test]
     fn african_parrot_speed_with_two_coconut() {
-        let parrot = Parrot { parrot_type: "african_parrot",
+        let parrot = AfricanParrot { parrot_type: "african_parrot",
                               number_of_coconuts: 2,
                               voltage: 0.0,
                               nailed: false };
@@ -100,7 +107,7 @@ mod tests {
 
     #[test]
     fn african_parrot_speed_with_no_coconut() {
-        let parrot = Parrot { parrot_type: "african_parrot",
+        let parrot = AfricanParrot { parrot_type: "african_parrot",
                               number_of_coconuts: 0,
                               voltage: 0.0,
                               nailed: false };
