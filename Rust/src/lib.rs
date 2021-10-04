@@ -4,22 +4,20 @@ struct Parrot<'a> {
     voltage: f32,
     nailed: bool,
 }
-
+const ZERO: f32 = 0.0;
 
 impl<'a> Parrot<'a> {
 
     pub fn speed(&self) -> Result<f32, &'static str> {
-        let zero = 0.0;
-
         match self.parrot_type {
             "european_parrot" => Ok(base_speed()),
             "african_parrot" => {
                 let african_speed = base_speed() - load_factor() * self.number_of_coconuts as f32;
-                if african_speed > zero { Ok(african_speed) } else { Ok(zero)}
+                Ok(positive_speed_or_zero(african_speed))
             }
             "norwegian_blue_parrot" => {
                 if self.nailed == true {
-                    Ok(zero)
+                    Ok(ZERO)
                 }
                 else {
                     Ok(compute_base_speed_for_voltage(self.voltage))
@@ -28,6 +26,10 @@ impl<'a> Parrot<'a> {
             _ => Err("Should be unreachable!")
         }
     }
+}
+
+fn positive_speed_or_zero(speed: f32) -> f32 {
+    if speed > ZERO { speed } else { ZERO }
 }
 
 fn compute_base_speed_for_voltage(voltage: f32) -> f32 {
