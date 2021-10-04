@@ -6,7 +6,7 @@ export enum ParrotTypes {
 
 export abstract class Parrot {
     constructor(
-        protected parrotType: ParrotTypes,
+        protected parrotType?: ParrotTypes,
     ) {
     }
 
