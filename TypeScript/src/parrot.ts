@@ -71,6 +71,14 @@ class NorvegianBlueParrot extends Parrot {
     ) {
         super(ParrotTypes.NORWEGIAN_BLUE, numberOfCoconuts, voltage, isNailed);
     }
+
+    public getSpeed(): number {
+        switch (this.parrotType) {
+            case ParrotTypes.NORWEGIAN_BLUE:
+                return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
+        }
+        throw new Error("Should be unreachable");
+    }
 }
 
 export function createParrot(
