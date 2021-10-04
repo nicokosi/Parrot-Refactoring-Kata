@@ -19,12 +19,10 @@ class NorvegianBlueParrot(object):
         self.base_speed = base_speed
 
     def speed(self):
-        def compute_base_speed_for_voltage(voltage, base_speed):
-            return min([24.0, voltage * base_speed])
         if self.nailed:
             return 0
         else:
-            return compute_base_speed_for_voltage(self.voltage, self.base_speed)
+            return min([24.0, self.voltage * self.base_speed])
 
 
 class Parrot:
