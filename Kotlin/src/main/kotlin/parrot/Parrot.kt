@@ -35,7 +35,7 @@ class NorwegianBlueParrot(
         isNailed: Boolean,
         voltage: Double,
         baseSpeed: Double
-    ) = if (isNailed) 0.0 else min(24.0, voltage * baseSpeed)
+    ) = if (this.isNailed) 0.0 else min(24.0, this.voltage * this.baseSpeed)
 }
 
 class AfricanParrot(
