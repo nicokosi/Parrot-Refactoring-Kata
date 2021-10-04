@@ -14,8 +14,10 @@ open class Parrot(
         get() = when (type) {
             ParrotTypeEnum.EUROPEAN -> europeanSpeed()
             ParrotTypeEnum.AFRICAN -> africanSpeed()
-            ParrotTypeEnum.NORWEGIAN_BLUE -> if (isNailed) 0.0 else getBaseSpeed(voltage)
+            ParrotTypeEnum.NORWEGIAN_BLUE -> norwegianBlueSpeed()
         }
+
+    private fun norwegianBlueSpeed() = if (isNailed) 0.0 else getBaseSpeed(voltage)
 
     private fun africanSpeed() = max(0.0, baseSpeed - loadFactor * numberOfCoconuts)
 
