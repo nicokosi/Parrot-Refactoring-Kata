@@ -21,11 +21,11 @@ struct AfricanParrot {
     nailed: bool,
 }
 
-trait Speed {
+trait Parrot {
     fn speed(&self) -> Result<f32, &'static str>;
 }
 
-impl Speed for NorwegianBlueParrot {
+impl Parrot for NorwegianBlueParrot {
     fn speed(&self) -> Result<f32, &'static str> {
         if self.nailed == true {
             Ok(ZERO)
@@ -35,13 +35,13 @@ impl Speed for NorwegianBlueParrot {
     }
 }
 
-impl Speed for EuropeanParrot {
+impl Parrot for EuropeanParrot {
     fn speed(&self) -> Result<f32, &'static str> {
         Ok(base_speed())
     }
 }
 
-impl Speed for AfricanParrot {
+impl Parrot for AfricanParrot {
     fn speed(&self) -> Result<f32, &'static str> {
         let african_speed = base_speed() - load_factor() * self.number_of_coconuts as f32;
         Ok(positive_speed_or_zero(african_speed))
