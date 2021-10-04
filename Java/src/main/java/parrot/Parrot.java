@@ -14,12 +14,10 @@ public class Parrot {
     }
 
     public double getSpeed() {
-        switch (type) {
-            case NORWEGIAN_BLUE:
-                return (isNailed) ? 0 : getBaseSpeed(voltage);
-            default:
-                throw new RuntimeException("Should be unreachable");
+        if (type == ParrotTypeEnum.NORWEGIAN_BLUE) {
+            return (isNailed) ? 0 : getBaseSpeed(voltage);
         }
+        throw new RuntimeException("Should be unreachable");
     }
 
     private double getBaseSpeed(double voltage) {
