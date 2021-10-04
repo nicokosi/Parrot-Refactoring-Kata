@@ -12,7 +12,7 @@ open class Parrot(
 
     val speed: Double
         get() = when (type) {
-            ParrotTypeEnum.EUROPEAN -> EuropeanParrot(baseSpeed).speed()
+            ParrotTypeEnum.EUROPEAN -> EuropeanParrot(baseSpeed).speed
             ParrotTypeEnum.AFRICAN -> africanSpeed()
             ParrotTypeEnum.NORWEGIAN_BLUE -> norwegianBlueSpeed()
         }
@@ -31,6 +31,4 @@ open class Parrot(
 
 }
 
-class EuropeanParrot(private val baseSpeed: Double) {
-    fun speed() = baseSpeed
-}
+class EuropeanParrot(val speed: Double)
