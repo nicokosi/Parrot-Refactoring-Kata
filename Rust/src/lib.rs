@@ -14,6 +14,13 @@ struct EuropeanParrot {
     nailed: bool,
 }
 
+struct AfricanParrot {
+    parrot_type: &'static str,
+    number_of_coconuts: usize,
+    voltage: f32,
+    nailed: bool,
+}
+
 trait Speed {
     fn speed(&self) -> Result<f32, &'static str>;
 }
