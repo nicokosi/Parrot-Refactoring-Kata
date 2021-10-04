@@ -59,6 +59,16 @@ class AfricanParrot extends Parrot {
     ) {
         super(ParrotTypes.AFRICAN, numberOfCoconuts, voltage, isNailed);
     }
+
+    public getSpeed(): number {
+        switch (this.parrotType) {
+            case ParrotTypes.AFRICAN:
+                return Math.max(0, this.getBaseSpeed() - this.getLoadFactor() * this.numberOfCoconuts);
+            case ParrotTypes.NORWEGIAN_BLUE:
+                return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
+        }
+        throw new Error("Should be unreachable");
+    }
 }
 
 export function createParrot(
