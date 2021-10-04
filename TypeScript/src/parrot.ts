@@ -47,11 +47,10 @@ class AfricanParrot extends Parrot {
 
 class NorvegianBlueParrot extends Parrot {
     constructor(
-        numberOfCoconuts: number,
         private voltage: number,
         private isNailed: boolean,
     ) {
-        super(ParrotTypes.NORWEGIAN_BLUE, numberOfCoconuts);
+        super(ParrotTypes.NORWEGIAN_BLUE);
     }
 
     public getSpeed(): number {
@@ -74,7 +73,7 @@ export function createParrot(
     } else if (parrotType === ParrotTypes.AFRICAN) {
         return new AfricanParrot(numberOfCoconuts);
     } else if (parrotType === ParrotTypes.NORWEGIAN_BLUE) {
-        return new NorvegianBlueParrot(numberOfCoconuts, voltage, nailed);
+        return new NorvegianBlueParrot(voltage, nailed);
     }
     throw new Error("Should be unreachable");
 }
