@@ -13,9 +13,6 @@ public class Parrot {
     }
 
     public double getSpeed() {
-        if (type == ParrotTypeEnum.NORWEGIAN_BLUE) {
-            return (isNailed) ? 0 : getBaseSpeed(voltage);
-        }
         throw new RuntimeException("Should be unreachable");
     }
 
