@@ -63,6 +63,16 @@ class AfricanParrot extends Parrot {
     }
 }
 
+class NorvegianBlueParrot extends Parrot {
+    constructor(
+        numberOfCoconuts: number,
+        voltage: number,
+        isNailed: boolean,
+    ) {
+        super(ParrotTypes.NORWEGIAN_BLUE, numberOfCoconuts, voltage, isNailed);
+    }
+}
+
 export function createParrot(
     parrotType: ParrotTypes,
     numberOfCoconuts: number,
