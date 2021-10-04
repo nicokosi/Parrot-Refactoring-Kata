@@ -31,7 +31,8 @@ class NorwegianBlueParrot(
     private val voltage: Double,
     private val baseSpeed: Double
 ) {
-    val speed get() = if (this.isNailed) 0.0 else min(24.0, this.voltage * this.baseSpeed)
+    val speed: Double
+        get() = if (this.isNailed) 0.0 else min(24.0, this.voltage * this.baseSpeed)
 }
 
 class AfricanParrot(
