@@ -26,15 +26,15 @@ open class Parrot(
 
 }
 
-interface BaseParrot {
-    val speed: Double
+abstract class BaseParrot(baseSpeed: Double) {
+    abstract val speed: Double
 }
 
 class NorwegianBlueParrot(
     private val isNailed: Boolean,
     private val voltage: Double,
     private val baseSpeed: Double
-) : BaseParrot {
+) : BaseParrot(baseSpeed) {
     override val speed: Double
         get() = if (this.isNailed) 0.0 else min(24.0, this.voltage * this.baseSpeed)
 }
@@ -43,12 +43,12 @@ class AfricanParrot(
     private val baseSpeed: Double,
     private val loadFactor: Double,
     private val numberOfCoconuts: Int
-) : BaseParrot {
+) : BaseParrot(baseSpeed) {
     override val speed: Double
         get() = max(0.0, this.baseSpeed - this.loadFactor * this.numberOfCoconuts)
 }
 
-class EuropeanParrot(private val baseSpeed: Double) : BaseParrot {
+class EuropeanParrot(private val baseSpeed: Double) : BaseParrot(baseSpeed) {
     override val speed: Double
         get() = this.baseSpeed
 }
