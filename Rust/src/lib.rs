@@ -19,10 +19,8 @@ trait Speed {
 }
 
 impl Speed for Parrot {
-
     fn speed(&self) -> Result<f32, &'static str> {
         match self.parrot_type {
-            "european_parrot" => Ok(base_speed()),
             "african_parrot" => {
                 let african_speed = base_speed() - load_factor() * self.number_of_coconuts as f32;
                 Ok(positive_speed_or_zero(african_speed))
