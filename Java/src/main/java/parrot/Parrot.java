@@ -12,7 +12,7 @@ public abstract class Parrot {
         this.isNailed = isNailed;
     }
 
-    double getSpeed() {
+    public double getSpeed() {
         return 0;
     }
 
@@ -24,7 +24,7 @@ public abstract class Parrot {
         return numberOfCoconuts;
     }
 
-    boolean isNailed() {
+    protected boolean isNailed() {
         return isNailed;
     }
 
