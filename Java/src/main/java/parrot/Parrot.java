@@ -42,4 +42,12 @@ public class Parrot {
     protected int getNumberOfCoconuts() {
         return numberOfCoconuts;
     }
+
+    boolean isNailed() {
+        return isNailed;
+    }
+
+    protected double getVoltage() {
+        return voltage;
+    }
 }
