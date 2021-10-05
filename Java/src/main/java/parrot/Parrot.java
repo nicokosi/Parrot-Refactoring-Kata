@@ -12,9 +12,7 @@ public abstract class Parrot {
         this.isNailed = isNailed;
     }
 
-    public double getSpeed() {
-        return 0;
-    }
+    public abstract double getSpeed();
 
     protected double getBaseSpeed() {
         return 12.0;
