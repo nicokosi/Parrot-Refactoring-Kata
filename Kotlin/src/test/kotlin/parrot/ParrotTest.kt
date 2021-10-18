@@ -14,20 +14,20 @@ class ParrotTest {
 
     @Test
     fun getSpeedOfAfricanParrot_With_One_Coconut() {
-        val parrot = Parrot(ParrotTypeEnum.AFRICAN, 1, 0.0, false)
-        assertEquals(3.0, parrot.speed, 0.0)
+        val parrot = AfricanParrot( 1)
+        assertEquals(3.0, parrot.speed(), 0.0)
     }
 
     @Test
     fun getSpeedOfAfricanParrot_With_Two_Coconuts() {
-        val parrot = Parrot(ParrotTypeEnum.AFRICAN, 2, 0.0, false)
-        assertEquals(0.0, parrot.speed, 0.0)
+        val parrot = AfricanParrot(2)
+        assertEquals(0.0, parrot.speed(), 0.0)
     }
 
     @Test
     fun getSpeedOfAfricanParrot_With_No_Coconuts() {
-        val parrot = Parrot(ParrotTypeEnum.AFRICAN, 0, 0.0, false)
-        assertEquals(12.0, parrot.speed, 0.0)
+        val parrot = AfricanParrot(0)
+        assertEquals(12.0, parrot.speed(), 0.0)
     }
 
     @Test
