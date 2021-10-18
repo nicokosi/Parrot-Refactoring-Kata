@@ -18,6 +18,15 @@ data class AfricanParrot(val numberOfCoconuts: Int) : IParrot {
     override fun speed(): Double = max(0.0, baseSpeed - loadFactor * numberOfCoconuts)
 }
 
+data class NorwegianBlueParrot(val voltage: Double, val isNailed: Boolean) : IParrot {
+    private val baseSpeed = 12
+
+    override fun speed(): Double = if (isNailed) 0.0 else getBaseSpeed(voltage)
+
+    private fun getBaseSpeed(voltage: Double): Double = min(24.0, voltage * baseSpeed)
+
+}
+
 open class Parrot(
     private val type: ParrotTypeEnum,
     private val numberOfCoconuts: Int,

@@ -32,19 +32,19 @@ class ParrotTest {
 
     @Test
     fun getSpeedNorwegianBlueParrot_nailed() {
-        val parrot = Parrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 1.5, true)
-        assertEquals(0.0, parrot.speed, 0.0)
+        val parrot = NorwegianBlueParrot(1.5, true)
+        assertEquals(0.0, parrot.speed(), 0.0)
     }
 
     @Test
     fun getSpeedNorwegianBlueParrot_not_nailed() {
-        val parrot = Parrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 1.5, false)
-        assertEquals(18.0, parrot.speed, 0.0)
+        val parrot = NorwegianBlueParrot(1.5, false)
+        assertEquals(18.0, parrot.speed(), 0.0)
     }
 
     @Test
     fun getSpeedNorwegianBlueParrot_not_nailed_high_voltage() {
-        val parrot = Parrot(ParrotTypeEnum.NORWEGIAN_BLUE, 0, 4.0, false)
-        assertEquals(24.0, parrot.speed, 0.0)
+        val parrot = NorwegianBlueParrot(4.0, false)
+        assertEquals(24.0, parrot.speed(), 0.0)
     }
 }
