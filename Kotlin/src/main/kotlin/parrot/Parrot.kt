@@ -7,10 +7,8 @@ interface IParrot {
     fun speed(): Double
 }
 
-class EuropeanParrot : IParrot {
-    override fun speed(): Double {
-        TODO("Not yet implemented")
-    }
+data class EuropeanParrot(val baseSpeed: Double) : IParrot {
+    override fun speed(): Double = baseSpeed
 }
 
 open class Parrot(
