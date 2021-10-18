@@ -21,6 +21,5 @@ data class AfricanParrot(val numberOfCoconuts: Int) : Parrot {
 
 data class NorwegianBlueParrot(val voltage: Double, val isNailed: Boolean) : Parrot {
     override val speed: Double
-        get() = if (isNailed) 0.0 else getBaseSpeed(voltage)
-    private fun getBaseSpeed(voltage: Double): Double = min(24.0, voltage * 12)
+        get() = if (isNailed) 0.0 else min(24.0, voltage * 12)
 }
