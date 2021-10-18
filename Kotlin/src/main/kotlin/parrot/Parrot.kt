@@ -3,6 +3,16 @@ package parrot
 import kotlin.math.max
 import kotlin.math.min
 
+interface IParrot {
+    fun speed(): Double
+}
+
+class EuropeanParrot : IParrot {
+    override fun speed(): Double {
+        TODO("Not yet implemented")
+    }
+}
+
 open class Parrot(
     private val type: ParrotTypeEnum,
     private val numberOfCoconuts: Int,
